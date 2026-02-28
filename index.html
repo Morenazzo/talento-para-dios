@@ -454,26 +454,32 @@
 
   /* === COLLABORATION CHIPS === */
   .form-group textarea {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100%;
     padding: 0.85rem 1rem;
     background: var(--black-input);
     border: 1px solid rgba(212, 175, 55, 0.15);
     border-radius: 12px;
     color: var(--white);
     font-family: 'Outfit', sans-serif;
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 400;
     transition: all 0.3s ease;
     outline: none;
-    resize: vertical;
-    min-height: 90px;
+    resize: none;
+    height: 110px;
     line-height: 1.5;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
   }
 
   .form-group textarea::placeholder {
     color: rgba(160, 154, 140, 0.45);
     font-weight: 300;
-    font-size: 0.88rem;
+    font-size: 0.92rem;
   }
 
   .form-group textarea:focus {
@@ -584,7 +590,7 @@
 
       <div class="form-group">
         <label for="colaborar">¿Cómo te gustaría colaborar en el proyecto?</label>
-        <textarea id="colaborar" placeholder="Ej: Ser parte del equipo fundador, promover en mi iglesia, recomendar talentos, oración, apoyo económico..." rows="3"></textarea>
+        <textarea id="colaborar" style="width:100%;box-sizing:border-box;background:#1A1A1A;color:#F5F0E8;border:1px solid rgba(212,175,55,0.15);border-radius:12px;padding:0.85rem 1rem;font-family:'Outfit',sans-serif;font-size:1rem;height:110px;resize:none;outline:none;" placeholder="Ej: Ser parte del equipo fundador, promover en mi iglesia, recomendar talentos, oración, apoyo económico..."></textarea>
       </div>
 
       <button class="btn-submit" id="btnSubmit" onclick="submitForm()">
