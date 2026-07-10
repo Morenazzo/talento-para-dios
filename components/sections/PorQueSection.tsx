@@ -73,7 +73,7 @@ export function PorQueSection() {
             <div aria-hidden className="mt-6 h-1.5 w-full rounded-full bg-gradient-to-r from-dorado to-dorado-claro" />
           </div>
         </div>
-        <p className="mt-3 text-right text-xs text-marfil-suave/60">
+        <p className="mt-3 text-right text-xs text-marfil-suave/75">
           {cifrasMision.alcanceMusica.fuente}
         </p>
 

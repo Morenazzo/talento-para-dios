@@ -69,7 +69,7 @@ export function Footer() {
           {t.footer.legal}
         </p>
 
-        <p className="text-xs text-marfil-suave/50">
+        <p className="text-xs text-marfil-suave/70">
           © {anio} {t.footer.derechos}
         </p>
       </div>
