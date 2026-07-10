@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-noche text-marfil antialiased;
+  }
+
+  ::selection {
+    @apply bg-dorado text-noche;
+  }
+}
+
+@layer components {
+  /* Ondas de sonido decorativas — azul eléctrico sutil */
+  .onda-sonido {
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 6px,
+      rgba(56, 189, 248, 0.25) 6px,
+      rgba(56, 189, 248, 0.25) 8px
+    );
+    mask-image: linear-gradient(90deg, transparent, black 30%, black 70%, transparent);
+  }
+}

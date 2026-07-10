@@ -156,6 +156,6 @@ export const es = {
     proximamente:
       "La pasarela de pago estará disponible próximamente. ¡Gracias por tu interés!",
   },
-} as const;
+};
 
 export type Diccionario = typeof es;
