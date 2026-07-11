@@ -4,6 +4,7 @@ import { PorQueSection } from "@/components/sections/PorQueSection";
 import { QueVivirasSection } from "@/components/sections/QueVivirasSection";
 import { AdopcionSection } from "@/components/sections/AdopcionSection";
 import { TicketTiers } from "@/components/sections/TicketTiers";
+import { ConvocatoriaBanner } from "@/components/sections/ConvocatoriaBanner";
 import { EticaSection } from "@/components/sections/EticaSection";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 import { Footer } from "@/components/sections/Footer";
@@ -19,6 +20,7 @@ export default function Home() {
         <AdopcionSection />
         <TicketTiers />
         <EticaSection />
+        <ConvocatoriaBanner />
         <CTAFinal />
       </main>
       <Footer />

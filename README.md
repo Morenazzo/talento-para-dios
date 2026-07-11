@@ -75,20 +75,29 @@ El checkout actual es un **stub** — no procesa cobros. Los puntos de conexión
 
 ```
 app/
-  layout.tsx            # Fuentes (Outfit + Playfair Display), metadata, lang=es
-  page.tsx              # Composición de secciones
-  api/checkout/route.ts # Stub de checkout (TODO: Conekta/Stripe)
+  layout.tsx                 # Fuentes (Outfit + Playfair Display), metadata, lang=es
+  page.tsx                   # Composición de secciones de la landing
+  icon.svg                   # Favicon (isotipo dorado)
+  aplica/page.tsx            # Convocatoria + formulario de inscripción de artistas
+  api/checkout/route.ts      # Stub de checkout (TODO: Conekta/Stripe)
+  api/aplicaciones/route.ts  # Stub de aplicaciones (TODO: Sheets/correo/DB)
 components/
-  sections/             # Hero, PorQue, QueViviras, Adopcion, TicketTiers, Etica, CTAFinal, Footer, Navbar
-  ui/                   # Button, Card, Badge (estilo shadcn/ui)
-  ImagePlaceholder.tsx  # Placeholder accesible para assets pendientes
-config/evento.ts        # ÚNICA fuente de precios, fecha, lugar y cifras
+  Logo.tsx                   # Isotipo SVG (micrófono dorado + halo + cruz)
+  sections/                  # Hero, PorQue, QueViviras, Adopcion, TicketTiers, Convocatoria, Etica, CTAFinal, Footer, Navbar
+  aplica/                    # FormularioAplicacion (7 secciones del formulario oficial)
+  ui/                        # Button, Card, Badge (estilo shadcn/ui)
+  ImagePlaceholder.tsx       # Placeholder accesible para assets pendientes
+config/evento.ts             # ÚNICA fuente de precios, fecha, lugar y cifras
 lib/
-  i18n/                 # es.ts (visible) + en.ts (preparado)
-  checkout.ts           # iniciarCheckout(tipoBoleto) — stub
+  i18n/                      # es.ts (visible) + en.ts (preparado)
+  checkout.ts                # iniciarCheckout(tipoBoleto) — stub
 public/
-  registro-pastores.html # Página previa preservada (/registro-pastores.html)
+  registro-pastores.html     # Página previa preservada (/registro-pastores.html)
 ```
+
+## Aplicaciones de artistas (`/aplica`)
+
+La página reproduce el formulario oficial de inscripción (7 secciones, dos vías de ingreso: invitación / aplicación abierta) con validación de los campos obligatorios. El envío llega a `app/api/aplicaciones/route.ts`, que hoy es un **stub sin persistencia**: conectar ahí Google Sheets, correo (Resend/SendGrid) o base de datos para que el equipo del filtro primario reciba las aplicaciones. Al conectar la persistencia, publicar el aviso de privacidad (datos personales y referencia pastoral — LFPDPPP).
 
 ## Nota legal del copy
 

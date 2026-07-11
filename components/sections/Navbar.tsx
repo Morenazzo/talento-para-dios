@@ -1,19 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
 const t = getDiccionario();
 
 const enlaces = [
-  { href: "#por-que", label: t.nav.porQue },
-  { href: "#evento", label: t.nav.evento },
-  { href: "#adopcion", label: t.nav.adopcion },
-  { href: "#boletos", label: t.nav.boletos },
-  { href: "#transparencia", label: t.nav.transparencia },
+  { href: "/#por-que", label: t.nav.porQue },
+  { href: "/#evento", label: t.nav.evento },
+  { href: "/#adopcion", label: t.nav.adopcion },
+  { href: "/#boletos", label: t.nav.boletos },
+  { href: "/#transparencia", label: t.nav.transparencia },
+  { href: "/aplica", label: t.nav.artistas },
 ];
 
 export function Navbar() {
@@ -25,12 +28,13 @@ export function Navbar() {
         aria-label="Navegación principal"
         className="container flex h-16 items-center justify-between"
       >
-        <a
-          href="#inicio"
-          className="font-display text-lg font-semibold tracking-wide text-dorado-claro"
+        <Link
+          href="/#inicio"
+          className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-wide text-dorado-claro"
         >
+          <Logo className="h-9 w-9" title="" />
           {evento.nombre}
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-7 md:flex">
           {enlaces.map((e) => (
@@ -45,7 +49,7 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="#boletos"
+              href="/#boletos"
               className={buttonVariants({ size: "sm" })}
             >
               {t.nav.cta}
@@ -83,7 +87,7 @@ export function Navbar() {
           ))}
           <li className="px-3 pt-2">
             <a
-              href="#boletos"
+              href="/#boletos"
               onClick={() => setAbierto(false)}
               className="block rounded-full bg-dorado px-6 py-2.5 text-center text-sm font-semibold text-noche"
             >
