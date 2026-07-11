@@ -11,6 +11,7 @@ export const en: Diccionario = {
     adopcion: "Adoption",
     boletos: "Tickets",
     transparencia: "Transparency",
+    artistas: "Artists",
     cta: "Get your ticket",
   },
   hero: {
@@ -155,5 +156,137 @@ export const en: Diccionario = {
   checkout: {
     proximamente:
       "The payment gateway will be available soon. Thank you for your interest!",
+  },
+  convocatoria: {
+    kicker: "Call for artists",
+    titulo: "Did God give you a song? Present it",
+    texto:
+      "Christian soloists, bands and groups with 100% original music can apply. It is not a contest: selected projects perform to be adopted and accompanied.",
+    cta: "Apply with your project",
+    nota: "Open-application spots are limited (approx. 3), subject to a primary filter.",
+  },
+  aplica: {
+    kicker: "Open call",
+    titulo: "Apply with your music project",
+    intro:
+      "Talento para Dios is a worship showcase and adoption platform for music ministries. It is not a contest: no one competes or is eliminated. Selected projects perform live to be adopted for one year — with funds, mentorship and venues — by churches, entrepreneurs and allies.",
+    vias: {
+      titulo: "Two entry paths, one single form",
+      invitacion: {
+        titulo: "By invitation",
+        texto:
+          "Most of the spots. You submit an original song via a YouTube link (it may be produced).",
+      },
+      abierta: {
+        titulo: "Open application",
+        texto:
+          "Approx. 3 spots, subject to a primary filter. You submit an original song as a raw video (MP4, max 20 MB): live performance, your own voice and instrument, no editing or production.",
+      },
+      nota: "In both cases the production budget is not evaluated — only the quality of the composition and the performance.",
+    },
+    requisitos: {
+      titulo: "Mandatory requirements",
+      items: [
+        "100% original, own music (indispensable requirement).",
+        "Christian project with Christ-centered content.",
+        "Contact of a pastor, leader or church as a reference.",
+        "No use of Artificial Intelligence in the application material: it must be 100% human and performed by you.",
+      ],
+      notaIA:
+        "AI use will be considered later, only for projects that pass the first filter and as arrangement/production support during the preparation phase.",
+    },
+    formulario: {
+      titulo: "Application form",
+      obligatorio: "Fields marked with * are required.",
+      secciones: {
+        proyecto: "1 — Project details",
+        integrantes: "2 — Members",
+        referencia: "3 — Ministry reference (required)",
+        perfil: "4 — Ministry and musical profile",
+        material: "5 — Material (original song)",
+        disponibilidad: "6 — Availability and commitment",
+        confirmacion: "7 — Confirmation",
+      },
+      campos: {
+        nombreProyecto: "Project / band / ministry name",
+        tipoParticipacion: "Participation type",
+        porInvitacion: "By invitation",
+        aplicacionAbierta: "Open application",
+        ciudadPais: "City and country",
+        nombreLider: "Leader / main contact name",
+        telefono: "Phone (WhatsApp)",
+        correo: "Email",
+        redes: "Social media / links (Instagram, YouTube, Spotify)",
+        numIntegrantes: "Number of members",
+        integrantes: "Names and instrument/role of each one",
+        iglesia: "Church or congregation you belong to",
+        pastorNombre: "Name of your reference pastor or spiritual leader",
+        pastorContacto: "Phone or email of the reference pastor/leader",
+        historia: "Brief project history (max 150 words)",
+        generos: "Musical genre(s)",
+        vision: "Ministry vision / purpose (max 150 words)",
+        enlaceMaterial: "Link to the material of one original song",
+        ayudaMaterialAbierta:
+          "Open application: raw MP4 video (max 20 MB), live, unedited — share the link (Drive, Dropbox, etc.).",
+        ayudaMaterialInvitacion:
+          "By invitation: YouTube link (it may be produced).",
+        confirmoOriginal: "I confirm the music is 100% original and my own.",
+        confirmoSinIA:
+          "I confirm the material was not generated or assisted with Artificial Intelligence.",
+        letra: "Song lyrics",
+        cifrado: "Chord chart / harmony (optional)",
+        dispPresentarse:
+          "Available to perform in Puebla on Sunday, September 27, 2026?",
+        dispMentoria:
+          "Available for the mentorship and preparation process?",
+        abiertoAdopcion:
+          "Open to the one-year adoption model (funds, mentorship, venues)?",
+        si: "Yes",
+        no: "No",
+        aceptoBases:
+          "I accept the rules and the use of my material for promotional and broadcast purposes.",
+        infoVeridica: "I confirm the information is truthful.",
+      },
+      enviar: "Submit application",
+      enviando: "Submitting…",
+      exito:
+        "We received your application! We will contact you via WhatsApp or email. Thank you for presenting your talent for God.",
+      error:
+        "We could not submit your application. Check the highlighted fields and try again.",
+      errorCampo: "This field is required.",
+    },
+    faq: {
+      titulo: "Frequently asked questions",
+      items: [
+        {
+          q: "Is it a contest?",
+          a: "No. It is a worship showcase. No one competes or is eliminated; projects perform to be adopted and accompanied.",
+        },
+        {
+          q: "What kind of music can I present?",
+          a: "100% original, own, Christ-centered music, in any genre.",
+        },
+        {
+          q: "Can I use artificial intelligence?",
+          a: "Not at this stage. The application material must be completely human and performed by you. AI use will be considered later, only for projects that pass the first filter and as support during preparation.",
+        },
+        {
+          q: "Do I need a pastor's reference?",
+          a: "Yes, it is mandatory. We ask for the contact of your pastor, leader or church as a reference.",
+        },
+        {
+          q: "What do I win if selected?",
+          a: "There is no “prize”. You become part of a platform that seeks churches, entrepreneurs and allies to adopt your ministry for one year with funds, mentorship and venues, plus mentor accompaniment.",
+        },
+        {
+          q: "What are mentors?",
+          a: "Experienced people who accompany you with feedback and counsel during the process and the event. They do not grade or eliminate you.",
+        },
+        {
+          q: "Who keeps the rights to my songs?",
+          a: "100% of the authorship remains with you. By applying you grant a non-exclusive license for promotional and broadcast use. Registration with INDAUTOR is recommended.",
+        },
+      ],
+    },
   },
 };

@@ -55,7 +55,7 @@ export function AdopcionSection() {
           </div>
           <a
             href="#nivel-productor"
-            className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full border border-dorado/50 px-6 text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-dorado/50 px-6 py-2 text-center text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
           >
             {t.adopcion.cta}
           </a>

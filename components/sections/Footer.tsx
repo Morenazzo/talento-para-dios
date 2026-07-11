@@ -1,4 +1,5 @@
 import { Instagram, Youtube, Facebook, Mail } from "lucide-react";
+import { Logo } from "@/components/Logo";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
@@ -10,9 +11,12 @@ export function Footer() {
   return (
     <footer className="border-t border-white/5 bg-noche py-12">
       <div className="container flex flex-col items-center gap-8 text-center">
-        <p className="font-display text-lg font-semibold tracking-wide text-dorado-claro">
-          {evento.nombre}
-        </p>
+        <div className="flex flex-col items-center gap-3">
+          <Logo className="h-14 w-14" title="" />
+          <p className="font-display text-lg font-semibold tracking-wide text-dorado-claro">
+            {evento.nombre}
+          </p>
+        </div>
 
         <div className="flex flex-col items-center gap-2 text-sm text-marfil-suave">
           <p>

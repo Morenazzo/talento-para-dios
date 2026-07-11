@@ -9,6 +9,7 @@ export const es = {
     adopcion: "Adopción",
     boletos: "Boletos",
     transparencia: "Transparencia",
+    artistas: "Artistas",
     cta: "Compra tu boleto",
   },
   hero: {
@@ -155,6 +156,138 @@ export const es = {
   checkout: {
     proximamente:
       "La pasarela de pago estará disponible próximamente. ¡Gracias por tu interés!",
+  },
+  convocatoria: {
+    kicker: "Convocatoria para artistas",
+    titulo: "¿Dios te dio una canción? Preséntala",
+    texto:
+      "Solistas, bandas y agrupaciones cristianas con música 100% original pueden aplicar. No es un concurso: los proyectos seleccionados se presentan para ser adoptados y acompañados.",
+    cta: "Aplica con tu proyecto",
+    nota: "Lugares por aplicación abierta limitados (aprox. 3), sujetos a filtro primario.",
+  },
+  aplica: {
+    kicker: "Convocatoria",
+    titulo: "Aplica con tu proyecto musical",
+    intro:
+      "Talento para Dios es una pasarela de adoración y adopción de ministerios musicales. No es un concurso: nadie compite ni es eliminado. Los proyectos seleccionados se presentan en vivo para ser adoptados por un año — con fondos, mentoría y espacios — por iglesias, empresarios y aliados.",
+    vias: {
+      titulo: "Dos vías de ingreso, un solo formulario",
+      invitacion: {
+        titulo: "Por invitación",
+        texto:
+          "La mayoría de los lugares. Envías una canción original mediante enlace de YouTube (puede estar producida).",
+      },
+      abierta: {
+        titulo: "Aplicación abierta",
+        texto:
+          "Aprox. 3 lugares, sujetos a un filtro primario. Envías una canción original en video crudo (MP4, máx. 20 MB): interpretación en vivo, con voz e instrumento propios, sin edición ni producción.",
+      },
+      nota: "En ambos casos no se evalúa el presupuesto de producción, sino la calidad de la composición y de la interpretación.",
+    },
+    requisitos: {
+      titulo: "Requisitos obligatorios",
+      items: [
+        "Música 100% original y propia (requisito indispensable).",
+        "Proyecto cristiano con contenido cristocéntrico.",
+        "Contacto de pastor, líder o iglesia como referencia.",
+        "Sin uso de Inteligencia Artificial en el material de inscripción: debe ser 100% humano e interpretado por ti.",
+      ],
+      notaIA:
+        "El uso de IA se contemplará más adelante, únicamente para los proyectos que pasen el primer filtro y como apoyo de arreglo/producción en la fase de preparación.",
+    },
+    formulario: {
+      titulo: "Formulario de inscripción",
+      obligatorio: "Los campos marcados con * son obligatorios.",
+      secciones: {
+        proyecto: "1 — Datos del proyecto",
+        integrantes: "2 — Integrantes",
+        referencia: "3 — Referencia ministerial (obligatoria)",
+        perfil: "4 — Perfil ministerial y musical",
+        material: "5 — Material (canción original)",
+        disponibilidad: "6 — Disponibilidad y compromiso",
+        confirmacion: "7 — Confirmación",
+      },
+      campos: {
+        nombreProyecto: "Nombre del proyecto / banda / ministerio",
+        tipoParticipacion: "Tipo de participación",
+        porInvitacion: "Por invitación",
+        aplicacionAbierta: "Aplicación abierta",
+        ciudadPais: "Ciudad y país",
+        nombreLider: "Nombre del líder / contacto principal",
+        telefono: "Teléfono (WhatsApp)",
+        correo: "Correo electrónico",
+        redes: "Redes sociales / enlaces (Instagram, YouTube, Spotify)",
+        numIntegrantes: "Número de integrantes",
+        integrantes: "Nombres e instrumento/rol de cada uno",
+        iglesia: "Iglesia o congregación a la que pertenecen",
+        pastorNombre: "Nombre del pastor o líder espiritual de referencia",
+        pastorContacto: "Teléfono o correo del pastor/líder de referencia",
+        historia: "Breve historia del proyecto (máx. 150 palabras)",
+        generos: "Género(s) musical(es)",
+        vision: "Visión / propósito ministerial (máx. 150 palabras)",
+        enlaceMaterial: "Enlace al material de una canción original",
+        ayudaMaterialAbierta:
+          "Aplicación abierta: video crudo en MP4 (máx. 20 MB), en vivo, sin edición — comparte el enlace (Drive, Dropbox, etc.).",
+        ayudaMaterialInvitacion:
+          "Por invitación: enlace de YouTube (puede estar producido).",
+        confirmoOriginal: "Confirmo que la música es 100% original y propia.",
+        confirmoSinIA:
+          "Confirmo que el material no fue generado ni asistido con Inteligencia Artificial.",
+        letra: "Letra de la canción",
+        cifrado: "Cifrado armónico / acordes (opcional)",
+        dispPresentarse:
+          "¿Disponibilidad para presentarse en Puebla el domingo 27 de septiembre de 2026?",
+        dispMentoria:
+          "¿Disponibilidad para el proceso de mentoría y preparación previa?",
+        abiertoAdopcion:
+          "¿Abierto al modelo de adopción por un año (fondos, mentoría, espacios)?",
+        si: "Sí",
+        no: "No",
+        aceptoBases:
+          "Acepto las bases y el uso de mi material con fines promocionales y de transmisión.",
+        infoVeridica: "Confirmo que la información es verídica.",
+      },
+      enviar: "Enviar aplicación",
+      enviando: "Enviando…",
+      exito:
+        "¡Recibimos tu aplicación! Te contactaremos por WhatsApp o correo. Gracias por presentar tu talento para Dios.",
+      error:
+        "No pudimos enviar tu aplicación. Revisa los campos marcados e intenta de nuevo.",
+      errorCampo: "Este campo es obligatorio.",
+    },
+    faq: {
+      titulo: "Preguntas frecuentes",
+      items: [
+        {
+          q: "¿Es un concurso?",
+          a: "No. Es una pasarela de adoración. Nadie compite ni es eliminado; los proyectos se presentan para ser adoptados y acompañados.",
+        },
+        {
+          q: "¿Qué tipo de música puedo presentar?",
+          a: "Música 100% original y propia, cristocéntrica, en cualquier género.",
+        },
+        {
+          q: "¿Puedo usar inteligencia artificial?",
+          a: "No en esta etapa. El material de inscripción debe ser completamente humano e interpretado por ti. El uso de IA se contemplará más adelante, solo para los proyectos que pasen el primer filtro y como apoyo en la fase de preparación.",
+        },
+        {
+          q: "¿Necesito referencia de un pastor?",
+          a: "Sí, es obligatorio. Pedimos el contacto de tu pastor, líder o iglesia como referencia.",
+        },
+        {
+          q: "¿Qué gano si me seleccionan?",
+          a: "No hay «premio». Formas parte de una plataforma que busca que iglesias, empresarios y aliados adopten tu ministerio por un año con fondos, mentoría y espacios, además del acompañamiento de mentores.",
+        },
+        {
+          q: "¿Qué son los mentores?",
+          a: "Personas con experiencia que te acompañan con feedback y consejo durante el proceso y el evento. No te califican ni eliminan.",
+        },
+        {
+          q: "¿Quién conserva los derechos de mis canciones?",
+          a: "El 100% de la autoría permanece contigo. Al inscribirte otorgas una licencia no exclusiva para uso promocional y de transmisión. Se recomienda registro ante INDAUTOR.",
+        },
+      ],
+    },
   },
 };
 
