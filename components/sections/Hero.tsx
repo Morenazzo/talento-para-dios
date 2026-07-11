@@ -1,5 +1,4 @@
 import { CalendarDays, MapPin, ChevronDown } from "lucide-react";
-import { Logo } from "@/components/Logo";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
@@ -25,7 +24,6 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 flex flex-col items-center py-24 text-center">
-        <Logo className="mb-8 h-24 w-24 sm:h-28 sm:w-28" title="" />
         <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-dorado-claro/90 sm:text-sm">
           {t.hero.kicker}
         </p>

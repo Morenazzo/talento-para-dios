@@ -30,9 +30,9 @@ export function Navbar() {
       >
         <Link
           href="/#inicio"
-          className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-wide text-dorado-claro"
+          className="flex shrink-0 items-center gap-2 whitespace-nowrap font-sans text-base font-bold tracking-tight text-dorado sm:gap-2.5 sm:text-lg"
         >
-          <Logo className="h-9 w-9" title="" />
+          <Logo className="h-9 w-9 sm:h-10 sm:w-10" title="" />
           {evento.nombre}
         </Link>
 
