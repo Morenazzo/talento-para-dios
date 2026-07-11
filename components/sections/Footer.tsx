@@ -11,9 +11,9 @@ export function Footer() {
   return (
     <footer className="border-t border-white/5 bg-noche py-12">
       <div className="container flex flex-col items-center gap-8 text-center">
-        <div className="flex flex-col items-center gap-3">
-          <Logo className="h-14 w-14" title="" />
-          <p className="font-display text-lg font-semibold tracking-wide text-dorado-claro">
+        <div className="flex items-center gap-3">
+          <Logo className="h-12 w-12" title="" />
+          <p className="font-sans text-lg font-bold tracking-tight text-dorado">
             {evento.nombre}
           </p>
         </div>

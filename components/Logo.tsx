@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Isotipo de Talento para Dios, alineado a la presentación oficial:
- * micrófono dorado vintage dentro de un halo radiante, con una cruz
- * luminosa en la base. Vectorial para nitidez en cualquier tamaño.
+ * Isotipo oficial de Talento para Dios: micrófono vintage dorado de
+ * tablillas con una cruz en el cuerpo, horquilla en U, pie y base.
+ * Vectorial para nitidez en cualquier tamaño.
  */
 export function Logo({
   className,
@@ -12,8 +12,6 @@ export function Logo({
   className?: string;
   title?: string;
 }) {
-  const rayos = Array.from({ length: 24 }, (_, i) => i * 15);
-
   return (
     <svg
       viewBox="0 0 120 120"
@@ -29,79 +27,51 @@ export function Logo({
           id="oro"
           gradientUnits="userSpaceOnUse"
           x1="60"
-          y1="0"
+          y1="6"
           x2="60"
-          y2="120"
+          y2="112"
         >
           <stop offset="0%" stopColor="#F5D87A" />
-          <stop offset="55%" stopColor="#D4AF37" />
-          <stop offset="100%" stopColor="#C09B30" />
+          <stop offset="50%" stopColor="#D4AF37" />
+          <stop offset="100%" stopColor="#B8952E" />
         </linearGradient>
-        <radialGradient id="halo" cx="50%" cy="42%" r="60%">
-          <stop offset="0%" stopColor="#F5D87A" stopOpacity="0.35" />
-          <stop offset="70%" stopColor="#D4AF37" stopOpacity="0.08" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
-        </radialGradient>
       </defs>
 
-      {/* Resplandor de fondo */}
-      <circle cx="60" cy="50" r="46" fill="url(#halo)" />
-
-      {/* Rayos del halo */}
-      <g stroke="url(#oro)" strokeWidth="1.6" strokeLinecap="round">
-        {rayos.map((a) => (
-          <line
-            key={a}
-            x1="60"
-            y1="14"
-            x2="60"
-            y2={a % 45 === 0 ? "7" : "10"}
-            transform={`rotate(${a} 60 50)`}
-          />
-        ))}
-      </g>
-
-      {/* Anillo del halo */}
-      <circle
-        cx="60"
-        cy="50"
-        r="30"
-        fill="none"
-        stroke="url(#oro)"
-        strokeWidth="2.4"
-      />
-
-      {/* Micrófono vintage */}
-      <rect x="51" y="31" width="18" height="26" rx="9" fill="url(#oro)" />
-      <g stroke="#0A0A0A" strokeWidth="1.4" opacity="0.5">
-        <line x1="53" y1="38" x2="67" y2="38" />
-        <line x1="52" y1="43" x2="68" y2="43" />
-        <line x1="53" y1="48" x2="67" y2="48" />
-      </g>
-      {/* Base del micrófono */}
+      {/* Cápsula: domo superior */}
+      <path d="M43 22 a17 17 0 0 1 34 0 v3 h-34 z" fill="url(#oro)" />
+      {/* Tablillas horizontales */}
+      <rect x="43" y="28" width="34" height="5" rx="2.5" fill="url(#oro)" />
+      <rect x="43" y="36" width="34" height="5" rx="2.5" fill="url(#oro)" />
+      <rect x="43" y="44" width="34" height="5" rx="2.5" fill="url(#oro)" />
+      {/* Cuerpo inferior con cruz en negativo */}
       <path
-        d="M48 46 a12 12 0 0 0 24 0"
+        d="M43 52 h34 v10 a17 17 0 0 1 -34 0 z"
+        fill="url(#oro)"
+      />
+      <g fill="#0A0A0A">
+        <rect x="57.5" y="53.5" width="5" height="21" rx="2" />
+        <rect x="50" y="58.5" width="20" height="5" rx="2" />
+      </g>
+
+      {/* Horquilla en U */}
+      <path
+        d="M34 38 v22 a26 26 0 0 0 52 0 v-22"
         fill="none"
         stroke="url(#oro)"
-        strokeWidth="2.4"
+        strokeWidth="5.5"
         strokeLinecap="round"
       />
+
+      {/* Pie y base */}
       <line
         x1="60"
-        y1="58"
+        y1="86"
         x2="60"
-        y2="65"
+        y2="102"
         stroke="url(#oro)"
-        strokeWidth="2.4"
-        strokeLinecap="round"
+        strokeWidth="5.5"
       />
-
-      {/* Cruz luminosa en la base */}
-      <g stroke="url(#oro)" strokeWidth="3.4" strokeLinecap="round">
-        <line x1="60" y1="88" x2="60" y2="112" />
-        <line x1="51" y1="96" x2="69" y2="96" />
-      </g>
-      <circle cx="60" cy="96" r="11" fill="url(#halo)" />
+      <rect x="38" y="102" width="44" height="6.5" rx="3" fill="url(#oro)" />
     </svg>
   );
 }
