@@ -36,7 +36,6 @@ npm start          # servir el build
 ⚠️ **Placeholders pendientes antes de publicar:**
 
 - Precios finales de todos los boletos (los actuales son precios ancla).
-- Nombre del recinto (`[CONFIRMAR NOMBRE]`).
 - Cifras de misión (`[VERIFICAR FUENTE]`) — no publicar sin cita verificada.
 - Correo, teléfono y redes sociales en `evento.contacto`.
 - Imágenes reales (hoy hay componentes `ImagePlaceholder` con dimensiones y alt text listos).
