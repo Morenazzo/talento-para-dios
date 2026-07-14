@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { getDiccionario } from "@/lib/i18n";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 
 const t = getDiccionario();
 
@@ -61,12 +61,13 @@ export function AdopcionSection() {
           </a>
         </div>
 
-        <div className="mt-12">
-          <ImagePlaceholder
-            alt="Líderes y pastores saludando a una banda emergente tras su presentación"
-            sugerencia="Foto: apretón de manos / oración por una banda en el escenario"
-            width={1200}
-            height={400}
+        <div className="relative mt-12 aspect-[3/1] overflow-hidden rounded-2xl border border-dorado/20">
+          <Image
+            src="/img/convocatoria-escenario.jpg"
+            alt="Escenario de Talento para Dios con la cruz luminosa al centro y siluetas adorando"
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
       </div>
