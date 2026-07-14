@@ -26,20 +26,11 @@ export function PorQueSection() {
         <div className="mt-10 space-y-6 text-base leading-relaxed text-marfil-suave sm:text-lg">
           <p>
             <span className="text-marfil">{t.porQue.parrafo1}</span>{" "}
-            {!cifrasMision.noAlcanzados.verificada && (
-              <sup className="text-xs text-electrico" title="Cifra pendiente de verificación">
-                {t.porQue.parrafo1Nota}
-              </sup>
-            )}
+            <span className="whitespace-nowrap text-xs text-marfil-suave/75">
+              ({cifrasMision.noAlcanzados.fuente})
+            </span>
           </p>
-          <p>
-            {t.porQue.parrafo2}{" "}
-            {!cifrasMision.alcanceMusica.verificada && (
-              <sup className="text-xs text-electrico" title="Cifra pendiente de verificación">
-                {t.porQue.parrafo2Nota}
-              </sup>
-            )}
-          </p>
+          <p>{t.porQue.parrafo2}</p>
         </div>
 
         {/* Contraste visual de cifras — sobrio, sin alarmismo */}
