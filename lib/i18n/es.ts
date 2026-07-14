@@ -13,7 +13,7 @@ export const es = {
     cta: "Compra tu boleto",
   },
   hero: {
-    kicker: "Concierto de Adoración · Pasarela de Talento + Adopción",
+    kicker: "Concierto de Adoración",
     titulo: "El Sonido de una Nueva Generación",
     subtitulo:
       "Una noche cristocéntrica donde el talento emergente de México se presenta para ser impulsado — y tú eres parte de la historia.",

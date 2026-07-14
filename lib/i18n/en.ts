@@ -15,7 +15,7 @@ export const en: Diccionario = {
     cta: "Get your ticket",
   },
   hero: {
-    kicker: "Worship Concert · Talent Showcase + Adoption",
+    kicker: "Worship Concert",
     titulo: "The Sound of a New Generation",
     subtitulo:
       "A Christ-centered night where Mexico's emerging talent takes the stage to be championed — and you are part of the story.",

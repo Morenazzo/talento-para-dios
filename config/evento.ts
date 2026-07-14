@@ -40,8 +40,7 @@ export const evento = {
   fecha: "2026-09-27T18:00:00-06:00",
   fechaTexto: "Domingo 27 de septiembre de 2026",
   horaTexto: "6:00 PM",
-  /** PLACEHOLDER — [CONFIRMAR NOMBRE DEL RECINTO] */
-  lugar: "Hacienda Paz [CONFIRMAR NOMBRE]",
+  lugar: "Hacienda Paz",
   ciudad: "Puebla, México",
   recintoDetalle:
     "Recinto para ~1,000 personas · sonido envolvente · techo retráctil",
