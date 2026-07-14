@@ -62,23 +62,21 @@ export const evento = {
 
 /**
  * Cifras de la sección "Por qué lo hacemos".
- * ⚠️ TODAS PENDIENTES DE VERIFICAR FUENTE antes de publicar.
+ * Fuentes confirmadas por el cliente (jul 2026).
  */
 export const cifrasMision = {
   noAlcanzados: {
     texto: "1 de cada 4 personas en el mundo aún no ha conocido las buenas nuevas de Jesucristo",
-    /** [VERIFICAR FUENTE] — no publicar sin cita verificada. */
-    fuente: "[VERIFICAR FUENTE]",
-    verificada: false,
+    fuente: "Fuente: Haggai Internacional",
+    verificada: true,
   },
   alcanceMusica: {
     predicaReproducciones: 2_000_000,
     predicaTexto: "~2 millones de reproducciones alcanza una prédica destacada",
     cancionReproducciones: 951_000_000,
     cancionTexto: "+951 millones de reproducciones supera una sola canción cristiana en español",
-    /** [VERIFICAR CIFRAS/FUENTE] — no publicar sin cita verificada. */
-    fuente: "[VERIFICAR CIFRAS/FUENTE]",
-    verificada: false,
+    fuente: "Fuente: YouTube",
+    verificada: true,
   },
 } as const;
 

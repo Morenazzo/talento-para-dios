@@ -30,13 +30,12 @@ npm start          # servir el build
 | --- | --- |
 | Precios de boletos, beneficios, boleto destacado | [`config/evento.ts`](config/evento.ts) |
 | Fecha, lugar, versículo, contacto y redes | [`config/evento.ts`](config/evento.ts) |
-| Cifras de la sección "Por qué" (⚠️ pendientes de verificar fuente) | [`config/evento.ts`](config/evento.ts) |
+| Cifras de la sección "Por qué" y sus fuentes (Haggai Internacional / YouTube) | [`config/evento.ts`](config/evento.ts) |
 | Copys de todas las secciones (es/en) | [`lib/i18n/es.ts`](lib/i18n/es.ts) / [`lib/i18n/en.ts`](lib/i18n/en.ts) |
 
 ⚠️ **Placeholders pendientes antes de publicar:**
 
 - Precios finales de todos los boletos (los actuales son precios ancla).
-- Cifras de misión (`[VERIFICAR FUENTE]`) — no publicar sin cita verificada.
 - Correo, teléfono y redes sociales en `evento.contacto`.
 - Imágenes reales (hoy hay componentes `ImagePlaceholder` con dimensiones y alt text listos).
 

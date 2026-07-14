@@ -26,10 +26,8 @@ export const es = {
     titulo: "Hay canciones que aún no se han escrito… y vidas esperándolas",
     parrafo1:
       "Aún 1 de cada 4 personas en el mundo no ha conocido las buenas nuevas de Jesucristo.",
-    parrafo1Nota: "[VERIFICAR FUENTE]",
     parrafo2:
       "La música es uno de los vehículos más poderosos para llevar ese mensaje. Mientras una prédica destacada alcanza alrededor de 2 millones de reproducciones, una sola canción cristiana en español supera los 951 millones.",
-    parrafo2Nota: "[VERIFICAR CIFRAS/FUENTE]",
     comparativa: {
       predicaLabel: "Una prédica destacada",
       predicaValor: "~2 M",

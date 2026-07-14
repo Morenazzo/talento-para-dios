@@ -28,10 +28,8 @@ export const en: Diccionario = {
     titulo: "There are songs not yet written… and lives waiting for them",
     parrafo1:
       "Still today, 1 in 4 people in the world has not heard the good news of Jesus Christ.",
-    parrafo1Nota: "[VERIFY SOURCE]",
     parrafo2:
       "Music is one of the most powerful vehicles to carry that message. While a leading sermon reaches about 2 million plays, a single Christian song in Spanish exceeds 951 million.",
-    parrafo2Nota: "[VERIFY FIGURES/SOURCE]",
     comparativa: {
       predicaLabel: "A leading sermon",
       predicaValor: "~2 M",
