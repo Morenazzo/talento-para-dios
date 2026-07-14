@@ -68,9 +68,6 @@ export function Hero() {
           </a>
         </div>
 
-        <p className="mt-8 text-xs text-marfil-suave/80">
-          {evento.recintoDetalle}
-        </p>
       </div>
 
       <a

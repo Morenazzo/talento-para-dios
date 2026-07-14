@@ -42,8 +42,6 @@ export const evento = {
   horaTexto: "6:00 PM",
   lugar: "Hacienda Paz",
   ciudad: "Puebla, México",
-  recintoDetalle:
-    "Recinto para ~1,000 personas · sonido envolvente · techo retráctil",
   versiculo: {
     cita: "Cada uno según el don que ha recibido, minístrelo a los otros, como buenos administradores de la multiforme gracia de Dios.",
     referencia: "1 Pedro 4:10",
