@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
-import { CheckCircle2, AlertCircle } from "lucide-react";
+import { useRef, useState, type ReactNode } from "react";
+import { CheckCircle2, AlertCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getDiccionario } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -107,32 +107,37 @@ function TituloSeccion({ children }: { children: ReactNode }) {
   );
 }
 
-/** Campos obligatorios del formulario oficial (documento de bases). */
-const OBLIGATORIOS = [
-  "nombreProyecto",
-  "tipoParticipacion",
-  "ciudadPais",
-  "nombreLider",
-  "telefono",
-  "correo",
-  "numIntegrantes",
-  "integrantes",
-  "iglesia",
-  "pastorNombre",
-  "pastorContacto",
-  "historia",
-  "generos",
-  "vision",
-  "enlaceMaterial",
-  "confirmoOriginal",
-  "confirmoSinIA",
-  "letra",
-  "dispPresentarse",
-  "dispMentoria",
-  "abiertoAdopcion",
-  "aceptoBases",
-  "infoVeridica",
+/** Un paso por sección del formulario oficial — se navega de una en una. */
+const PASOS = [
+  { titulo: f.secciones.proyecto, campos: ["nombreProyecto", "tipoParticipacion", "ciudadPais", "nombreLider", "telefono", "correo"] },
+  { titulo: f.secciones.integrantes, campos: ["numIntegrantes", "integrantes"] },
+  { titulo: f.secciones.referencia, campos: ["iglesia", "pastorNombre", "pastorContacto"] },
+  { titulo: f.secciones.perfil, campos: ["historia", "generos", "vision"] },
+  { titulo: f.secciones.material, campos: ["enlaceMaterial", "confirmoOriginal", "confirmoSinIA", "letra"] },
+  { titulo: f.secciones.disponibilidad, campos: ["dispPresentarse", "dispMentoria", "abiertoAdopcion"] },
+  { titulo: f.secciones.confirmacion, campos: ["aceptoBases", "infoVeridica"] },
 ] as const;
+
+const TOTAL_PASOS = PASOS.length;
+
+function ProgresoPasos({ paso }: { paso: number }) {
+  return (
+    <div>
+      <div className="flex items-center justify-between text-xs text-marfil-suave">
+        <span>
+          {f.progresoPaso} {paso + 1} {f.progresoDe} {TOTAL_PASOS}
+        </span>
+        <span className="text-dorado-claro">{PASOS[paso].titulo}</span>
+      </div>
+      <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-noche-borde">
+        <div
+          className="h-full rounded-full bg-dorado transition-all duration-300"
+          style={{ width: `${((paso + 1) / TOTAL_PASOS) * 100}%` }}
+        />
+      </div>
+    </div>
+  );
+}
 
 export function FormularioAplicacion() {
   const [errores, setErrores] = useState<Record<string, string>>({});
@@ -140,28 +145,82 @@ export function FormularioAplicacion() {
     "idle"
   );
   const [via, setVia] = useState<"invitacion" | "abierta" | "">("");
+  const [paso, setPaso] = useState(0);
+  const formRef = useRef<HTMLFormElement>(null);
+  const esUltimoPaso = paso === TOTAL_PASOS - 1;
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const datos = Object.fromEntries(new FormData(form).entries());
+  function leerDatos() {
+    if (!formRef.current) return {} as Record<string, FormDataEntryValue>;
+    return Object.fromEntries(new FormData(formRef.current).entries());
+  }
 
+  function validarCampos(campos: readonly string[]) {
+    const datos = leerDatos();
     const nuevos: Record<string, string> = {};
-    for (const campo of OBLIGATORIOS) {
+    for (const campo of campos) {
       if (!datos[campo] || String(datos[campo]).trim() === "") {
         nuevos[campo] = f.errorCampo;
       }
     }
-    setErrores(nuevos);
-    if (Object.keys(nuevos).length > 0) {
-      setEstado("error");
-      form.querySelector<HTMLElement>('[aria-invalid="true"], [role="alert"]')
+    return nuevos;
+  }
+
+  function enfocarPrimerError() {
+    requestAnimationFrame(() => {
+      formRef.current
+        ?.querySelector<HTMLElement>('[aria-invalid="true"], [role="alert"]')
         ?.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+  }
+
+  function irAPaso(destino: number) {
+    setPaso(destino);
+    requestAnimationFrame(() => {
+      formRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+  }
+
+  function alSiguiente() {
+    const nuevosErrores = validarCampos(PASOS[paso].campos);
+    setErrores((prev) => {
+      const limpio = { ...prev };
+      PASOS[paso].campos.forEach((c) => delete limpio[c]);
+      return { ...limpio, ...nuevosErrores };
+    });
+    if (Object.keys(nuevosErrores).length > 0) {
+      enfocarPrimerError();
+      return;
+    }
+    irAPaso(Math.min(paso + 1, TOTAL_PASOS - 1));
+  }
+
+  function alAtras() {
+    irAPaso(Math.max(paso - 1, 0));
+  }
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const todosLosCampos = PASOS.flatMap((p) => p.campos);
+    const nuevosErrores = validarCampos(todosLosCampos);
+    setErrores(nuevosErrores);
+    if (Object.keys(nuevosErrores).length > 0) {
+      // Si el campo con error no está en el paso actual, ve a ese paso primero.
+      const primerPasoConError = PASOS.findIndex((p) =>
+        p.campos.some((c) => nuevosErrores[c])
+      );
+      if (primerPasoConError !== -1 && primerPasoConError !== paso) {
+        irAPaso(primerPasoConError);
+      } else {
+        enfocarPrimerError();
+      }
+      setEstado("error");
       return;
     }
 
     setEstado("enviando");
     try {
+      const datos = leerDatos();
       const res = await fetch("/api/aplicaciones", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -169,10 +228,18 @@ export function FormularioAplicacion() {
       });
       if (!res.ok) throw new Error();
       setEstado("exito");
-      form.reset();
+      formRef.current?.reset();
       setVia("");
     } catch {
       setEstado("error");
+    }
+  }
+
+  function alTeclaEnter(e: React.KeyboardEvent<HTMLFormElement>) {
+    const objetivo = e.target as HTMLElement;
+    if (e.key === "Enter" && objetivo.tagName !== "TEXTAREA" && !esUltimoPaso) {
+      e.preventDefault();
+      alSiguiente();
     }
   }
 
@@ -184,7 +251,13 @@ export function FormularioAplicacion() {
       >
         <CheckCircle2 aria-hidden className="h-12 w-12 text-dorado" />
         <p className="max-w-md text-marfil">{f.exito}</p>
-        <Button variant="contorno" onClick={() => setEstado("idle")}>
+        <Button
+          variant="contorno"
+          onClick={() => {
+            setEstado("idle");
+            setPaso(0);
+          }}
+        >
           Enviar otra aplicación
         </Button>
       </div>
@@ -192,11 +265,21 @@ export function FormularioAplicacion() {
   }
 
   return (
-    <form noValidate onSubmit={onSubmit} className="space-y-12">
+    <form
+      ref={formRef}
+      noValidate
+      onSubmit={onSubmit}
+      onKeyDown={alTeclaEnter}
+      className="space-y-8"
+    >
+      <ProgresoPasos paso={paso} />
       <p className="text-sm text-marfil-suave">{f.obligatorio}</p>
 
       {/* Sección 1 — Datos del proyecto */}
-      <section aria-label={f.secciones.proyecto} className="space-y-6">
+      <section
+        aria-label={f.secciones.proyecto}
+        className={cn("space-y-6", paso !== 0 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.proyecto}</TituloSeccion>
 
         <Campo id="nombreProyecto" label={f.campos.nombreProyecto} error={errores.nombreProyecto}>
@@ -265,7 +348,10 @@ export function FormularioAplicacion() {
       </section>
 
       {/* Sección 2 — Integrantes */}
-      <section aria-label={f.secciones.integrantes} className="space-y-6">
+      <section
+        aria-label={f.secciones.integrantes}
+        className={cn("space-y-6", paso !== 1 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.integrantes}</TituloSeccion>
         <div className="grid gap-6 sm:grid-cols-[10rem_1fr]">
           <Campo id="numIntegrantes" label={f.campos.numIntegrantes} error={errores.numIntegrantes}>
@@ -278,7 +364,10 @@ export function FormularioAplicacion() {
       </section>
 
       {/* Sección 3 — Referencia ministerial */}
-      <section aria-label={f.secciones.referencia} className="space-y-6">
+      <section
+        aria-label={f.secciones.referencia}
+        className={cn("space-y-6", paso !== 2 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.referencia}</TituloSeccion>
         <Campo id="iglesia" label={f.campos.iglesia} error={errores.iglesia}>
           <input id="iglesia" name="iglesia" type="text" className={inputCls} aria-invalid={!!errores.iglesia} />
@@ -294,7 +383,10 @@ export function FormularioAplicacion() {
       </section>
 
       {/* Sección 4 — Perfil ministerial y musical */}
-      <section aria-label={f.secciones.perfil} className="space-y-6">
+      <section
+        aria-label={f.secciones.perfil}
+        className={cn("space-y-6", paso !== 3 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.perfil}</TituloSeccion>
         <Campo id="historia" label={f.campos.historia} error={errores.historia}>
           <textarea id="historia" name="historia" rows={4} className={inputCls} aria-invalid={!!errores.historia} />
@@ -308,7 +400,10 @@ export function FormularioAplicacion() {
       </section>
 
       {/* Sección 5 — Material */}
-      <section aria-label={f.secciones.material} className="space-y-6">
+      <section
+        aria-label={f.secciones.material}
+        className={cn("space-y-6", paso !== 4 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.material}</TituloSeccion>
         <Campo
           id="enlaceMaterial"
@@ -354,7 +449,10 @@ export function FormularioAplicacion() {
       </section>
 
       {/* Sección 6 — Disponibilidad y compromiso */}
-      <section aria-label={f.secciones.disponibilidad} className="space-y-6">
+      <section
+        aria-label={f.secciones.disponibilidad}
+        className={cn("space-y-6", paso !== 5 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.disponibilidad}</TituloSeccion>
         <GrupoSiNo name="dispPresentarse" label={f.campos.dispPresentarse} error={errores.dispPresentarse} />
         <GrupoSiNo name="dispMentoria" label={f.campos.dispMentoria} error={errores.dispMentoria} />
@@ -362,7 +460,10 @@ export function FormularioAplicacion() {
       </section>
 
       {/* Sección 7 — Confirmación */}
-      <section aria-label={f.secciones.confirmacion} className="space-y-6">
+      <section
+        aria-label={f.secciones.confirmacion}
+        className={cn("space-y-6", paso !== 6 && "hidden")}
+      >
         <TituloSeccion>{f.secciones.confirmacion}</TituloSeccion>
         {(
           [
@@ -385,16 +486,34 @@ export function FormularioAplicacion() {
         ))}
       </section>
 
-      {estado === "error" && Object.keys(errores).length > 0 && (
+      {estado === "error" && (
         <p role="alert" className="flex items-center gap-2 rounded-xl border border-red-400/30 bg-red-950/30 p-4 text-sm text-red-200">
           <AlertCircle aria-hidden className="h-4 w-4 shrink-0" />
-          {f.error}
+          {Object.keys(errores).length > 0 ? f.error : f.errorEnvio}
         </p>
       )}
 
-      <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={estado === "enviando"}>
-        {estado === "enviando" ? f.enviando : f.enviar}
-      </Button>
+      <div className="flex items-center justify-between gap-4 border-t border-noche-borde pt-6">
+        {paso > 0 ? (
+          <Button type="button" variant="contorno" onClick={alAtras}>
+            <ChevronLeft aria-hidden className="h-4 w-4" />
+            {f.atras}
+          </Button>
+        ) : (
+          <span />
+        )}
+
+        {esUltimoPaso ? (
+          <Button type="submit" disabled={estado === "enviando"}>
+            {estado === "enviando" ? f.enviando : f.enviar}
+          </Button>
+        ) : (
+          <Button type="button" onClick={alSiguiente}>
+            {f.siguiente}
+            <ChevronRight aria-hidden className="h-4 w-4" />
+          </Button>
+        )}
+      </div>
     </form>
   );
 }

@@ -23,25 +23,14 @@ export function RecintoSection() {
           {t.recinto.texto}
         </p>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_40px_rgba(212,175,55,0.1)] sm:aspect-square">
-            <Image
-              src="/img/recinto-fachada.jpg"
-              alt={t.recinto.altFachada}
-              fill
-              sizes="(min-width: 640px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_40px_rgba(212,175,55,0.1)] sm:aspect-square">
-            <Image
-              src="/img/recinto-aereo.jpg"
-              alt={t.recinto.altAereo}
-              fill
-              sizes="(min-width: 640px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+        <div className="relative mt-12 aspect-video overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_48px_rgba(212,175,55,0.12)]">
+          <Image
+            src="/img/concierto-adoracion.jpg"
+            alt={t.recinto.altImagen}
+            fill
+            sizes="(min-width: 1024px) 1000px, 100vw"
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

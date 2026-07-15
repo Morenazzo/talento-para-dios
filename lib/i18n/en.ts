@@ -76,10 +76,8 @@ export const en: Diccionario = {
     titulo: "Hacienda Paz, Puebla",
     texto:
       "A venue with history and character, ready to become a stage for worship under the open sky.",
-    altFachada:
-      "Hacienda Paz façade at dusk, with its stone tower and lit archways",
-    altAereo:
-      "Aerial view of Hacienda Paz showing the full venue, gardens and parking",
+    altImagen:
+      "Talento para Dios stage at Hacienda Paz, with the live band and hundreds of attendees worshipping with raised hands",
   },
   adopcion: {
     kicker: "The adoption model",
@@ -258,12 +256,18 @@ export const en: Diccionario = {
           "I accept the rules and the use of my material for promotional and broadcast purposes.",
         infoVeridica: "I confirm the information is truthful.",
       },
+      atras: "Back",
+      siguiente: "Next",
+      progresoPaso: "Step",
+      progresoDe: "of",
       enviar: "Submit application",
       enviando: "Submitting…",
       exito:
         "We received your application! We will contact you via WhatsApp or email. Thank you for presenting your talent for God.",
       error:
         "We could not submit your application. Check the highlighted fields and try again.",
+      errorEnvio:
+        "We couldn't submit your application right now. Please try again in a few minutes.",
       errorCampo: "This field is required.",
     },
     faq: {
