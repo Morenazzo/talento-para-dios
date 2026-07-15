@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CalendarDays, MapPin, ChevronDown } from "lucide-react";
+import { Countdown } from "@/components/Countdown";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
@@ -60,6 +61,10 @@ export function Hero() {
               {evento.lugar} · {evento.ciudad}
             </span>
           </span>
+        </div>
+
+        <div className="mt-10">
+          <Countdown />
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
