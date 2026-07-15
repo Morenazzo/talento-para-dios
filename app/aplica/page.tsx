@@ -46,9 +46,10 @@ export default function AplicaPage() {
         {/* Vías de ingreso */}
         <section
           aria-labelledby="vias-titulo"
-          className="bg-noche-carbon py-16 sm:py-20"
+          className="relative overflow-hidden bg-noche-medianoche/30 py-16 sm:py-20"
         >
-          <div className="container max-w-4xl">
+          <div aria-hidden className="absolute inset-0 bg-destello-dorado" />
+          <div className="container relative z-10 max-w-4xl">
             <h2
               id="vias-titulo"
               className="font-display text-2xl font-bold text-marfil sm:text-3xl"
@@ -112,9 +113,10 @@ export default function AplicaPage() {
         {/* Formulario */}
         <section
           aria-labelledby="formulario-titulo"
-          className="bg-noche py-16 sm:py-20"
+          className="relative overflow-hidden bg-noche py-16 sm:py-20"
         >
-          <div className="container max-w-3xl">
+          <div aria-hidden className="absolute inset-0 bg-destello-hero opacity-60" />
+          <div className="container relative z-10 max-w-3xl">
             <h2
               id="formulario-titulo"
               className="font-display text-2xl font-bold text-marfil sm:text-3xl"
@@ -130,9 +132,10 @@ export default function AplicaPage() {
         {/* FAQ */}
         <section
           aria-labelledby="faq-titulo"
-          className="bg-noche-carbon py-16 sm:py-20"
+          className="relative overflow-hidden bg-noche-medianoche/20 py-16 sm:py-20"
         >
-          <div className="container max-w-3xl">
+          <div aria-hidden className="absolute inset-0 bg-destello-dorado" />
+          <div className="container relative z-10 max-w-3xl">
             <h2
               id="faq-titulo"
               className="font-display text-2xl font-bold text-marfil sm:text-3xl"
