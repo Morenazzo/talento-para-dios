@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CalendarDays, MapPin, ChevronDown } from "lucide-react";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
@@ -11,9 +12,19 @@ export function Hero() {
       aria-label="Portada del evento"
       className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-noche pt-16"
     >
-      {/* Fondo cinematográfico: destellos dorados + azul medianoche */}
+      {/* Fondo cinematográfico: imagen oficial del escenario.
+          TODO(video): sustituir esta imagen por el video oficial del evento
+          (usarla como poster del <video>). */}
       <div aria-hidden className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-noche-medianoche via-noche to-noche" />
+        <Image
+          src="/img/convocatoria-escenario.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-noche/55 via-noche/80 to-noche" />
         <div className="absolute inset-0 bg-destello-hero" />
         {/* Destellos tipo marquesina */}
         <div className="absolute left-1/4 top-1/4 h-1 w-1 rounded-full bg-dorado-claro/80 shadow-[0_0_12px_4px_rgba(245,216,122,0.4)] animate-pulso-suave" />

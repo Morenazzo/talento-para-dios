@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getDiccionario } from "@/lib/i18n";
 
 const t = getDiccionario();
@@ -61,15 +60,6 @@ export function AdopcionSection() {
           </a>
         </div>
 
-        <div className="relative mt-12 aspect-[3/1] overflow-hidden rounded-2xl border border-dorado/20">
-          <Image
-            src="/img/convocatoria-escenario.jpg"
-            alt="Escenario de Talento para Dios con la cruz luminosa al centro y siluetas adorando"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
       </div>
     </section>
   );
