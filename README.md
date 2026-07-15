@@ -94,7 +94,13 @@ public/
 
 ## Aplicaciones de artistas (`/aplica`)
 
-La página reproduce el formulario oficial de inscripción (7 secciones, dos vías de ingreso: invitación / aplicación abierta) con validación de los campos obligatorios. El envío llega a `app/api/aplicaciones/route.ts`, que hoy es un **stub sin persistencia**: conectar ahí Google Sheets, correo (Resend/SendGrid) o base de datos para que el equipo del filtro primario reciba las aplicaciones. Al conectar la persistencia, publicar el aviso de privacidad (datos personales y referencia pastoral — LFPDPPP).
+La página reproduce el formulario oficial de inscripción (7 secciones, dos vías de ingreso: invitación / aplicación abierta) con validación de los campos obligatorios. Cada envío llega a `app/api/aplicaciones/route.ts`, que lo reenvía a **Google Sheets** mediante un webhook de Apps Script:
+
+1. Instala el script siguiendo las instrucciones de [`docs/apps-script-aplicaciones.gs`](docs/apps-script-aplicaciones.gs).
+2. Configura la variable de entorno `APLICACIONES_WEBHOOK_URL` en Vercel con la URL `/exec` del script (es secreta — nunca en el repo).
+3. Sin esa variable, el endpoint responde 503 y el formulario muestra error (no se pierden datos en silencio).
+
+Pendiente legal: publicar el aviso de privacidad (datos personales y referencia pastoral — LFPDPPP).
 
 ## Nota legal del copy
 
