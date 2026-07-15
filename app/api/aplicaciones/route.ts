@@ -1,16 +1,15 @@
 import { NextResponse } from "next/server";
 
 /**
- * STUB del endpoint de aplicaciones de artistas — NO persiste datos todavía.
+ * Endpoint de aplicaciones de artistas.
  *
- * TODO(aplicaciones): conectar el destino real de las aplicaciones. Opciones:
- *  - Google Sheets (Apps Script / API) para que el equipo del filtro primario
- *    (Aldo, Edwin, Abel) las revise.
- *  - Notificación por correo (Resend/SendGrid) al equipo.
- *  - Base de datos (Vercel Postgres / Supabase) si crece el volumen.
+ * Cada aplicación se reenvía a Google Sheets vía un webhook de Apps Script
+ * (ver docs/apps-script-aplicaciones.gs para instalarlo). La URL del webhook
+ * vive en la variable de entorno APLICACIONES_WEBHOOK_URL (Vercel → Settings
+ * → Environment Variables) — funciona como contraseña, nunca en el repo.
  *
- * ⚠️ Datos personales (teléfonos, correos, referencia pastoral): al conectar
- * la persistencia, tratar conforme a la LFPDPPP (aviso de privacidad).
+ * ⚠️ Datos personales (teléfonos, correos, referencia pastoral): tratar
+ * conforme a la LFPDPPP (publicar aviso de privacidad).
  */
 
 /** Campos obligatorios del formulario oficial (documento de bases). */
@@ -56,7 +55,37 @@ export async function POST(request: Request) {
     );
   }
 
-  // TODO(aplicaciones): aquí se enviará/persistirá la aplicación.
-  // Por ahora solo se confirma la recepción sin guardar nada.
+  const webhook = process.env.APLICACIONES_WEBHOOK_URL;
+  if (!webhook) {
+    // Sin destino configurado: fallar visiblemente en vez de perder datos.
+    console.error(
+      "APLICACIONES_WEBHOOK_URL no está configurada — aplicación rechazada."
+    );
+    return NextResponse.json(
+      { error: "El registro no está disponible temporalmente. Intenta más tarde." },
+      { status: 503 }
+    );
+  }
+
+  try {
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(datos),
+      // Apps Script responde con una redirección a googleusercontent.
+      redirect: "follow",
+    });
+    const cuerpo = await res.json().catch(() => null);
+    if (!res.ok || !cuerpo?.ok) {
+      throw new Error(`Webhook respondió ${res.status}: ${JSON.stringify(cuerpo)}`);
+    }
+  } catch (err) {
+    console.error("Error reenviando aplicación a Google Sheets:", err);
+    return NextResponse.json(
+      { error: "No pudimos registrar tu aplicación. Intenta de nuevo." },
+      { status: 502 }
+    );
+  }
+
   return NextResponse.json({ ok: true });
 }
