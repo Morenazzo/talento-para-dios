@@ -37,7 +37,7 @@ npm start          # servir el build
 
 - Precios finales de todos los boletos (los actuales son precios ancla).
 - Correo, teléfono y redes sociales en `evento.contacto`.
-- Imágenes reales (hoy hay componentes `ImagePlaceholder` con dimensiones y alt text listos).
+- Video oficial del hero: sustituir la imagen de fondo (`public/img/convocatoria-escenario.jpg`) por el `<video>` usando esa imagen como poster — ver TODO en `components/sections/Hero.tsx`.
 
 ## Desplegar en Vercel (recomendado)
 
@@ -80,11 +80,10 @@ app/
   api/checkout/route.ts      # Stub de checkout (TODO: Conekta/Stripe)
   api/aplicaciones/route.ts  # Stub de aplicaciones (TODO: Sheets/correo/DB)
 components/
-  Logo.tsx                   # Isotipo SVG (micrófono dorado + halo + cruz)
+  Logo.tsx                   # Isotipo SVG (micrófono dorado + cruz)
   sections/                  # Hero, PorQue, QueViviras, Adopcion, TicketTiers, Convocatoria, Etica, CTAFinal, Footer, Navbar
   aplica/                    # FormularioAplicacion (7 secciones del formulario oficial)
   ui/                        # Button, Card, Badge (estilo shadcn/ui)
-  ImagePlaceholder.tsx       # Placeholder accesible para assets pendientes
 config/evento.ts             # ÚNICA fuente de precios, fecha, lugar y cifras
 lib/
   i18n/                      # es.ts (visible) + en.ts (preparado)

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Music, Sparkles, HeartHandshake, Mic2 } from "lucide-react";
 import { getDiccionario } from "@/lib/i18n";
 
@@ -27,18 +26,8 @@ export function QueVivirasSection() {
           {t.queViviras.intro}
         </p>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_48px_rgba(212,175,55,0.12)]">
-            <Image
-              src="/img/convocatoria-escenario.jpg"
-              alt="Escenario dorado de Talento para Dios: micrófono vintage en un halo radiante, cruz luminosa al centro y jóvenes adorando entre ondas de sonido"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+        <div className="mt-12">
+          <ul className="grid gap-8 sm:grid-cols-2">
             {t.queViviras.items.map((item, i) => {
               const Icono = iconos[i % iconos.length];
               return (
