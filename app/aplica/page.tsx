@@ -9,10 +9,23 @@ import { evento } from "@/config/evento";
 
 const t = getDiccionario();
 
+const descripcionAplica =
+  "Convocatoria para solistas, bandas y ministerios musicales cristianos con música 100% original. Pasarela de adoración y adopción — no es un concurso.";
+
 export const metadata: Metadata = {
   title: `Aplica con tu proyecto — ${evento.nombre}`,
-  description:
-    "Convocatoria para solistas, bandas y ministerios musicales cristianos con música 100% original. Pasarela de adoración y adopción — no es un concurso.",
+  description: descripcionAplica,
+  openGraph: {
+    title: `Aplica con tu proyecto — ${evento.nombre}`,
+    description: descripcionAplica,
+    url: "/aplica",
+    siteName: evento.nombre,
+    type: "website",
+    locale: "es_MX",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function AplicaPage() {
