@@ -1,4 +1,5 @@
 import { getDiccionario } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 const t = getDiccionario();
 
@@ -7,9 +8,10 @@ export function AdopcionSection() {
     <section
       id="adopcion"
       aria-labelledby="adopcion-titulo"
-      className="relative bg-noche-medianoche/40 py-24 sm:py-32"
+      className="relative overflow-hidden bg-noche-medianoche/40 py-24 sm:py-32"
     >
       <div aria-hidden className="absolute inset-0 bg-destello-dorado" />
+      <div aria-hidden className="absolute inset-0 bg-destello-electrico-inv" />
 
       <div className="container relative z-10 max-w-5xl">
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-dorado">
@@ -30,7 +32,10 @@ export function AdopcionSection() {
             <li key={paso.titulo} className="relative">
               <span
                 aria-hidden
-                className="font-display text-5xl font-bold text-dorado/25"
+                className={cn(
+                  "font-display text-5xl font-bold",
+                  i % 2 === 1 ? "text-electrico/30" : "text-dorado/25"
+                )}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>

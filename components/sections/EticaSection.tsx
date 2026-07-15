@@ -1,5 +1,6 @@
 import { ShieldCheck, Scale, Users, Copyright } from "lucide-react";
 import { getDiccionario } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 const t = getDiccionario();
 
@@ -29,6 +30,7 @@ export function EticaSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {t.etica.puntos.map((punto, i) => {
             const Icono = iconos[i % iconos.length];
+            const esAzul = i % 2 === 1;
             return (
               <div
                 key={punto.titulo}
@@ -36,9 +38,16 @@ export function EticaSection() {
               >
                 <span
                   aria-hidden
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-dorado/30 bg-dorado/10"
+                  className={cn(
+                    "flex h-10 w-10 items-center justify-center rounded-full border",
+                    esAzul
+                      ? "border-electrico/30 bg-electrico/10"
+                      : "border-dorado/30 bg-dorado/10"
+                  )}
                 >
-                  <Icono className="h-5 w-5 text-dorado" />
+                  <Icono
+                    className={cn("h-5 w-5", esAzul ? "text-electrico" : "text-dorado")}
+                  />
                 </span>
                 <h3 className="mt-4 font-semibold text-marfil">
                   {punto.titulo}

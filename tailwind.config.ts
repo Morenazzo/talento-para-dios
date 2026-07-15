@@ -51,6 +51,10 @@ const config: Config = {
           "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212,175,55,0.15), transparent)",
         "destello-hero":
           "radial-gradient(ellipse 60% 45% at 50% 0%, rgba(245,216,122,0.18), transparent 70%)",
+        "destello-electrico":
+          "radial-gradient(ellipse 65% 50% at 15% 15%, rgba(56,189,248,0.14), transparent 70%)",
+        "destello-electrico-inv":
+          "radial-gradient(ellipse 65% 50% at 85% 85%, rgba(56,189,248,0.12), transparent 70%)",
       },
       keyframes: {
         "pulso-suave": {

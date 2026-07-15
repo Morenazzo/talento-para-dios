@@ -23,9 +23,9 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top opacity-70"
+          className="object-cover object-top opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-noche/40 via-noche/55 to-noche" />
+        <div className="absolute inset-0 bg-gradient-to-b from-noche/50 via-noche/68 to-noche" />
         <div className="absolute inset-0 bg-destello-hero" />
         {/* Destellos tipo marquesina */}
         <div className="absolute left-1/4 top-1/4 h-1 w-1 rounded-full bg-dorado-claro/80 shadow-[0_0_12px_4px_rgba(245,216,122,0.4)] animate-pulso-suave" />
