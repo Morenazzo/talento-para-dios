@@ -133,9 +133,10 @@ export function TicketTiers() {
     <section
       id="boletos"
       aria-labelledby="boletos-titulo"
-      className="bg-noche-carbon py-24 sm:py-32"
+      className="relative overflow-hidden bg-noche-carbon py-24 sm:py-32"
     >
-      <div className="container">
+      <div aria-hidden className="absolute inset-0 bg-destello-electrico-inv" />
+      <div className="container relative z-10">
         <div className="max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-dorado">
             {t.boletos.kicker}
