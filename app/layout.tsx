@@ -16,13 +16,19 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://talentoparadios.com"),
   title: `${evento.nombre} — ${evento.tituloHero}`,
   description: `Concierto de Adoración · ${evento.fechaTexto}, ${evento.horaTexto} · ${evento.ciudad}. Pasarela de talento + adopción de ministerios musicales. Compra tu boleto en preventa.`,
   openGraph: {
     title: `${evento.nombre} — ${evento.tituloHero}`,
     description: `Concierto de Adoración · ${evento.fechaTexto} · ${evento.ciudad}. Compra tu boleto en preventa.`,
+    url: "/",
+    siteName: evento.nombre,
     type: "website",
     locale: "es_MX",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
