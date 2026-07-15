@@ -23,9 +23,9 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top opacity-45"
+          className="object-cover object-top opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-noche/55 via-noche/80 to-noche" />
+        <div className="absolute inset-0 bg-gradient-to-b from-noche/40 via-noche/55 to-noche" />
         <div className="absolute inset-0 bg-destello-hero" />
         {/* Destellos tipo marquesina */}
         <div className="absolute left-1/4 top-1/4 h-1 w-1 rounded-full bg-dorado-claro/80 shadow-[0_0_12px_4px_rgba(245,216,122,0.4)] animate-pulso-suave" />
@@ -36,19 +36,25 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 flex flex-col items-center py-24 text-center">
-        <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-dorado-claro/90 sm:text-sm">
+        <p
+          className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-dorado-claro/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.8)] sm:text-sm"
+        >
           {t.hero.kicker}
         </p>
 
-        <h1 className="max-w-4xl font-display text-4xl font-bold leading-tight text-marfil sm:text-6xl lg:text-7xl">
+        <h1
+          className="max-w-4xl font-display text-4xl font-bold leading-tight text-marfil [text-shadow:0_2px_24px_rgba(0,0,0,0.85),0_1px_4px_rgba(0,0,0,0.9)] sm:text-6xl lg:text-7xl"
+        >
           {t.hero.titulo}
         </h1>
 
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-marfil-suave sm:text-lg">
+        <p
+          className="mt-6 max-w-2xl text-base leading-relaxed text-marfil-suave [text-shadow:0_2px_12px_rgba(0,0,0,0.85)] sm:text-lg"
+        >
           {t.hero.subtitulo}
         </p>
 
-        <div className="mt-8 flex flex-col items-center gap-3 text-sm text-marfil sm:flex-row sm:gap-8">
+        <div className="mt-8 flex flex-col items-center gap-3 text-sm text-marfil [text-shadow:0_2px_10px_rgba(0,0,0,0.85)] sm:flex-row sm:gap-8">
           <span className="inline-flex items-center gap-2">
             <CalendarDays aria-hidden className="h-4 w-4 text-dorado" />
             <span>

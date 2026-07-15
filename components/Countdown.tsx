@@ -64,10 +64,10 @@ export function Countdown() {
     >
       {unidades.map(({ clave, etiqueta }) => (
         <div key={clave} className="flex flex-col items-center">
-          <span className="font-display text-3xl font-bold tabular-nums text-marfil sm:text-4xl">
+          <span className="font-display text-3xl font-bold tabular-nums text-marfil [text-shadow:0_2px_12px_rgba(0,0,0,0.85)] sm:text-4xl">
             {String(restante[clave]).padStart(2, "0")}
           </span>
-          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-widest text-marfil-suave/80 sm:text-xs">
+          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-widest text-marfil-suave/80 [text-shadow:0_2px_8px_rgba(0,0,0,0.85)] sm:text-xs">
             {etiqueta}
           </span>
         </div>
