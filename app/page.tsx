@@ -2,6 +2,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { PorQueSection } from "@/components/sections/PorQueSection";
 import { QueVivirasSection } from "@/components/sections/QueVivirasSection";
+import { RecintoSection } from "@/components/sections/RecintoSection";
 import { AdopcionSection } from "@/components/sections/AdopcionSection";
 import { TicketTiers } from "@/components/sections/TicketTiers";
 import { ConvocatoriaBanner } from "@/components/sections/ConvocatoriaBanner";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <PorQueSection />
         <QueVivirasSection />
+        <RecintoSection />
         <AdopcionSection />
         <TicketTiers />
         <EticaSection />

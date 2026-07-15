@@ -71,6 +71,16 @@ export const en: Diccionario = {
       },
     ],
   },
+  recinto: {
+    kicker: "The venue",
+    titulo: "Hacienda Paz, Puebla",
+    texto:
+      "A venue with history and character, ready to become a stage for worship under the open sky.",
+    altFachada:
+      "Hacienda Paz façade at dusk, with its stone tower and lit archways",
+    altAereo:
+      "Aerial view of Hacienda Paz showing the full venue, gardens and parking",
+  },
   adopcion: {
     kicker: "The adoption model",
     titulo: "Adopt a band for one year",
@@ -112,6 +122,9 @@ export const en: Diccionario = {
     contactar: "I want to sponsor",
     notaLegalTitulo: "About your purchase",
     moneda: "MXN",
+    verOpciones: "Buy ticket",
+    modalTitulo: "Choose your ticket",
+    modalCerrar: "Close",
   },
   etica: {
     kicker: "Transparency & ethics",

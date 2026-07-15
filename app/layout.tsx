@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import { evento } from "@/config/evento";
+import { BoletosModal } from "@/components/BoletosModal";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -37,7 +38,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es" className={`${outfit.variable} ${playfair.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <BoletosModal />
+      </body>
     </html>
   );
 }

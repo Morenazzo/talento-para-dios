@@ -1,5 +1,6 @@
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
+import { BotonAbrirBoletos } from "@/components/BotonAbrirBoletos";
 
 const t = getDiccionario();
 
@@ -23,12 +24,12 @@ export function CTAFinal() {
           {t.ctaFinal.texto}
         </p>
 
-        <a
-          href="#boleto-general"
+        <BotonAbrirBoletos
+          tierId="general"
           className="mt-10 inline-flex h-14 items-center justify-center rounded-full bg-dorado px-8 py-3.5 text-base font-semibold text-noche shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-all hover:bg-dorado-claro hover:shadow-[0_0_36px_rgba(245,216,122,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
         >
           {t.ctaFinal.cta}
-        </a>
+        </BotonAbrirBoletos>
 
         <blockquote className="mt-16 max-w-2xl">
           <p className="font-display text-lg italic leading-relaxed text-dorado-claro/90 sm:text-xl">

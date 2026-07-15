@@ -1,5 +1,3 @@
-"use client";
-
 import { Check, Info } from "lucide-react";
 import {
   Card,
@@ -10,34 +8,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { boletos, notaLegal, evento, type Boleto } from "@/config/evento";
+import { buttonVariants } from "@/components/ui/button";
+import { BotonAbrirBoletos } from "@/components/BotonAbrirBoletos";
+import { boletos, notaLegal, type Boleto } from "@/config/evento";
 import { getDiccionario } from "@/lib/i18n";
-import { iniciarCheckout } from "@/lib/checkout";
 import { cn } from "@/lib/utils";
 
 const t = getDiccionario();
 
-const formatoMXN = new Intl.NumberFormat("es-MX", {
-  style: "currency",
-  currency: "MXN",
-  maximumFractionDigits: 0,
-});
-
 function TarjetaBoleto({ boleto }: { boleto: Boleto }) {
-  // Ancla para el CTA principal (boleto general) y el secundario (patrocinio)
-  const anchorId =
-    boleto.id === "general"
-      ? "boleto-general"
-      : boleto.id === "productor"
-        ? "nivel-productor"
-        : undefined;
-
   return (
     <Card
-      id={anchorId}
       className={cn(
-        "relative flex h-full scroll-mt-24 flex-col",
+        "relative flex h-full flex-col",
         boleto.destacado &&
           "border-dorado/60 shadow-[0_0_48px_rgba(212,175,55,0.15)]"
       )}
@@ -56,44 +39,7 @@ function TarjetaBoleto({ boleto }: { boleto: Boleto }) {
       </CardHeader>
 
       <CardContent className="flex-1">
-        {/* Precio de preventa destacado + precio normal de referencia */}
-        <div aria-live="off">
-          {boleto.rangoPrecio ? (
-            <>
-              <p className="text-xs uppercase tracking-widest text-marfil-suave">
-                {t.boletos.desde}
-              </p>
-              <p className="font-display text-3xl font-bold text-dorado-claro">
-                {boleto.rangoPrecio}
-              </p>
-              <p className="mt-1 text-xs text-marfil-suave/70">
-                PLACEHOLDER — rango por definir
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="text-xs uppercase tracking-widest text-marfil-suave">
-                {t.boletos.precioPreventaLabel}
-              </p>
-              <p className="font-display text-4xl font-bold text-dorado-claro">
-                {formatoMXN.format(boleto.precioPreventa)}
-                <span className="ml-1 text-sm font-normal text-marfil-suave">
-                  {t.boletos.moneda}
-                </span>
-              </p>
-              {boleto.precioNormal !== null && (
-                <p className="mt-1.5 text-sm text-marfil-suave">
-                  {t.boletos.precioNormalLabel}{" "}
-                  <s className="text-marfil-suave/80">
-                    {formatoMXN.format(boleto.precioNormal)}
-                  </s>
-                </p>
-              )}
-            </>
-          )}
-        </div>
-
-        <ul className="mt-6 space-y-2.5">
+        <ul className="space-y-2.5">
           {boleto.beneficios.map((b) => (
             <li key={b} className="flex items-start gap-2.5 text-sm">
               <Check
@@ -107,22 +53,15 @@ function TarjetaBoleto({ boleto }: { boleto: Boleto }) {
       </CardContent>
 
       <CardFooter>
-        {boleto.esPatrocinio ? (
-          <a
-            href={`mailto:${evento.contacto.correo}?subject=Quiero ser patrocinador — ${evento.nombre}`}
-            className="inline-flex h-11 w-full items-center justify-center rounded-full border border-dorado/50 px-6 text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
-          >
-            {t.boletos.contactar}
-          </a>
-        ) : (
-          <Button
-            className="w-full"
-            variant={boleto.destacado ? "dorado" : "contorno"}
-            onClick={() => iniciarCheckout(boleto.id)}
-          >
-            {t.boletos.comprar}
-          </Button>
-        )}
+        <BotonAbrirBoletos
+          tierId={boleto.id}
+          className={cn(
+            "w-full",
+            buttonVariants({ variant: boleto.destacado ? "dorado" : "contorno" })
+          )}
+        >
+          {t.boletos.verOpciones}
+        </BotonAbrirBoletos>
       </CardFooter>
     </Card>
   );
