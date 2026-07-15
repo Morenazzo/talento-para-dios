@@ -5,8 +5,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
+import { abrirBoletos } from "@/components/BotonAbrirBoletos";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
+import { cn } from "@/lib/utils";
 
 const t = getDiccionario();
 
@@ -48,12 +50,13 @@ export function Navbar() {
             </li>
           ))}
           <li>
-            <a
-              href="/#boletos"
-              className={buttonVariants({ size: "sm" })}
+            <button
+              type="button"
+              onClick={() => abrirBoletos("general")}
+              className={cn(buttonVariants({ size: "sm" }))}
             >
               {t.nav.cta}
-            </a>
+            </button>
           </li>
         </ul>
 
@@ -86,13 +89,16 @@ export function Navbar() {
             </li>
           ))}
           <li className="px-3 pt-2">
-            <a
-              href="/#boletos"
-              onClick={() => setAbierto(false)}
-              className="block rounded-full bg-dorado px-6 py-2.5 text-center text-sm font-semibold text-noche"
+            <button
+              type="button"
+              onClick={() => {
+                setAbierto(false);
+                abrirBoletos("general");
+              }}
+              className="block w-full rounded-full bg-dorado px-6 py-2.5 text-center text-sm font-semibold text-noche"
             >
               {t.nav.cta}
-            </a>
+            </button>
           </li>
         </ul>
       )}

@@ -69,6 +69,16 @@ export const es = {
       },
     ],
   },
+  recinto: {
+    kicker: "El lugar",
+    titulo: "Hacienda Paz, Puebla",
+    texto:
+      "Un recinto con historia y carácter, listo para convertirse en un escenario de adoración bajo el cielo abierto.",
+    altFachada:
+      "Fachada de Hacienda Paz al atardecer, con su torre de piedra y arcos iluminados",
+    altAereo:
+      "Vista aérea de Hacienda Paz mostrando el recinto completo, jardines y estacionamiento",
+  },
   adopcion: {
     kicker: "El modelo de adopción",
     titulo: "Adopta una banda por un año",
@@ -110,6 +120,9 @@ export const es = {
     contactar: "Quiero ser patrocinador",
     notaLegalTitulo: "Sobre tu compra",
     moneda: "MXN",
+    verOpciones: "Comprar boleto",
+    modalTitulo: "Elige tu boleto",
+    modalCerrar: "Cerrar",
   },
   etica: {
     kicker: "Transparencia y ética",
