@@ -78,6 +78,10 @@ export const en: Diccionario = {
       "A venue with history and character, ready to become a stage for worship under the open sky.",
     altImagen:
       "Talento para Dios stage at Hacienda Paz, with the live band and hundreds of attendees worshipping with raised hands",
+    altFachada:
+      "Hacienda Paz façade at dusk, with its stone tower and lit archways",
+    altAereo:
+      "Aerial view of Hacienda Paz showing the full venue, gardens and parking",
   },
   adopcion: {
     kicker: "The adoption model",

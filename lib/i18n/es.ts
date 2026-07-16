@@ -76,6 +76,10 @@ export const es = {
       "Un recinto con historia y carácter, listo para convertirse en un escenario de adoración bajo el cielo abierto.",
     altImagen:
       "Escenario de Talento para Dios en Hacienda Paz, con la banda en vivo y cientos de asistentes adorando con las manos alzadas",
+    altFachada:
+      "Fachada de Hacienda Paz al atardecer, con su torre de piedra y arcos iluminados",
+    altAereo:
+      "Vista aérea de Hacienda Paz mostrando el recinto completo, jardines y estacionamiento",
   },
   adopcion: {
     kicker: "El modelo de adopción",
