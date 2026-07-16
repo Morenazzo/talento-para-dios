@@ -74,10 +74,8 @@ export const es = {
     titulo: "Hacienda Paz, Puebla",
     texto:
       "Un recinto con historia y carácter, listo para convertirse en un escenario de adoración bajo el cielo abierto.",
-    altFachada:
-      "Fachada de Hacienda Paz al atardecer, con su torre de piedra y arcos iluminados",
-    altAereo:
-      "Vista aérea de Hacienda Paz mostrando el recinto completo, jardines y estacionamiento",
+    altImagen:
+      "Escenario de Talento para Dios en Hacienda Paz, con la banda en vivo y cientos de asistentes adorando con las manos alzadas",
   },
   adopcion: {
     kicker: "El modelo de adopción",
@@ -258,12 +256,18 @@ export const es = {
           "Acepto las bases y el uso de mi material con fines promocionales y de transmisión.",
         infoVeridica: "Confirmo que la información es verídica.",
       },
+      atras: "Atrás",
+      siguiente: "Siguiente",
+      progresoPaso: "Paso",
+      progresoDe: "de",
       enviar: "Enviar aplicación",
       enviando: "Enviando…",
       exito:
         "¡Recibimos tu aplicación! Te contactaremos por WhatsApp o correo. Gracias por presentar tu talento para Dios.",
       error:
         "No pudimos enviar tu aplicación. Revisa los campos marcados e intenta de nuevo.",
+      errorEnvio:
+        "No pudimos enviar tu aplicación en este momento. Intenta de nuevo en unos minutos.",
       errorCampo: "Este campo es obligatorio.",
     },
     faq: {
