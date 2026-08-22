@@ -83,7 +83,7 @@ export default function OpengraphImage() {
                 color: "#D4AF37",
               }}
             >
-              Concierto de Adoración
+              Festival de Música Cristiana
             </div>
           </div>
           <div

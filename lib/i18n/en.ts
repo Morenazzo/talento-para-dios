@@ -9,13 +9,14 @@ export const en: Diccionario = {
     porQue: "Why",
     evento: "The event",
     adopcion: "Adoption",
+    cartelera: "Lineup",
     boletos: "Tickets",
     transparencia: "Transparency",
     artistas: "Artists",
     cta: "Get your ticket",
   },
   hero: {
-    kicker: "Worship Concert",
+    kicker: "Christian Music Festival",
     titulo: "The Sound of a New Generation",
     subtitulo:
       "A Christ-centered night where Mexico's emerging talent takes the stage to be championed — and you are part of the story.",
@@ -71,6 +72,19 @@ export const en: Diccionario = {
       },
     ],
   },
+  artistas: {
+    kicker: "Lineup",
+    titulo: "Who is performing",
+    intro:
+      "Voices already carrying the message of Christ with their own songs, together on one stage for one night.",
+    etiquetaCancion: "Featured song",
+    altBanner:
+      "María, of Songfield, singing «Santo por Siempre» live for Iglesia EB, backed by the choir",
+    banner: {
+      titulo: "María, of Songfield, in «Santo por Siempre» for Iglesia EB",
+      dato: "Over 90 million plays",
+    },
+  },
   recinto: {
     kicker: "The venue",
     titulo: "Hacienda Paz, Puebla",
@@ -92,7 +106,7 @@ export const en: Diccionario = {
       {
         titulo: "Meet the projects",
         texto:
-          "At the concert you will see the selected ministries live and hear their hearts.",
+          "At the festival you will see the selected ministries live and hear their hearts.",
       },
       {
         titulo: "Choose who to champion",
@@ -118,15 +132,12 @@ export const en: Diccionario = {
     intro:
       "Buy your presale ticket and be part of this night from the start. Capacity limited to ~1,000 people.",
     precioPreventaLabel: "Presale",
-    precioNormalLabel: "Regular price at the door:",
+    precioNormalLabel: "Price at the event:",
     desde: "From",
     comprar: "Get your tickets",
     contactar: "I want to sponsor",
     notaLegalTitulo: "About your purchase",
     moneda: "MXN",
-    verOpciones: "Buy ticket",
-    modalTitulo: "Choose your ticket",
-    modalCerrar: "Close",
   },
   etica: {
     kicker: "Transparency & ethics",
@@ -142,7 +153,7 @@ export const en: Diccionario = {
       {
         titulo: "Accountability",
         texto:
-          "Every peso is handled with clarity. The presale funds the concert production; the surplus over the goal goes to the Talent Momentum Fund.",
+          "Every peso is handled with clarity. The presale funds the festival production; the surplus over the goal goes to the Talent Momentum Fund.",
       },
       {
         titulo: "No competition",
@@ -165,10 +176,6 @@ export const en: Diccionario = {
     contacto: "Contact",
     legal: "Tickets are an event-entry presale, not a donation.",
     derechos: "Talento para Dios ®. All rights reserved.",
-  },
-  checkout: {
-    proximamente:
-      "The payment gateway will be available soon. Thank you for your interest!",
   },
   convocatoria: {
     kicker: "Call for artists",
