@@ -68,7 +68,7 @@ export const artistas: Artista[] = [
     nombre: "Tony Rosher",
     cancion: "Para dedicarme a ti",
     dato: "2 veces participante de La Voz México",
-    imagen: "/img/artistas/tony-rosher.jpeg",
+    imagen: "/img/artistas/tony-rosher.jpg",
     alt: "Portada del álbum «Para dedicarme a ti» de Tony Rosher",
   },
   {
