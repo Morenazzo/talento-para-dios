@@ -30,7 +30,7 @@ const unidades: { clave: keyof Restante; etiqueta: string }[] = [
 ];
 
 /**
- * Cuenta regresiva al Concierto de Adoración. Se calcula en el cliente para
+ * Cuenta regresiva al Festival de Música Cristiana. Se calcula en el cliente para
  * evitar desajustes de hora entre servidor y navegador; el primer render
  * (SSR) queda vacío y se llena tras montar, sin bloquear el resto del Hero.
  */
@@ -59,7 +59,7 @@ export function Countdown() {
     <div
       role="timer"
       aria-live="off"
-      aria-label={`Faltan ${restante.dias} días, ${restante.horas} horas, ${restante.minutos} minutos y ${restante.segundos} segundos para el concierto`}
+      aria-label={`Faltan ${restante.dias} días, ${restante.horas} horas, ${restante.minutos} minutos y ${restante.segundos} segundos para el festival`}
       className="flex items-start gap-3 sm:gap-5"
     >
       {unidades.map(({ clave, etiqueta }) => (

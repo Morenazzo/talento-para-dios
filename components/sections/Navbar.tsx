@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { abrirBoletos } from "@/components/BotonAbrirBoletos";
+import { BotonBoletos } from "@/components/BotonBoletos";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,7 @@ const t = getDiccionario();
 const enlaces = [
   { href: "/#por-que", label: t.nav.porQue },
   { href: "/#evento", label: t.nav.evento },
+  { href: "/#artistas", label: t.nav.cartelera },
   { href: "/#adopcion", label: t.nav.adopcion },
   { href: "/#boletos", label: t.nav.boletos },
   { href: "/#transparencia", label: t.nav.transparencia },
@@ -50,13 +51,9 @@ export function Navbar() {
             </li>
           ))}
           <li>
-            <button
-              type="button"
-              onClick={() => abrirBoletos("general")}
-              className={cn(buttonVariants({ size: "sm" }))}
-            >
+            <BotonBoletos className={cn(buttonVariants({ size: "sm" }))}>
               {t.nav.cta}
-            </button>
+            </BotonBoletos>
           </li>
         </ul>
 
@@ -89,16 +86,12 @@ export function Navbar() {
             </li>
           ))}
           <li className="px-3 pt-2">
-            <button
-              type="button"
-              onClick={() => {
-                setAbierto(false);
-                abrirBoletos("general");
-              }}
+            <BotonBoletos
+              onClick={() => setAbierto(false)}
               className="block w-full rounded-full bg-dorado px-6 py-2.5 text-center text-sm font-semibold text-noche"
             >
               {t.nav.cta}
-            </button>
+            </BotonBoletos>
           </li>
         </ul>
       )}

@@ -7,13 +7,14 @@ export const es = {
     porQue: "Por qué",
     evento: "El evento",
     adopcion: "Adopción",
+    cartelera: "Artistas",
     boletos: "Boletos",
     transparencia: "Transparencia",
-    artistas: "Artistas",
+    artistas: "Convocatoria",
     cta: "Compra tu boleto",
   },
   hero: {
-    kicker: "Concierto de Adoración",
+    kicker: "Festival de Música Cristiana",
     titulo: "El Sonido de una Nueva Generación",
     subtitulo:
       "Una noche cristocéntrica donde el talento emergente de México se presenta para ser impulsado — y tú eres parte de la historia.",
@@ -69,6 +70,19 @@ export const es = {
       },
     ],
   },
+  artistas: {
+    kicker: "Cartelera",
+    titulo: "Quiénes se presentan",
+    intro:
+      "Voces que ya están llevando el mensaje de Cristo con canciones propias, en una misma noche y un mismo escenario.",
+    etiquetaCancion: "Canción destacada",
+    altBanner:
+      "María, de Songfield, cantando «Santo por Siempre» en vivo para Iglesia EB, acompañada por el coro",
+    banner: {
+      titulo: "María, de Songfield, en «Santo por Siempre» para Iglesia EB",
+      dato: "Más de 90 millones de reproducciones",
+    },
+  },
   recinto: {
     kicker: "El lugar",
     titulo: "Hacienda Paz, Puebla",
@@ -90,7 +104,7 @@ export const es = {
       {
         titulo: "Conoce a los proyectos",
         texto:
-          "En el concierto verás en vivo a los ministerios seleccionados y escucharás su corazón.",
+          "En el festival verás en vivo a los ministerios seleccionados y escucharás su corazón.",
       },
       {
         titulo: "Elige a quién impulsar",
@@ -116,15 +130,12 @@ export const es = {
     intro:
       "Compra tu boleto en preventa y sé parte de esta noche desde el principio. Cupo limitado a ~1,000 personas.",
     precioPreventaLabel: "Preventa",
-    precioNormalLabel: "Precio normal en puerta:",
+    precioNormalLabel: "Precio en el evento:",
     desde: "Desde",
     comprar: "Adquiere tus boletos",
     contactar: "Quiero ser patrocinador",
     notaLegalTitulo: "Sobre tu compra",
     moneda: "MXN",
-    verOpciones: "Comprar boleto",
-    modalTitulo: "Elige tu boleto",
-    modalCerrar: "Cerrar",
   },
   etica: {
     kicker: "Transparencia y ética",
@@ -140,7 +151,7 @@ export const es = {
       {
         titulo: "Rendición de cuentas",
         texto:
-          "Cada peso se maneja con claridad. La preventa financia la producción del concierto; el excedente sobre la meta se destina al Fondo de Impulso al Talento.",
+          "Cada peso se maneja con claridad. La preventa financia la producción del festival; el excedente sobre la meta se destina al Fondo de Impulso al Talento.",
       },
       {
         titulo: "Sin competencia",
@@ -165,10 +176,6 @@ export const es = {
     legal:
       "Los boletos son una preventa de entrada al evento, no un donativo.",
     derechos: "Talento para Dios ®. Todos los derechos reservados.",
-  },
-  checkout: {
-    proximamente:
-      "La pasarela de pago estará disponible próximamente. ¡Gracias por tu interés!",
   },
   convocatoria: {
     kicker: "Convocatoria para artistas",

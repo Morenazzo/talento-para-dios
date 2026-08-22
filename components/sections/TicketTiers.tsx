@@ -9,12 +9,20 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { BotonAbrirBoletos } from "@/components/BotonAbrirBoletos";
-import { boletos, notaLegal, type Boleto } from "@/config/evento";
+import { BotonBoletos } from "@/components/BotonBoletos";
+import { boletos, notaLegal, evento, type Boleto } from "@/config/evento";
 import { getDiccionario } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const t = getDiccionario();
+
+/** MXN sin decimales cuando el precio es cerrado ($450) y con ellos cuando no ($324.33). */
+const formatoMXN = new Intl.NumberFormat("es-MX", {
+  style: "currency",
+  currency: "MXN",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
+});
 
 function TarjetaBoleto({ boleto }: { boleto: Boleto }) {
   return (
@@ -39,6 +47,39 @@ function TarjetaBoleto({ boleto }: { boleto: Boleto }) {
       </CardHeader>
 
       <CardContent className="flex-1">
+        <div className="mb-6">
+          {boleto.rangoPrecio ? (
+            <>
+              <p className="text-xs uppercase tracking-widest text-marfil-suave">
+                {t.boletos.desde}
+              </p>
+              <p className="font-display text-2xl font-bold text-dorado-claro">
+                {boleto.rangoPrecio}
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-xs uppercase tracking-widest text-marfil-suave">
+                {t.boletos.precioPreventaLabel}
+              </p>
+              <p className="font-display text-3xl font-bold text-dorado-claro">
+                {formatoMXN.format(boleto.precioPreventa)}
+                <span className="ml-1 text-sm font-normal text-marfil-suave">
+                  {t.boletos.moneda}
+                </span>
+              </p>
+              {boleto.precioNormal !== null && (
+                <p className="mt-1 text-xs text-marfil-suave">
+                  {t.boletos.precioNormalLabel}{" "}
+                  <span className="text-marfil">
+                    {formatoMXN.format(boleto.precioNormal)}
+                  </span>
+                </p>
+              )}
+            </>
+          )}
+        </div>
+
         <ul className="space-y-2.5">
           {boleto.beneficios.map((b) => (
             <li key={b} className="flex items-start gap-2.5 text-sm">
@@ -53,15 +94,26 @@ function TarjetaBoleto({ boleto }: { boleto: Boleto }) {
       </CardContent>
 
       <CardFooter>
-        <BotonAbrirBoletos
-          tierId={boleto.id}
-          className={cn(
-            "w-full",
-            buttonVariants({ variant: boleto.destacado ? "dorado" : "contorno" })
-          )}
-        >
-          {t.boletos.verOpciones}
-        </BotonAbrirBoletos>
+        {/* Los paquetes de patrocinio se cotizan: van a contacto, no a Eventbrite. */}
+        {boleto.esPatrocinio ? (
+          <a
+            href={`mailto:${evento.contacto.correo}?subject=Quiero ser patrocinador — ${evento.nombre}`}
+            className={cn("w-full", buttonVariants({ variant: "contorno" }))}
+          >
+            {t.boletos.contactar}
+          </a>
+        ) : (
+          <BotonBoletos
+            className={cn(
+              "w-full",
+              buttonVariants({
+                variant: boleto.destacado ? "dorado" : "contorno",
+              })
+            )}
+          >
+            {t.boletos.comprar}
+          </BotonBoletos>
+        )}
       </CardFooter>
     </Card>
   );
@@ -91,7 +143,14 @@ export function TicketTiers() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div
+          className={cn(
+            "mt-14 grid gap-6 gap-y-10",
+            boletos.length === 1
+              ? "mx-auto max-w-md"
+              : "sm:grid-cols-2 lg:grid-cols-3"
+          )}
+        >
           {boletos.map((b) => (
             <TarjetaBoleto key={b.id} boleto={b} />
           ))}

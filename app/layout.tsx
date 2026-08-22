@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import { evento } from "@/config/evento";
-import { BoletosModal } from "@/components/BoletosModal";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -19,10 +18,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://talentoparadios.com"),
   title: `${evento.nombre} — ${evento.tituloHero}`,
-  description: `Concierto de Adoración · ${evento.fechaTexto}, ${evento.horaTexto} · ${evento.ciudad}. Pasarela de talento + adopción de ministerios musicales. Compra tu boleto en preventa.`,
+  description: `Festival de Música Cristiana · ${evento.fechaTexto}, ${evento.horaTexto} · ${evento.ciudad}. Pasarela de talento + adopción de ministerios musicales. Compra tu boleto en preventa.`,
   openGraph: {
     title: `${evento.nombre} — ${evento.tituloHero}`,
-    description: `Concierto de Adoración · ${evento.fechaTexto} · ${evento.ciudad}. Compra tu boleto en preventa.`,
+    description: `Festival de Música Cristiana · ${evento.fechaTexto} · ${evento.ciudad}. Compra tu boleto en preventa.`,
     url: "/",
     siteName: evento.nombre,
     type: "website",
@@ -40,7 +39,6 @@ export default function RootLayout({
     <html lang="es" className={`${outfit.variable} ${playfair.variable}`}>
       <body className="font-sans">
         {children}
-        <BoletosModal />
       </body>
     </html>
   );

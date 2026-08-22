@@ -1,6 +1,6 @@
 import { getDiccionario } from "@/lib/i18n";
+import { evento } from "@/config/evento";
 import { cn } from "@/lib/utils";
-import { BotonAbrirBoletos } from "@/components/BotonAbrirBoletos";
 
 const t = getDiccionario();
 
@@ -58,12 +58,12 @@ export function AdopcionSection() {
               dinámicas de adopción durante el evento.
             </p>
           </div>
-          <BotonAbrirBoletos
-            tierId="productor"
+          <a
+            href={`mailto:${evento.contacto.correo}?subject=Quiero adoptar un ministerio — ${evento.nombre}`}
             className="inline-flex min-h-11 items-center justify-center rounded-full border border-dorado/50 px-6 py-2 text-center text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
           >
             {t.adopcion.cta}
-          </BotonAbrirBoletos>
+          </a>
         </div>
 
       </div>

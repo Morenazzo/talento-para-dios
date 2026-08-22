@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CalendarDays, MapPin, ChevronDown } from "lucide-react";
 import { Countdown } from "@/components/Countdown";
-import { BotonAbrirBoletos } from "@/components/BotonAbrirBoletos";
+import { BotonBoletos } from "@/components/BotonBoletos";
 import { getDiccionario } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
@@ -75,20 +75,19 @@ export function Hero() {
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          {/* CTA principal → abre el modal de boletos en el General (Preventa) */}
-          <BotonAbrirBoletos
-            tierId="general"
+          {/* CTA principal → compra en Eventbrite */}
+          <BotonBoletos
             className="inline-flex h-14 items-center justify-center rounded-full bg-dorado px-8 py-3.5 text-base font-semibold text-noche shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-all hover:bg-dorado-claro hover:shadow-[0_0_36px_rgba(245,216,122,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
           >
             {t.hero.ctaPrincipal}
-          </BotonAbrirBoletos>
-          {/* CTA secundario, discreto → abre el modal en el nivel Productor/Patrocinador */}
-          <BotonAbrirBoletos
-            tierId="productor"
+          </BotonBoletos>
+          {/* CTA secundario, discreto → baja a la sección de adopción */}
+          <a
+            href="#adopcion"
             className="inline-flex h-11 items-center justify-center rounded-full border border-dorado/40 px-6 text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
           >
             {t.hero.ctaSecundario}
-          </BotonAbrirBoletos>
+          </a>
         </div>
 
       </div>
