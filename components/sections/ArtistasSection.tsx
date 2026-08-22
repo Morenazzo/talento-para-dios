@@ -17,8 +17,8 @@ function tieneFoto(imagen?: string): imagen is string {
 }
 
 /** Foto destacada del banner, con respaldo si aún no se ha subido. */
-const BANNER = tieneFoto("/img/concierto-santo-por-siempre.jpeg")
-  ? "/img/concierto-santo-por-siempre.jpeg"
+const BANNER = tieneFoto("/img/concierto-santo-por-siempre.jpg")
+  ? "/img/concierto-santo-por-siempre.jpg"
   : "/img/convocatoria-escenario.jpg";
 
 function TarjetaArtista({ artista }: { artista: Artista }) {
