@@ -70,6 +70,13 @@ export const es = {
       },
     ],
   },
+  video: {
+    kicker: "Presentación",
+    titulo: "Mira de qué se trata",
+    texto:
+      "Un vistazo a la noche que estamos construyendo y al talento que se va a presentar.",
+    reproducir: "Reproducir el video de presentación del festival",
+  },
   artistas: {
     kicker: "Cartelera",
     titulo: "Quiénes se presentan",

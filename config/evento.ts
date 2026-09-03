@@ -89,10 +89,15 @@ export const evento = {
   urlBoletos:
     "https://www.eventbrite.com/e/talento-para-dios-festival-de-musica-cristiana-en-puebla-tickets-1998600284251",
   /** Fecha verificada del Festival de Música Cristiana. */
-  fecha: "2026-09-27T18:00:00-06:00",
+  fecha: "2026-09-27T18:30:00-06:00",
   fechaTexto: "Domingo 27 de septiembre de 2026",
-  horaTexto: "6:00 PM",
+  horaTexto: "6:30 PM",
   lugar: "Hacienda Paz",
+  /** Video de presentación del evento (YouTube). */
+  video: {
+    id: "OVgEkmA2_Sk",
+    titulo: "Presentación Concierto Talento Para Dios Puebla",
+  },
   ciudad: "Puebla, México",
   versiculo: {
     cita: "Cada uno según el don que ha recibido, minístrelo a los otros, como buenos administradores de la multiforme gracia de Dios.",
@@ -152,7 +157,7 @@ export const boletos: Boleto[] = [
     descripcion: "Tu entrada al Festival de Música Cristiana.",
     beneficios: [
       "Acceso general al festival",
-      "Apertura de puertas 5:15 PM",
+      "Apertura de puertas 6:00 PM",
       "Estacionamiento sin costo",
     ],
     destacado: true,
