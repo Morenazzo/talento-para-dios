@@ -72,6 +72,13 @@ export const en: Diccionario = {
       },
     ],
   },
+  video: {
+    kicker: "Introduction",
+    titulo: "See what it is about",
+    texto:
+      "A look at the night we are building and the talent that will take the stage.",
+    reproducir: "Play the festival introduction video",
+  },
   artistas: {
     kicker: "Lineup",
     titulo: "Who is performing",
