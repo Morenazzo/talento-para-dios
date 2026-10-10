@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { convocatoriaAbierta } from "@/config/evento";
 
 /**
  * Endpoint de aplicaciones de artistas.
@@ -40,6 +41,14 @@ const OBLIGATORIOS = [
 ] as const;
 
 export async function POST(request: Request) {
+  // Convocatoria cerrada: no se procesa ni se reenvía nada a Google Sheets.
+  if (!convocatoriaAbierta) {
+    return NextResponse.json(
+      { error: "La convocatoria está cerrada." },
+      { status: 410 }
+    );
+  }
+
   const datos = await request.json().catch(() => null);
   if (!datos || typeof datos !== "object") {
     return NextResponse.json({ error: "Cuerpo inválido." }, { status: 400 });

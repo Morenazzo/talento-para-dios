@@ -4,19 +4,25 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Logo } from "@/components/Logo";
 import { FormularioAplicacion } from "@/components/aplica/FormularioAplicacion";
+import { ConvocatoriaCerrada } from "@/components/aplica/ConvocatoriaCerrada";
 import { getDiccionario } from "@/lib/i18n";
-import { evento } from "@/config/evento";
+import { evento, convocatoriaAbierta } from "@/config/evento";
 
 const t = getDiccionario();
 
-const descripcionAplica =
-  "Convocatoria para solistas, bandas y ministerios musicales cristianos con música 100% original. Pasarela de adoración y adopción — no es un concurso.";
+const descripcionAplica = convocatoriaAbierta
+  ? "Convocatoria para solistas, bandas y ministerios musicales cristianos con música 100% original. Pasarela de adoración y adopción — no es un concurso."
+  : "La convocatoria de este año cerró. Escríbenos para conectar con Talento para Dios: artistas, aliados y voluntarios.";
+
+const tituloAplica = convocatoriaAbierta
+  ? `Aplica con tu proyecto — ${evento.nombre}`
+  : `Conecta con ${evento.nombre}`;
 
 export const metadata: Metadata = {
-  title: `Aplica con tu proyecto — ${evento.nombre}`,
+  title: tituloAplica,
   description: descripcionAplica,
   openGraph: {
-    title: `Aplica con tu proyecto — ${evento.nombre}`,
+    title: tituloAplica,
     description: descripcionAplica,
     url: "/aplica",
     siteName: evento.nombre,
@@ -29,6 +35,8 @@ export const metadata: Metadata = {
 };
 
 export default function AplicaPage() {
+  if (!convocatoriaAbierta) return <ConvocatoriaCerrada />;
+
   return (
     <>
       <Navbar />
