@@ -20,7 +20,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-2 text-sm text-marfil-suave">
           <p>
-            {evento.fechaTexto} · {evento.horaTexto}
+            {evento.fechaTexto}
           </p>
           <p>
             {evento.lugar} · {evento.ciudad}

@@ -1,94 +1,165 @@
 /**
  * ÚNICA FUENTE DE VERDAD del evento.
- * Edita aquí precios, fecha, lugar y cifras — sin tocar componentes.
+ * Edita aquí fecha, lugar, artistas, fotos y cifras — sin tocar componentes.
  *
- * ⚠️ Los montos y cifras marcados como PLACEHOLDER son valores ancla:
- * el cliente definirá los finales antes de publicar.
+ * El festival se realizó el 27 de septiembre de 2026: el sitio funciona como
+ * recap. La venta de boletos (Eventbrite) y la cuenta regresiva se retiraron;
+ * el historial de git conserva esas versiones.
  */
 
-export type TipoBoleto =
-  | "general"
-  | "fan-vip"
-  | "aliado"
-  | "productor"
-  | "iglesias";
-
-export interface Boleto {
-  id: TipoBoleto;
-  nombre: string;
-  /** Precio de preventa en MXN. PLACEHOLDER — precio ancla, no final. */
-  precioPreventa: number;
-  /** Precio normal (en puerta) en MXN. PLACEHOLDER — precio ancla, no final.
-   *  `null` cuando el paquete se cotiza por rango (ej. patrocinadores). */
-  precioNormal: number | null;
-  /** Rango de precio para paquetes cotizados (ej. "PLACEHOLDER $15,000–$25,000"). */
-  rangoPrecio?: string;
-  descripcion: string;
-  beneficios: string[];
-  /** Marca el boleto normal / "Más popular" — objetivo del CTA principal. */
-  destacado: boolean;
-  /** Etiqueta del badge cuando destacado o especial. */
-  badge?: string;
-  /** Los paquetes de patrocinio no se compran en línea: van a contacto. */
-  esPatrocinio?: boolean;
-}
-
 export interface Artista {
-  /** Nombre con el que se anuncia al artista en cartelera. */
+  /** Nombre con el que se presentó el artista. */
   nombre: string;
   /** Proyecto o agrupación a la que pertenece. Vacío si es solista. */
   proyecto?: string;
-  /** Canción o álbum con el que se le identifica. */
-  cancion: string;
-  /**
-   * Foto en `public/img/artistas/`.
-   * Si falta el archivo, la tarjeta muestra un marcador con la inicial
-   * en lugar de una imagen rota.
-   */
-  imagen?: string;
+  /** Foto del propio evento, en `public/img/recap/artistas/`. */
+  imagen: string;
   /** Texto alternativo de la foto (accesibilidad + SEO). */
-  alt?: string;
+  alt: string;
   /** Dato de respaldo que se muestra como sello en la tarjeta. */
   dato?: string;
 }
 
 /**
- * Cartelera del festival — orden de aparición en el home.
- * Las fotos se guardan en `public/img/artistas/` con el nombre indicado.
+ * Los diez proyectos que se presentaron, en orden de aparición.
+ * Las fotos son del propio festival (Hacienda Paz, 27 sep 2026).
  */
 export const artistas: Artista[] = [
   {
-    nombre: "Aldo y María Teomitzi",
-    proyecto: "Songfield",
-    cancion: "Tú me Redimes",
-    imagen: "/img/artistas/songfield.jpeg",
-    alt: "Portada de «Tú me Redimes»: Aldo y María Teomitzi, del proyecto Songfield, tocando guitarra acústica",
+    nombre: "Manzo",
+    imagen: "/img/recap/artistas/manzo.jpg",
+    alt: "Manzo en el escenario: una vocalista y un guitarrista frente a la pantalla con el nombre de la banda",
   },
   {
-    nombre: "Tony Rosher",
-    cancion: "Para dedicarme a ti",
-    dato: "2 veces participante de La Voz México",
-    imagen: "/img/artistas/tony-rosher.jpg",
-    alt: "Portada del álbum «Para dedicarme a ti» de Tony Rosher",
+    nombre: "Cheo Bustamante",
+    imagen: "/img/recap/artistas/cheo-bustamante.jpg",
+    alt: "Cheo Bustamante con su sección de metales, trombón y saxofones, durante su presentación",
+  },
+  {
+    nombre: "Omar Vigil",
+    imagen: "/img/recap/artistas/omar-vigil.jpg",
+    alt: "Omar Vigil al teclado frente a la pantalla con la letra «Te adoro, gran Señor»",
+  },
+  {
+    nombre: "Shejiná",
+    imagen: "/img/recap/artistas/shejina.jpg",
+    alt: "Un integrante de Shejiná cantando con los ojos cerrados bajo luces rojas",
+  },
+  {
+    nombre: "Juan Poumian",
+    imagen: "/img/recap/artistas/juan-poumian.jpg",
+    alt: "Juan Poumian cantando con su guitarra acústica sobre el escenario",
   },
   {
     nombre: "Dfive",
-    cancion: "Unidos a ti",
-    imagen: "/img/artistas/dfive.jpeg",
-    alt: "Portada de «Unidos a ti»: los cinco integrantes de Dfive",
+    imagen: "/img/recap/artistas/dfive.jpg",
+    alt: "Dos vocalistas de Dfive cantando frente a una pantalla de luces",
+  },
+  {
+    nombre: "TWOG",
+    imagen: "/img/recap/artistas/twog.jpg",
+    alt: "Un guitarrista de TWOG con las manos al cielo junto a su vocalista",
+  },
+  {
+    nombre: "Jesús Espinoza",
+    imagen: "/img/recap/artistas/jesus-espinoza.jpg",
+    alt: "Jesús Espinoza cantando con guitarra junto a un saxofonista, bajo el logotipo JE",
+  },
+  {
+    nombre: "Tony Rosher y Dos de Fe",
+    dato: "2 veces participante de La Voz México",
+    imagen: "/img/recap/artistas/tony-rosher.jpg",
+    alt: "Tony Rosher cantando con el brazo levantado bajo luces moradas",
+  },
+  {
+    nombre: "Aldo y María Teomitzi",
+    proyecto: "Songfield",
+    imagen: "/img/recap/artistas/songfield.jpg",
+    alt: "María Teomitzi cantando junto a Aldo, de Songfield, con su bajo en el escenario",
+  },
+];
+
+export interface FotoGaleria {
+  src: string;
+  /** Dimensiones reales: permiten que la cuadrícula reserve el espacio sin saltos. */
+  ancho: number;
+  alto: number;
+  alt: string;
+  /** Pie de foto visible. */
+  pie: string;
+}
+
+/** Momentos de la noche, en orden de lectura. */
+export const galeria: FotoGaleria[] = [
+  {
+    src: "/img/recap/galeria/cierre-escenario.jpg",
+    ancho: 1800,
+    alto: 1012,
+    alt: "Todos los artistas y participantes reunidos en el escenario, frente al logotipo de Talento para Dios",
+    pie: "El cierre: todos juntos en el escenario",
+  },
+  {
+    src: "/img/recap/galeria/songfield-duo.jpg",
+    ancho: 1400,
+    alto: 2100,
+    alt: "Aldo y María Teomitzi, de Songfield, sonriendo juntos en el escenario con un bajo",
+    pie: "Aldo y María Teomitzi, de Songfield",
+  },
+  {
+    src: "/img/recap/galeria/manos-al-cielo.jpg",
+    ancho: 1800,
+    alto: 1200,
+    alt: "Público con las manos levantadas frente al escenario durante la presentación de Dfive",
+    pie: "Manos al cielo",
+  },
+  {
+    src: "/img/recap/galeria/conductores.jpg",
+    ancho: 1600,
+    alto: 900,
+    alt: "Los dos conductores del festival mirando hacia arriba con alegría",
+    pie: "Los conductores de la noche",
+  },
+  {
+    src: "/img/recap/galeria/adoracion.jpg",
+    ancho: 1400,
+    alto: 2100,
+    alt: "Juan Poumian cantando con los brazos abiertos y su guitarra acústica",
+    pie: "Juan Poumian, con los brazos abiertos",
+  },
+  {
+    src: "/img/recap/galeria/cantando-juntos.jpg",
+    ancho: 1600,
+    alto: 1067,
+    alt: "Artistas cantando juntos frente a una pantalla luminosa con la letra «Exaltado Dios, Santo, Santo por siempre»",
+    pie: "Voces unidas",
+  },
+  {
+    src: "/img/recap/galeria/dfive-voz.jpg",
+    ancho: 1400,
+    alto: 788,
+    alt: "Una vocalista de Dfive cantando con el brazo en alto",
+    pie: "Dfive, en vivo",
+  },
+  {
+    src: "/img/recap/galeria/brazo-con-brazo.jpg",
+    ancho: 1600,
+    alto: 1067,
+    alt: "Músicos de distintas bandas abrazados por los hombros, cantando juntos",
+    pie: "Brazo con brazo, un solo canto",
+  },
+  {
+    src: "/img/recap/galeria/anfitriona.jpg",
+    ancho: 1800,
+    alto: 1200,
+    alt: "El escenario lleno al cierre de la noche, con la conductora hablando al micrófono",
+    pie: "El escenario lleno al cierre de la noche",
   },
 ];
 
 export const evento = {
   nombre: "Talento para Dios",
   tituloHero: "El Sonido de una Nueva Generación",
-  /**
-   * Venta de boletos: TODA la compra ocurre en Eventbrite.
-   * Único lugar donde vive el enlace — si cambia el evento, se cambia aquí.
-   */
-  urlBoletos:
-    "https://www.eventbrite.com/e/talento-para-dios-festival-de-musica-cristiana-en-puebla-tickets-1998600284251",
-  /** Fecha verificada del Festival de Música Cristiana. */
+  /** Fecha del Festival de Música Cristiana (ya realizado). */
   fecha: "2026-09-27T18:30:00-06:00",
   fechaTexto: "Domingo 27 de septiembre de 2026",
   horaTexto: "6:30 PM",
@@ -99,9 +170,15 @@ export const evento = {
     titulo: "Presentación Concierto Talento Para Dios Puebla",
   },
   ciudad: "Puebla, México",
+  /** Salmo 96:1-3 — base del texto del sitio. */
   versiculo: {
-    cita: "Cada uno según el don que ha recibido, minístrelo a los otros, como buenos administradores de la multiforme gracia de Dios.",
-    referencia: "1 Pedro 4:10",
+    versos: [
+      "Cantad a Jehová cántico nuevo; cantad a Jehová, toda la tierra.",
+      "Cantad a Jehová, bendecid su nombre; anunciad de día en día su salvación.",
+      "Proclamad entre las naciones su gloria, en todos los pueblos sus maravillas.",
+    ],
+    cita: "Cantad a Jehová cántico nuevo; cantad a Jehová, toda la tierra. Cantad a Jehová, bendecid su nombre; anunciad de día en día su salvación. Proclamad entre las naciones su gloria, en todos los pueblos sus maravillas.",
+    referencia: "Salmo 96:1-3",
   },
   contacto: {
     /** Correo de contacto del evento. */
@@ -134,34 +211,3 @@ export const cifrasMision = {
     verificada: true,
   },
 } as const;
-
-/**
- * Nota legal (redacción precisa — no modificar sin revisión):
- * los boletos son PREVENTA de entrada a un evento, NO donativos.
- */
-export const notaLegal =
-  "Tu boleto es una preventa de entrada al evento, no un donativo. La preventa financia la producción del festival; el excedente sobre la meta se destina al Fondo de Impulso al Talento.";
-
-/**
- * Cartelera de boletos = exactamente lo que se vende en Eventbrite.
- * Se dejó un único nivel a propósito: cualquier nivel extra que no exista
- * en Eventbrite manda al comprador a una página donde no puede comprarlo.
- * Para reactivar Fan VIP / Aliado / Iglesias, créalos primero en Eventbrite.
- */
-export const boletos: Boleto[] = [
-  {
-    id: "general",
-    nombre: "Boleto General",
-    precioPreventa: 324.33, // Precio de preventa en Eventbrite (incluye cargos)
-    precioNormal: 450, // Precio en el evento
-    descripcion: "Tu entrada al Festival de Música Cristiana.",
-    beneficios: [
-      "Acceso general al festival",
-      "Apertura de puertas 6:00 PM",
-      "Estacionamiento sin costo",
-    ],
-    destacado: true,
-    // Sin badge: con un solo nivel no hay nada de qué distinguirlo,
-    // y "Preventa" ya aparece sobre el precio.
-  },
-];

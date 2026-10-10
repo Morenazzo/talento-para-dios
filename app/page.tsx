@@ -3,10 +3,10 @@ import { Hero } from "@/components/sections/Hero";
 import { VideoSection } from "@/components/sections/VideoSection";
 import { PorQueSection } from "@/components/sections/PorQueSection";
 import { QueVivirasSection } from "@/components/sections/QueVivirasSection";
+import { GaleriaSection } from "@/components/sections/GaleriaSection";
 import { ArtistasSection } from "@/components/sections/ArtistasSection";
 import { RecintoSection } from "@/components/sections/RecintoSection";
 import { AdopcionSection } from "@/components/sections/AdopcionSection";
-import { TicketTiers } from "@/components/sections/TicketTiers";
 import { ConvocatoriaBanner } from "@/components/sections/ConvocatoriaBanner";
 import { EticaSection } from "@/components/sections/EticaSection";
 import { CTAFinal } from "@/components/sections/CTAFinal";
@@ -21,10 +21,10 @@ export default function Home() {
         <VideoSection />
         <PorQueSection />
         <QueVivirasSection />
+        <GaleriaSection />
         <ArtistasSection />
         <RecintoSection />
         <AdopcionSection />
-        <TicketTiers />
         <EticaSection />
         <ConvocatoriaBanner />
         <CTAFinal />

@@ -10,7 +10,7 @@ export const contentType = "image/png";
 
 export default function OpengraphImage() {
   const imagen = readFileSync(
-    join(process.cwd(), "public/img/convocatoria-escenario.jpg")
+    join(process.cwd(), "public/img/recap/hero-cierre.jpg")
   );
   const src = `data:image/jpeg;base64,${imagen.toString("base64")}`;
 

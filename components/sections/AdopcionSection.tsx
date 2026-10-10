@@ -54,8 +54,7 @@ export function AdopcionSection() {
               ¿Dios puso un ministerio en tu corazón?
             </p>
             <p className="mt-2 text-sm text-marfil-suave">
-              Los niveles de Productor Asociado incluyen participación en las
-              dinámicas de adopción durante el evento.
+              Escríbenos y platiquemos cómo acompañar a un ministerio musical.
             </p>
           </div>
           <a

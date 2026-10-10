@@ -26,7 +26,7 @@ export function RecintoSection() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_48px_rgba(212,175,55,0.12)] lg:col-span-2">
             <Image
-              src="/img/concierto-adoracion.jpg"
+              src="/img/recap/galeria/sala-shejina.jpg"
               alt={t.recinto.altImagen}
               fill
               sizes="(min-width: 1024px) 66vw, 100vw"

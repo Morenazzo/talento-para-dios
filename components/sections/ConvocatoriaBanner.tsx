@@ -8,7 +8,7 @@ const t = getDiccionario();
 export function ConvocatoriaBanner() {
   return (
     <section
-      id="artistas"
+      id="convocatoria"
       aria-labelledby="convocatoria-titulo"
       className="bg-noche py-20 sm:py-24"
     >
