@@ -18,10 +18,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://talentoparadios.com"),
   title: `${evento.nombre} — ${evento.tituloHero}`,
-  description: `Festival de Música Cristiana · ${evento.fechaTexto} · ${evento.ciudad}. Recap del festival: diez proyectos musicales cristianos, un solo escenario.`,
+  description: `Festival de Música Cristiana · ${evento.fechaRealizado} · ${evento.ciudad}. Recap del festival: diez proyectos musicales cristianos, un solo escenario.`,
   openGraph: {
     title: `${evento.nombre} — ${evento.tituloHero}`,
-    description: `Festival de Música Cristiana · ${evento.fechaTexto} · ${evento.ciudad}. Recap del festival.`,
+    description: `Festival de Música Cristiana · ${evento.fechaRealizado} · ${evento.ciudad}. Recap del festival.`,
     url: "/",
     siteName: evento.nombre,
     type: "website",

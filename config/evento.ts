@@ -162,6 +162,8 @@ export const evento = {
   /** Fecha del Festival de Música Cristiana (ya realizado). */
   fecha: "2026-09-27T18:30:00-06:00",
   fechaTexto: "Domingo 27 de septiembre de 2026",
+  /** Para mostrarla en el sitio: el evento ya pasó, no debe leerse como futuro. */
+  fechaRealizado: "Realizado el domingo 27 de septiembre de 2026",
   horaTexto: "6:30 PM",
   lugar: "Hacienda Paz",
   /** Video de presentación del evento (YouTube). */
@@ -182,7 +184,7 @@ export const evento = {
   },
   contacto: {
     /** Correo de contacto del evento. */
-    correo: "edwin.seop@gmail.com",
+    correo: "somostalentoparadios@gmail.com",
     /** PLACEHOLDER — teléfono/WhatsApp oficial */
     telefono: "[PLACEHOLDER: WhatsApp]",
     /** PLACEHOLDER — redes sociales oficiales */

@@ -279,7 +279,7 @@ export const es = {
         letra: "Letra de la canción",
         cifrado: "Cifrado armónico / acordes (opcional)",
         dispPresentarse:
-          "¿Disponibilidad para presentarse en Puebla el domingo 27 de septiembre de 2026?",
+          "¿Tendrías disponibilidad para presentarte en Puebla en una próxima fecha?",
         dispMentoria:
           "¿Disponibilidad para el proceso de mentoría y preparación previa?",
         abiertoAdopcion:

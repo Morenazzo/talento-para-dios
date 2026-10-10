@@ -106,7 +106,7 @@ export default function OpengraphImage() {
               gap: 16,
             }}
           >
-            <div style={{ display: "flex" }}>{evento.fechaTexto}</div>
+            <div style={{ display: "flex" }}>{evento.fechaRealizado}</div>
             <div style={{ display: "flex" }}>·</div>
             <div style={{ display: "flex" }}>{evento.ciudad}</div>
           </div>

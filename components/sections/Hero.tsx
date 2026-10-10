@@ -59,7 +59,7 @@ export function Hero() {
           <span className="inline-flex items-center gap-2">
             <CalendarDays aria-hidden className="h-4 w-4 text-dorado" />
             <span>
-              {evento.fechaTexto}
+              {evento.fechaRealizado}
             </span>
           </span>
           <span className="inline-flex items-center gap-2">

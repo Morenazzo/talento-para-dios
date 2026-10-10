@@ -279,7 +279,7 @@ export const en: Diccionario = {
         letra: "Song lyrics",
         cifrado: "Chord chart / harmony (optional)",
         dispPresentarse:
-          "Available to perform in Puebla on Sunday, September 27, 2026?",
+          "Would you be available to perform in Puebla on an upcoming date?",
         dispMentoria:
           "Available for the mentorship and preparation process?",
         abiertoAdopcion:
