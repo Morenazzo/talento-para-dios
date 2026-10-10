@@ -5,26 +5,49 @@
 export const es = {
   nav: {
     porQue: "Por qué",
-    evento: "El evento",
-    adopcion: "Adopción",
+    evento: "La noche",
+    galeria: "Fotos",
     cartelera: "Artistas",
-    boletos: "Boletos",
+    adopcion: "Adopción",
     transparencia: "Transparencia",
     artistas: "Convocatoria",
-    cta: "Compra tu boleto",
+    cta: "Apoya el proyecto",
   },
   hero: {
-    kicker: "Festival de Música Cristiana",
-    titulo: "El Sonido de una Nueva Generación",
+    kicker: "Festival de Música Cristiana · Puebla 2026",
+    titulo: "Cantad a Jehová cántico nuevo",
+    referencia: "Salmo 96:1",
+    lema: "El sonido de una nueva generación",
     subtitulo:
-      "Una noche cristocéntrica donde el talento emergente de México se presenta para ser impulsado — y tú eres parte de la historia.",
-    ctaPrincipal: "Compra tu boleto en preventa",
-    ctaSecundario: "Conviértete en aliado / patrocinador",
+      "El 27 de septiembre, en Hacienda Paz, diez proyectos musicales cristianos y una sala entera adoraron juntos. Gracias por cantar con nosotros: esto fue lo que vivimos.",
+    ctaPrincipal: "Ver el video",
+    ctaSecundario: "Quiero apoyar el proyecto",
     scrollHint: "Descubre por qué lo hacemos",
   },
   porQue: {
     kicker: "Por qué lo hacemos",
     titulo: "Hay canciones que aún no se han escrito… y vidas esperándolas",
+    versiculoIntro: "Todo empezó con una invitación que ya estaba escrita:",
+    pilares: [
+      {
+        versiculo: "Cantad a Jehová cántico nuevo",
+        titulo: "Una canción nueva",
+        texto:
+          "Música propia, escrita por una generación que quiere adorar con voz propia. Por eso cada proyecto se presenta con lo que Dios puso en su corazón.",
+      },
+      {
+        versiculo: "Anunciad de día en día su salvación",
+        titulo: "Más que una noche",
+        texto:
+          "El mensaje no termina cuando se apagan las luces. El modelo de adopción acompaña a un ministerio durante un año para que siga anunciándolo de día en día.",
+      },
+      {
+        versiculo: "Proclamad entre las naciones su gloria",
+        titulo: "Un alcance sin fronteras",
+        texto:
+          "Una canción viaja a donde una prédica quizá nunca llegue. Por eso creemos en levantar nuevo talento cristiano.",
+      },
+    ],
     parrafo1:
       "Aún 1 de cada 4 personas en el mundo no ha conocido las buenas nuevas de Jesucristo.",
     parrafo2:
@@ -43,46 +66,51 @@ export const es = {
       "Impulsar una banda emergente no es patrocinar un espectáculo. Es enviar una canción a donde una prédica quizá nunca llegue.",
   },
   queViviras: {
-    kicker: "El evento",
-    titulo: "Qué vivirás el 27 de septiembre",
+    kicker: "La noche",
+    titulo: "Lo que vivimos el 27 de septiembre",
     intro:
-      "No es un concurso de ganadores y perdedores. Es una pasarela de adoración: los mejores proyectos seleccionados se presentan en vivo, con lo mejor de su corazón.",
+      "No fue un concurso de ganadores y perdedores. Fue una pasarela de adoración: diez proyectos se presentaron en vivo, con lo mejor de su corazón.",
     items: [
       {
-        titulo: "Canciones 100% originales",
+        titulo: "Diez proyectos, un escenario",
         texto:
-          "Proyectos musicales cristianos con composiciones propias y cristocéntricas — nada de covers.",
+          "Metales, teclados, guitarras y voces: una misma adoración con muchos sonidos.",
       },
       {
-        titulo: "Diversidad de géneros",
+        titulo: "Una sala que cantó",
         texto:
-          "Del pop a lo acústico, del rock a lo urbano: una misma adoración con muchos sonidos.",
+          "El público no fue espectador: cantó, levantó las manos y adoró junto a los artistas.",
       },
       {
-        titulo: "Ambiente de adoración",
+        titulo: "El cierre, todos juntos",
         texto:
-          "Una noche cristocéntrica en un recinto íntimo, con sonido envolvente y cielo abierto.",
+          "Al final, los artistas compartieron el escenario y cantaron como un solo coro.",
       },
       {
-        titulo: "El momento de la adopción",
+        titulo: "Una noche con propósito",
         texto:
-          "El cierre de la noche: líderes y aliados conocen a los proyectos que podrán impulsar por un año.",
+          "Más que un espectáculo: una plataforma para que estos ministerios lleguen más lejos.",
       },
     ],
   },
   video: {
     kicker: "Presentación",
-    titulo: "Mira de qué se trata",
+    titulo: "Así presentamos el festival",
     texto:
-      "Un vistazo a la noche que estamos construyendo y al talento que se va a presentar.",
+      "El video con el que invitamos a esta noche: la idea, el lugar y el talento que subió al escenario.",
     reproducir: "Reproducir el video de presentación del festival",
   },
-  artistas: {
-    kicker: "Cartelera",
-    titulo: "Quiénes se presentan",
+  galeria: {
+    kicker: "Recap",
+    titulo: "La noche en fotos",
     intro:
-      "Voces que ya están llevando el mensaje de Cristo con canciones propias, en una misma noche y un mismo escenario.",
-    etiquetaCancion: "Canción destacada",
+      "Algunos de los momentos que nos dejó el festival, de la primera nota al cierre con todos en el escenario.",
+  },
+  artistas: {
+    kicker: "Los artistas",
+    titulo: "Quiénes subieron al escenario",
+    intro:
+      "Diez proyectos cristianos, uno tras otro, cantando a Jehová cántico nuevo.",
     altBanner:
       "María, de Songfield, cantando «Santo por Siempre» en vivo para Iglesia EB, acompañada por el coro",
     banner: {
@@ -94,9 +122,9 @@ export const es = {
     kicker: "El lugar",
     titulo: "Hacienda Paz, Puebla",
     texto:
-      "Un recinto con historia y carácter, listo para convertirse en un escenario de adoración bajo el cielo abierto.",
+      "Un recinto con historia y carácter que, el 27 de septiembre, se convirtió en un escenario de adoración.",
     altImagen:
-      "Escenario de Talento para Dios en Hacienda Paz, con la banda en vivo y cientos de asistentes adorando con las manos alzadas",
+      "Sala de Hacienda Paz durante la presentación de Shejiná, con el público frente al escenario iluminado en rojo",
     altFachada:
       "Fachada de Hacienda Paz al atardecer, con su torre de piedra y arcos iluminados",
     altAereo:
@@ -111,7 +139,7 @@ export const es = {
       {
         titulo: "Conoce a los proyectos",
         texto:
-          "En el festival verás en vivo a los ministerios seleccionados y escucharás su corazón.",
+          "Escucha a los ministerios que se presentaron en Hacienda Paz y conoce su corazón.",
       },
       {
         titulo: "Elige a quién impulsar",
@@ -131,19 +159,6 @@ export const es = {
     ],
     cta: "Quiero saber más sobre adoptar",
   },
-  boletos: {
-    kicker: "Preventa",
-    titulo: "Asegura tu lugar",
-    intro:
-      "Compra tu boleto en preventa y sé parte de esta noche desde el principio. Cupo limitado a ~1,000 personas.",
-    precioPreventaLabel: "Preventa",
-    precioNormalLabel: "Precio en el evento:",
-    desde: "Desde",
-    comprar: "Adquiere tus boletos",
-    contactar: "Quiero ser patrocinador",
-    notaLegalTitulo: "Sobre tu compra",
-    moneda: "MXN",
-  },
   etica: {
     kicker: "Transparencia y ética",
     titulo: "Cuidado con integridad, transparencia y respaldo pastoral",
@@ -158,7 +173,7 @@ export const es = {
       {
         titulo: "Rendición de cuentas",
         texto:
-          "Cada peso se maneja con claridad. La preventa financia la producción del festival; el excedente sobre la meta se destina al Fondo de Impulso al Talento.",
+          "Cada peso se maneja con claridad. La venta de boletos financió la producción del festival; el excedente sobre la meta se destina al Fondo de Impulso al Talento.",
       },
       {
         titulo: "Sin competencia",
@@ -173,15 +188,16 @@ export const es = {
     ],
   },
   ctaFinal: {
-    titulo: "Sé parte de lo que Dios está haciendo con la música en México",
+    titulo:
+      "Gracias por ser parte de lo que Dios está haciendo con la música en México",
     texto:
-      "El domingo 27 de septiembre de 2026, una nueva generación de adoradores subirá al escenario. Tu boleto en preventa hace posible esa noche.",
-    cta: "Compra tu boleto en preventa",
+      "El domingo 27 de septiembre de 2026, una nueva generación de adoradores subió al escenario. Gracias a cada persona que cantó, oró y sirvió esa noche.",
+    cta: "Escríbenos para apoyar el proyecto",
   },
   footer: {
     contacto: "Contacto",
     legal:
-      "Los boletos son una preventa de entrada al evento, no un donativo.",
+      "Gracias a todos los que hicieron posible esta noche.",
     derechos: "Talento para Dios ®. Todos los derechos reservados.",
   },
   convocatoria: {
@@ -263,7 +279,7 @@ export const es = {
         letra: "Letra de la canción",
         cifrado: "Cifrado armónico / acordes (opcional)",
         dispPresentarse:
-          "¿Disponibilidad para presentarse en Puebla el domingo 27 de septiembre de 2026?",
+          "¿Tendrías disponibilidad para presentarte en Puebla en una próxima fecha?",
         dispMentoria:
           "¿Disponibilidad para el proceso de mentoría y preparación previa?",
         abiertoAdopcion:

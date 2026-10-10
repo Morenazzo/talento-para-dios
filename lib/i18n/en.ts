@@ -7,26 +7,49 @@ import type { Diccionario } from "./es";
 export const en: Diccionario = {
   nav: {
     porQue: "Why",
-    evento: "The event",
+    evento: "The night",
+    galeria: "Photos",
+    cartelera: "Artists",
     adopcion: "Adoption",
-    cartelera: "Lineup",
-    boletos: "Tickets",
     transparencia: "Transparency",
-    artistas: "Artists",
-    cta: "Get your ticket",
+    artistas: "Open call",
+    cta: "Support the project",
   },
   hero: {
-    kicker: "Christian Music Festival",
-    titulo: "The Sound of a New Generation",
+    kicker: "Christian Music Festival · Puebla 2026",
+    titulo: "Sing to the Lord a new song",
+    referencia: "Psalm 96:1",
+    lema: "The sound of a new generation",
     subtitulo:
-      "A Christ-centered night where Mexico's emerging talent takes the stage to be championed — and you are part of the story.",
-    ctaPrincipal: "Buy your presale ticket",
-    ctaSecundario: "Become an ally / sponsor",
-    scrollHint: "Discover why we do this",
+      "On September 27, at Hacienda Paz, ten Christian music projects and a whole room worshipped together. Thank you for singing with us: this is what we lived.",
+    ctaPrincipal: "Watch the video",
+    ctaSecundario: "I want to support the project",
+    scrollHint: "Find out why we do it",
   },
   porQue: {
     kicker: "Why we do this",
     titulo: "There are songs not yet written… and lives waiting for them",
+    versiculoIntro: "It all began with an invitation that was already written:",
+    pilares: [
+      {
+        versiculo: "Sing to the Lord a new song",
+        titulo: "A new song",
+        texto:
+          "Original music, written by a generation that wants to worship in its own voice. That is why each project performs what God put in its heart.",
+      },
+      {
+        versiculo: "Proclaim his salvation day after day",
+        titulo: "More than one night",
+        texto:
+          "The message does not end when the lights go out. The adoption model supports a ministry for a year so it can keep proclaiming it day after day.",
+      },
+      {
+        versiculo: "Declare his glory among the nations",
+        titulo: "A reach without borders",
+        texto:
+          "A song travels where a sermon may never arrive. That is why we believe in raising up new Christian talent.",
+      },
+    ],
     parrafo1:
       "Still today, 1 in 4 people in the world has not heard the good news of Jesus Christ.",
     parrafo2:
@@ -45,46 +68,51 @@ export const en: Diccionario = {
       "Championing an emerging band is not sponsoring a show. It is sending a song where a sermon may never reach.",
   },
   queViviras: {
-    kicker: "The event",
-    titulo: "What you will live on September 27",
+    kicker: "The night",
+    titulo: "What we lived on September 27",
     intro:
-      "This is not a contest of winners and losers. It is a worship showcase: the best selected projects perform live, with the best of their hearts.",
+      "It was not a contest of winners and losers. It was a worship runway: ten projects performed live, with the best of their hearts.",
     items: [
       {
-        titulo: "100% original songs",
+        titulo: "Ten projects, one stage",
         texto:
-          "Christian music projects with their own Christ-centered compositions — no covers.",
+          "Brass, keys, guitars and voices: one worship, many sounds.",
       },
       {
-        titulo: "Diversity of genres",
+        titulo: "A room that sang",
         texto:
-          "From pop to acoustic, rock to urban: one worship, many sounds.",
+          "The audience was not a spectator: it sang, raised its hands and worshipped alongside the artists.",
       },
       {
-        titulo: "An atmosphere of worship",
+        titulo: "The finale, all together",
         texto:
-          "A Christ-centered night in an intimate venue with immersive sound under an open sky.",
+          "At the end, the artists shared the stage and sang as a single choir.",
       },
       {
-        titulo: "The adoption moment",
+        titulo: "A night with purpose",
         texto:
-          "The close of the night: leaders and allies meet the projects they can champion for a year.",
+          "More than a show: a platform for these ministries to reach further.",
       },
     ],
   },
   video: {
     kicker: "Introduction",
-    titulo: "See what it is about",
+    titulo: "How we introduced the festival",
     texto:
-      "A look at the night we are building and the talent that will take the stage.",
+      "The video we used to invite people to this night: the idea, the place and the talent that took the stage.",
     reproducir: "Play the festival introduction video",
   },
-  artistas: {
-    kicker: "Lineup",
-    titulo: "Who is performing",
+  galeria: {
+    kicker: "Recap",
+    titulo: "The night in photos",
     intro:
-      "Voices already carrying the message of Christ with their own songs, together on one stage for one night.",
-    etiquetaCancion: "Featured song",
+      "Some of the moments the festival gave us, from the first note to the finale with everyone on stage.",
+  },
+  artistas: {
+    kicker: "The artists",
+    titulo: "Who took the stage",
+    intro:
+      "Ten Christian projects, one after another, singing to the Lord a new song.",
     altBanner:
       "María, of Songfield, singing «Santo por Siempre» live for Iglesia EB, backed by the choir",
     banner: {
@@ -96,9 +124,9 @@ export const en: Diccionario = {
     kicker: "The venue",
     titulo: "Hacienda Paz, Puebla",
     texto:
-      "A venue with history and character, ready to become a stage for worship under the open sky.",
+      "A venue with history and character that, on September 27, became a stage for worship.",
     altImagen:
-      "Talento para Dios stage at Hacienda Paz, with the live band and hundreds of attendees worshipping with raised hands",
+      "Hacienda Paz hall during Shejiná's set, with the audience facing the stage lit in red",
     altFachada:
       "Hacienda Paz façade at dusk, with its stone tower and lit archways",
     altAereo:
@@ -113,7 +141,7 @@ export const en: Diccionario = {
       {
         titulo: "Meet the projects",
         texto:
-          "At the festival you will see the selected ministries live and hear their hearts.",
+          "Listen to the ministries that performed at Hacienda Paz and get to know their hearts.",
       },
       {
         titulo: "Choose who to champion",
@@ -133,19 +161,6 @@ export const en: Diccionario = {
     ],
     cta: "I want to learn more about adopting",
   },
-  boletos: {
-    kicker: "Presale",
-    titulo: "Secure your place",
-    intro:
-      "Buy your presale ticket and be part of this night from the start. Capacity limited to ~1,000 people.",
-    precioPreventaLabel: "Presale",
-    precioNormalLabel: "Price at the event:",
-    desde: "From",
-    comprar: "Get your tickets",
-    contactar: "I want to sponsor",
-    notaLegalTitulo: "About your purchase",
-    moneda: "MXN",
-  },
   etica: {
     kicker: "Transparency & ethics",
     titulo: "Guarded with integrity, transparency and pastoral backing",
@@ -160,7 +175,7 @@ export const en: Diccionario = {
       {
         titulo: "Accountability",
         texto:
-          "Every peso is handled with clarity. The presale funds the festival production; the surplus over the goal goes to the Talent Momentum Fund.",
+          "Every peso is handled with clarity. Ticket sales funded the festival production; the surplus over the goal goes to the Talent Momentum Fund.",
       },
       {
         titulo: "No competition",
@@ -174,14 +189,15 @@ export const en: Diccionario = {
     ],
   },
   ctaFinal: {
-    titulo: "Be part of what God is doing with music in Mexico",
+    titulo:
+      "Thank you for being part of what God is doing with music in Mexico",
     texto:
-      "On Sunday, September 27, 2026, a new generation of worshippers takes the stage. Your presale ticket makes that night possible.",
-    cta: "Buy your presale ticket",
+      "On Sunday, September 27, 2026, a new generation of worshippers took the stage. Thank you to everyone who sang, prayed and served that night.",
+    cta: "Write to us to support the project",
   },
   footer: {
     contacto: "Contact",
-    legal: "Tickets are an event-entry presale, not a donation.",
+    legal: "Thank you to everyone who made this night possible.",
     derechos: "Talento para Dios ®. All rights reserved.",
   },
   convocatoria: {
@@ -263,7 +279,7 @@ export const en: Diccionario = {
         letra: "Song lyrics",
         cifrado: "Chord chart / harmony (optional)",
         dispPresentarse:
-          "Available to perform in Puebla on Sunday, September 27, 2026?",
+          "Would you be available to perform in Puebla on an upcoming date?",
         dispMentoria:
           "Available for the mentorship and preparation process?",
         abiertoAdopcion:

@@ -1,5 +1,5 @@
 import { getDiccionario } from "@/lib/i18n";
-import { cifrasMision } from "@/config/evento";
+import { cifrasMision, evento } from "@/config/evento";
 
 const t = getDiccionario();
 
@@ -22,6 +22,45 @@ export function PorQueSection() {
         >
           {t.porQue.titulo}
         </h2>
+
+        {/* Salmo 96:1-3: la base de todo el texto que sigue */}
+        <div className="mt-10">
+          <p className="text-sm uppercase tracking-[0.2em] text-marfil-suave/80">
+            {t.porQue.versiculoIntro}
+          </p>
+          <blockquote className="mt-4 border-l-2 border-dorado pl-5">
+            <div className="space-y-2 font-display text-lg italic leading-relaxed text-marfil sm:text-xl">
+              {evento.versiculo.versos.map((verso, i) => (
+                <p key={verso}>
+                  <sup className="mr-1.5 font-sans text-xs not-italic text-dorado">
+                    {i + 1}
+                  </sup>
+                  {verso}
+                </p>
+              ))}
+            </div>
+            <cite className="mt-3 block text-sm not-italic tracking-widest text-dorado-claro">
+              — {evento.versiculo.referencia}
+            </cite>
+          </blockquote>
+
+          <ul className="mt-10 grid gap-4 md:grid-cols-3">
+            {t.porQue.pilares.map((pilar) => (
+              <li
+                key={pilar.titulo}
+                className="rounded-2xl border border-noche-borde bg-noche p-6"
+              >
+                <p className="font-display text-sm italic text-dorado-claro">
+                  «{pilar.versiculo}»
+                </p>
+                <h3 className="mt-3 font-semibold text-marfil">{pilar.titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-marfil-suave">
+                  {pilar.texto}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="mt-10 space-y-6 text-base leading-relaxed text-marfil-suave sm:text-lg">
           <p>
