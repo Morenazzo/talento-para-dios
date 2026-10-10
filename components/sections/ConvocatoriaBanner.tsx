@@ -32,9 +32,6 @@ export function ConvocatoriaBanner() {
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-marfil-suave">
                 {t.convocatoria.texto}
               </p>
-              <p className="mt-3 text-xs text-marfil-suave/80">
-                {t.convocatoria.nota}
-              </p>
             </div>
 
             <Link

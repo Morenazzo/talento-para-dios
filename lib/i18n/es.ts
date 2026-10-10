@@ -10,7 +10,7 @@ export const es = {
     cartelera: "Artistas",
     adopcion: "Adopción",
     transparencia: "Transparencia",
-    artistas: "Convocatoria",
+    artistas: "Conecta",
     cta: "Apoya el proyecto",
   },
   hero: {
@@ -201,12 +201,48 @@ export const es = {
     derechos: "Talento para Dios ®. Todos los derechos reservados.",
   },
   convocatoria: {
-    kicker: "Convocatoria para artistas",
-    titulo: "¿Dios te dio una canción? Preséntala",
+    kicker: "Conecta con nosotros",
+    titulo: "¿Dios te dio una canción? Conectemos",
     texto:
-      "Solistas, bandas y agrupaciones cristianas con música 100% original pueden aplicar. No es un concurso: los proyectos seleccionados se presentan para ser adoptados y acompañados.",
-    cta: "Aplica con tu proyecto",
-    nota: "Lugares por aplicación abierta limitados (aprox. 3), sujetos a filtro primario.",
+      "La convocatoria de este año ya cerró, pero nos encantaría conocerte. Cuéntanos de tu proyecto o de cómo quieres sumarte.",
+    cta: "Conecta con nosotros",
+  },
+  conecta: {
+    kicker: "Convocatoria cerrada",
+    titulo: "La convocatoria de este año ya cerró",
+    intro:
+      "Gracias a cada banda y solista que nos escribió. El festival ya se realizó, así que dejamos de recibir aplicaciones. Pero si quieres conectar con Talento para Dios, la puerta sigue abierta: escríbenos.",
+    opcionesTitulo: "¿Cómo quieres conectar?",
+    opciones: [
+      {
+        titulo: "Soy artista o banda",
+        texto:
+          "Cuéntanos quién eres, qué música haces y comparte un enlace para escucharte.",
+        cta: "Escribir como artista",
+        asunto: "Soy artista / banda — Talento para Dios",
+        cuerpo:
+          "Hola, somos / soy:\nCiudad:\nIglesia o congregación:\nEnlace para escuchar nuestra música:\nCuéntanos de tu proyecto:\n",
+      },
+      {
+        titulo: "Quiero apoyar o adoptar",
+        texto:
+          "Si eres iglesia, empresario o aliado y quieres acompañar a un ministerio musical.",
+        cta: "Escribir para apoyar",
+        asunto: "Quiero apoyar o adoptar un ministerio — Talento para Dios",
+        cuerpo:
+          "Hola, soy / somos:\nIglesia u organización:\nCiudad:\nMe gustaría saber más sobre:\n",
+      },
+      {
+        titulo: "Quiero sumarme",
+        texto:
+          "Voluntarios, medios, músicos o líderes que quieran servir con Talento para Dios.",
+        cta: "Escribir para sumarme",
+        asunto: "Quiero sumarme — Talento para Dios",
+        cuerpo:
+          "Hola, soy:\nCiudad:\nMe gustaría colaborar en:\n",
+      },
+    ],
+    correoNota: "También puedes escribirnos directo a",
   },
   aplica: {
     kicker: "Convocatoria",

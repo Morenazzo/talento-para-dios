@@ -12,7 +12,7 @@ export const en: Diccionario = {
     cartelera: "Artists",
     adopcion: "Adoption",
     transparencia: "Transparency",
-    artistas: "Open call",
+    artistas: "Connect",
     cta: "Support the project",
   },
   hero: {
@@ -201,12 +201,48 @@ export const en: Diccionario = {
     derechos: "Talento para Dios ®. All rights reserved.",
   },
   convocatoria: {
-    kicker: "Call for artists",
-    titulo: "Did God give you a song? Present it",
+    kicker: "Connect with us",
+    titulo: "Did God give you a song? Let's connect",
     texto:
-      "Christian soloists, bands and groups with 100% original music can apply. It is not a contest: selected projects perform to be adopted and accompanied.",
-    cta: "Apply with your project",
-    nota: "Open-application spots are limited (approx. 3), subject to a primary filter.",
+      "This year's call for artists has closed, but we would love to meet you. Tell us about your project or how you would like to join in.",
+    cta: "Connect with us",
+  },
+  conecta: {
+    kicker: "Call closed",
+    titulo: "This year's call for artists has closed",
+    intro:
+      "Thank you to every band and soloist who wrote to us. The festival has taken place, so we stopped receiving applications. But if you want to connect with Talento para Dios, the door is still open: write to us.",
+    opcionesTitulo: "How would you like to connect?",
+    opciones: [
+      {
+        titulo: "I am an artist or a band",
+        texto:
+          "Tell us who you are, what music you make and share a link so we can listen.",
+        cta: "Write as an artist",
+        asunto: "I am an artist / band — Talento para Dios",
+        cuerpo:
+          "Hello, we are / I am:\nCity:\nChurch or congregation:\nLink to our music:\nTell us about your project:\n",
+      },
+      {
+        titulo: "I want to support or adopt",
+        texto:
+          "If you are a church, business owner or ally and want to accompany a music ministry.",
+        cta: "Write to support",
+        asunto: "I want to support or adopt a ministry — Talento para Dios",
+        cuerpo:
+          "Hello, I am / we are:\nChurch or organization:\nCity:\nI would like to know more about:\n",
+      },
+      {
+        titulo: "I want to join in",
+        texto:
+          "Volunteers, media, musicians or leaders who want to serve with Talento para Dios.",
+        cta: "Write to join in",
+        asunto: "I want to join in — Talento para Dios",
+        cuerpo:
+          "Hello, I am:\nCity:\nI would like to help with:\n",
+      },
+    ],
+    correoNota: "You can also write to us directly at",
   },
   aplica: {
     kicker: "Open call",

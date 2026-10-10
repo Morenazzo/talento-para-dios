@@ -7,6 +7,14 @@
  * el historial de git conserva esas versiones.
  */
 
+/**
+ * Convocatoria para artistas (/aplica y /api/aplicaciones).
+ * `false` = cerrada: la página muestra cómo conectar por correo y la API
+ * rechaza envíos. Para reabrirla en una próxima edición, cámbialo a `true`
+ * y actualiza las fechas del formulario en `lib/i18n`.
+ */
+export const convocatoriaAbierta = false;
+
 export interface Artista {
   /** Nombre con el que se presentó el artista. */
   nombre: string;

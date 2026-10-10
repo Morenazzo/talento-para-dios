@@ -1,10 +1,12 @@
 import { ImageResponse } from "next/og";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { evento } from "@/config/evento";
+import { evento, convocatoriaAbierta } from "@/config/evento";
 
 export const runtime = "nodejs";
-export const alt = `Aplica con tu proyecto — ${evento.nombre}`;
+export const alt = convocatoriaAbierta
+  ? `Aplica con tu proyecto — ${evento.nombre}`
+  : `Conecta con ${evento.nombre}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -83,7 +85,7 @@ export default function OpengraphImageAplica() {
                 color: "#D4AF37",
               }}
             >
-              Convocatoria
+              {convocatoriaAbierta ? "Convocatoria" : "Convocatoria cerrada"}
             </div>
           </div>
           <div
@@ -95,7 +97,9 @@ export default function OpengraphImageAplica() {
               maxWidth: 1000,
             }}
           >
-            Aplica con tu proyecto musical
+            {convocatoriaAbierta
+              ? "Aplica con tu proyecto musical"
+              : "Conecta con nosotros"}
           </div>
           <div
             style={{
