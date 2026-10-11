@@ -93,6 +93,14 @@ export const es = {
       },
     ],
   },
+  proposito: {
+    kicker: "Nuestro propósito",
+    inicio: "Impulsar ",
+    destacado: "talento emergente musical cristiano",
+    final: " para evangelizar.",
+    apoyo:
+      "Cada canción es una oportunidad de llevar el mensaje de Cristo a donde una prédica quizá nunca llegue.",
+  },
   video: {
     kicker: "Recap",
     titulo: "Revive la noche",
@@ -202,6 +210,7 @@ export const es = {
   },
   footer: {
     contacto: "Contacto",
+    lema: "Impulsamos talento emergente musical cristiano para evangelizar.",
     legal:
       "Gracias a todos los que hicieron posible esta noche.",
     derechos: "Talento para Dios ®. Todos los derechos reservados.",
