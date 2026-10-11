@@ -10,7 +10,13 @@ import { evento } from "@/config/evento";
  * una imagen local. El iframe de YouTube —que arrastra cientos de KB de
  * scripts y cookies— se monta apenas al primer clic.
  */
-export function VideoPresentacion({ etiquetaReproducir }: { etiquetaReproducir: string }) {
+export function VideoPresentacion({
+  etiquetaReproducir,
+  tituloIframe,
+}: {
+  etiquetaReproducir: string;
+  tituloIframe: string;
+}) {
   const [reproduciendo, setReproduciendo] = useState(false);
 
   if (reproduciendo) {
@@ -18,7 +24,7 @@ export function VideoPresentacion({ etiquetaReproducir }: { etiquetaReproducir: 
       <div className="relative aspect-video overflow-hidden rounded-2xl border border-dorado/30 bg-noche">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${evento.video.id}?autoplay=1&rel=0`}
-          title={evento.video.titulo}
+          title={tituloIframe}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="absolute inset-0 h-full w-full"

@@ -3,8 +3,8 @@ import { evento } from "@/config/evento";
 
 interface BotonContactoProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
-  /** Asunto con el que se abre el correo. */
-  asunto?: string;
+  /** Asunto con el que se abre el correo (ya traducido). */
+  asunto: string;
 }
 
 /**
@@ -12,7 +12,7 @@ interface BotonContactoProps
  * asunto ya escrito. Sustituye al antiguo botón de compra de boletos.
  */
 export function BotonContacto({
-  asunto = `Quiero apoyar ${evento.nombre}`,
+  asunto,
   className,
   children,
   ...props

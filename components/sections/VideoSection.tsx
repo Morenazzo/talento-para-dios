@@ -1,26 +1,27 @@
 import { VideoRecap } from "@/components/VideoRecap";
 import { VideoPresentacion } from "@/components/VideoPresentacion";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
-const t = getDiccionario();
 
-const SITIO = "https://talentoparadios.com";
+const SITIO = evento.sitio;
 
-/** Datos estructurados para que Google pueda mostrar el video en sus resultados. */
-const datosVideo = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  name: evento.videoRecap.titulo,
-  description: t.video.texto,
-  thumbnailUrl: `${SITIO}${evento.videoRecap.poster}`,
-  contentUrl: `${SITIO}${evento.videoRecap.src}`,
-  uploadDate: evento.videoRecap.subidoEl,
-  duration: evento.videoRecap.duracionISO,
-  inLanguage: "es",
-};
+export function VideoSection({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
 
-export function VideoSection() {
+  /** Datos estructurados para que Google pueda mostrar el video en sus resultados. */
+  const datosVideo = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: t.video.jsonTitulo,
+    description: t.video.texto,
+    thumbnailUrl: `${SITIO}${evento.videoRecap.poster}`,
+    contentUrl: `${SITIO}${evento.videoRecap.src}`,
+    uploadDate: evento.videoRecap.subidoEl,
+    duration: evento.videoRecap.duracionISO,
+    inLanguage: lang,
+  };
+
   return (
     <section
       id="video"
@@ -63,7 +64,10 @@ export function VideoSection() {
           </p>
         </div>
         <div className="mx-auto mt-8 max-w-3xl">
-          <VideoPresentacion etiquetaReproducir={t.video.presentacion.reproducir} />
+          <VideoPresentacion
+            etiquetaReproducir={t.video.presentacion.reproducir}
+            tituloIframe={t.video.presentacion.iframeTitulo}
+          />
         </div>
       </div>
     </section>

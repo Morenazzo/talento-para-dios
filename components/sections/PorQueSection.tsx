@@ -1,9 +1,8 @@
-import { getDiccionario } from "@/lib/i18n";
-import { cifrasMision, evento } from "@/config/evento";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 
-const t = getDiccionario();
 
-export function PorQueSection() {
+export function PorQueSection({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       id="por-que"
@@ -30,7 +29,7 @@ export function PorQueSection() {
           </p>
           <blockquote className="mt-4 border-l-2 border-dorado pl-5">
             <div className="space-y-2 font-display text-lg italic leading-relaxed text-marfil sm:text-xl">
-              {evento.versiculo.versos.map((verso, i) => (
+              {t.versiculo.versos.map((verso, i) => (
                 <p key={verso}>
                   <sup className="mr-1.5 font-sans text-xs not-italic text-dorado">
                     {i + 1}
@@ -40,7 +39,7 @@ export function PorQueSection() {
               ))}
             </div>
             <cite className="mt-3 block text-sm not-italic tracking-widest text-dorado-claro">
-              — {evento.versiculo.referencia}
+              — {t.versiculo.referencia}
             </cite>
           </blockquote>
 
@@ -51,7 +50,7 @@ export function PorQueSection() {
                 className="rounded-2xl border border-noche-borde bg-noche p-6"
               >
                 <p className="font-display text-sm italic text-dorado-claro">
-                  «{pilar.versiculo}»
+                  {t.comillas.abre}{pilar.versiculo}{t.comillas.cierra}
                 </p>
                 <h3 className="mt-3 font-semibold text-marfil">{pilar.titulo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-marfil-suave">
@@ -66,7 +65,7 @@ export function PorQueSection() {
           <p>
             <span className="text-marfil">{t.porQue.parrafo1}</span>{" "}
             <span className="whitespace-nowrap text-xs text-marfil-suave/75">
-              ({cifrasMision.noAlcanzados.fuente})
+              ({t.porQue.fuentes.noAlcanzados})
             </span>
           </p>
           <p>{t.porQue.parrafo2}</p>
@@ -75,7 +74,7 @@ export function PorQueSection() {
         {/* Contraste visual de cifras — sobrio, sin alarmismo */}
         <div
           role="group"
-          aria-label="Comparativa de alcance: prédica vs canción"
+          aria-label={t.a11y.comparativa}
           className="mt-12 grid gap-4 sm:grid-cols-2"
         >
           <div className="rounded-2xl border border-noche-borde bg-noche p-8">
@@ -88,7 +87,7 @@ export function PorQueSection() {
             <p className="mt-1 text-xs uppercase tracking-widest text-marfil-suave/70">
               {t.porQue.comparativa.predicaUnidad}
             </p>
-            <div aria-hidden className="mt-6 h-1.5 w-[12%] min-w-6 rounded-full bg-electrico/50" />
+            <div aria-hidden className="mt-6 h-1.5 w-[12%] min-w-6 rounded-full bg-marfil-suave/40" />
           </div>
           <div className="rounded-2xl border border-dorado/30 bg-noche p-8 shadow-[0_0_40px_rgba(212,175,55,0.08)]">
             <p className="text-sm text-marfil-suave">
@@ -104,7 +103,7 @@ export function PorQueSection() {
           </div>
         </div>
         <p className="mt-3 text-right text-xs text-marfil-suave/75">
-          {cifrasMision.alcanceMusica.fuente}
+          {t.porQue.fuentes.alcance}
         </p>
 
         <div className="mt-12 space-y-6 text-base leading-relaxed text-marfil-suave sm:text-lg">

@@ -1,19 +1,19 @@
 import { Instagram, Youtube, Facebook, Mail } from "lucide-react";
 import { Logo } from "@/components/Logo";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
-const t = getDiccionario();
 
-export function Footer() {
+export function Footer({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   const anio = new Date().getFullYear();
 
   return (
     <footer className="border-t border-white/5 bg-noche py-12">
       <div className="container flex flex-col items-center gap-8 text-center">
         <div className="flex items-center gap-3">
-          <Logo className="h-12 w-12" title="" />
-          <p className="font-sans text-lg font-bold tracking-tight text-dorado">
+          <Logo className="h-16 w-16" title="" sizes="64px" />
+          <p className="font-sans text-base font-bold uppercase tracking-[0.1em] text-dorado">
             {evento.nombre}
           </p>
         </div>
@@ -24,10 +24,10 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-2 text-sm text-marfil-suave">
           <p>
-            {evento.fechaRealizado}
+            {t.evento.fechaRealizado}
           </p>
           <p>
-            {evento.lugar} · {evento.ciudad}
+            {evento.lugar} · {t.evento.ciudad}
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${evento.contacto.correo}`}
-                aria-label="Escríbenos por correo"
+                aria-label={t.a11y.correo}
                 className="text-marfil-suave transition-colors hover:text-dorado-claro"
               >
                 <Mail aria-hidden className="h-5 w-5" />
@@ -46,7 +46,7 @@ export function Footer() {
             <li>
               <a
                 href={evento.contacto.instagram}
-                aria-label="Instagram de Talento para Dios (enlace por definir)"
+                aria-label={t.a11y.instagram}
                 className="text-marfil-suave transition-colors hover:text-dorado-claro"
               >
                 <Instagram aria-hidden className="h-5 w-5" />
@@ -55,7 +55,7 @@ export function Footer() {
             <li>
               <a
                 href={evento.contacto.youtube}
-                aria-label="YouTube de Talento para Dios (enlace por definir)"
+                aria-label={t.a11y.youtube}
                 className="text-marfil-suave transition-colors hover:text-dorado-claro"
               >
                 <Youtube aria-hidden className="h-5 w-5" />
@@ -64,7 +64,7 @@ export function Footer() {
             <li>
               <a
                 href={evento.contacto.facebook}
-                aria-label="Facebook de Talento para Dios (enlace por definir)"
+                aria-label={t.a11y.facebook}
                 className="text-marfil-suave transition-colors hover:text-dorado-claro"
               >
                 <Facebook aria-hidden className="h-5 w-5" />

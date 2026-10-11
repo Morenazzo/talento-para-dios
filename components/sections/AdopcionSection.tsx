@@ -1,10 +1,10 @@
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 import { cn } from "@/lib/utils";
 
-const t = getDiccionario();
 
-export function AdopcionSection() {
+export function AdopcionSection({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       id="adopcion"
@@ -12,7 +12,7 @@ export function AdopcionSection() {
       className="relative overflow-hidden bg-noche-medianoche/40 py-24 sm:py-32"
     >
       <div aria-hidden className="absolute inset-0 bg-destello-dorado" />
-      <div aria-hidden className="absolute inset-0 bg-destello-electrico-inv" />
+      <div aria-hidden className="absolute inset-0 bg-destello-lateral-inv" />
 
       <div className="container relative z-10 max-w-5xl">
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-dorado">
@@ -35,7 +35,7 @@ export function AdopcionSection() {
                 aria-hidden
                 className={cn(
                   "font-display text-5xl font-bold",
-                  i % 2 === 1 ? "text-electrico/30" : "text-dorado/25"
+                  "text-dorado/25"
                 )}
               >
                 {String(i + 1).padStart(2, "0")}
@@ -51,14 +51,14 @@ export function AdopcionSection() {
         <div className="mt-16 grid items-center gap-8 rounded-2xl border border-dorado/20 bg-noche/60 p-8 sm:grid-cols-[1fr_auto]">
           <div>
             <p className="font-display text-xl text-marfil sm:text-2xl">
-              ¿Dios puso un ministerio en tu corazón?
+              {t.adopcion.contactoTitulo}
             </p>
             <p className="mt-2 text-sm text-marfil-suave">
-              Escríbenos y platiquemos cómo acompañar a un ministerio musical.
+              {t.adopcion.contactoTexto}
             </p>
           </div>
           <a
-            href={`mailto:${evento.contacto.correo}?subject=Quiero adoptar un ministerio — ${evento.nombre}`}
+            href={`mailto:${evento.contacto.correo}?subject=${encodeURIComponent(`${t.adopcion.asunto} — ${evento.nombre}`)}`}
             className="inline-flex min-h-11 items-center justify-center rounded-full border border-dorado/50 px-6 py-2 text-center text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
           >
             {t.adopcion.cta}

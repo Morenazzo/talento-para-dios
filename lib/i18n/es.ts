@@ -3,6 +3,52 @@
  * Estructura espejo de `en.ts` para facilitar la traducción futura.
  */
 export const es = {
+  evento: {
+    tituloHero: "El Sonido de una Nueva Generación",
+    fechaRealizado: "Realizado el domingo 27 de septiembre de 2026",
+    ciudad: "Puebla, México",
+    tipo: "Festival de Música Cristiana",
+  },
+  meta: {
+    descripcion:
+      "Impulsando talento emergente cristiano para evangelizar y transformar la cultura. Festival de Música Cristiana · Realizado el domingo 27 de septiembre de 2026 · Puebla, México. Recap del festival: diez proyectos musicales cristianos, un solo escenario.",
+    descripcionOg:
+      "Impulsando talento emergente cristiano para evangelizar y transformar la cultura. Festival de Música Cristiana · Realizado el domingo 27 de septiembre de 2026 · Puebla, México.",
+  },
+  /** Salmo 96:1-3 (RVR1960) — base del texto del sitio. */
+  versiculo: {
+    versos: [
+      "Cantad a Jehová cántico nuevo; cantad a Jehová, toda la tierra.",
+      "Cantad a Jehová, bendecid su nombre; anunciad de día en día su salvación.",
+      "Proclamad entre las naciones su gloria, en todos los pueblos sus maravillas.",
+    ],
+    cita: "Cantad a Jehová cántico nuevo; cantad a Jehová, toda la tierra. Cantad a Jehová, bendecid su nombre; anunciad de día en día su salvación. Proclamad entre las naciones su gloria, en todos los pueblos sus maravillas.",
+    referencia: "Salmo 96:1-3",
+  },
+  a11y: {
+    idioma: "Idioma",
+    navPrincipal: "Navegación principal",
+    abrirMenu: "Abrir menú",
+    cerrarMenu: "Cerrar menú",
+    portada: "Portada del evento",
+    comparativa: "Comparativa de alcance: prédica vs canción",
+    correo: "Escríbenos por correo",
+    instagram: "Instagram de Talento para Dios (enlace por definir)",
+    youtube: "YouTube de Talento para Dios (enlace por definir)",
+    facebook: "Facebook de Talento para Dios (enlace por definir)",
+  },
+  comillas: { abre: "«", cierra: "»" },
+  correo: {
+    asuntoApoyo: "Quiero apoyar Talento para Dios",
+  },
+  aplicaMeta: {
+    tituloAbierta: "Aplica con tu proyecto",
+    tituloCerrada: "Conecta con",
+    descripcionAbierta:
+      "Convocatoria para solistas, bandas y ministerios musicales cristianos con música 100% original. Pasarela de adoración y adopción — no es un concurso.",
+    descripcionCerrada:
+      "La convocatoria de este año cerró. Escríbenos para conectar con Talento para Dios: artistas, aliados y voluntarios.",
+  },
   nav: {
     porQue: "Por qué",
     evento: "La noche",
@@ -64,6 +110,10 @@ export const es = {
       "Por eso creemos en levantar nuevo talento cristiano como misioneros musicales: artistas que buscan más que fama — llevar el mensaje de Cristo e impactar a la sociedad a través de sus canciones.",
     cierre:
       "Impulsar una banda emergente no es patrocinar un espectáculo. Es enviar una canción a donde una prédica quizá nunca llegue.",
+    fuentes: {
+      noAlcanzados: "Fuente: Haggai Internacional",
+      alcance: "Fuente: YouTube",
+    },
   },
   queViviras: {
     kicker: "La noche",
@@ -95,11 +145,12 @@ export const es = {
   },
   proposito: {
     kicker: "Nuestro propósito",
-    inicio: "Impulsar ",
-    destacado: "talento emergente musical cristiano",
-    final: " para evangelizar.",
+    inicio: "Impulsando ",
+    destacado: "talento emergente cristiano",
+    final: " para evangelizar y transformar la cultura.",
     apoyo:
-      "Cada canción es una oportunidad de llevar el mensaje de Cristo a donde una prédica quizá nunca llegue.",
+      "Una plataforma cristiana que descubre, impulsa y conecta talento musical emergente para evangelizar y transformar la cultura a través de la música.",
+    valores: ["Talento", "Comunidad", "Propósito"],
   },
   video: {
     kicker: "Recap",
@@ -112,13 +163,55 @@ export const es = {
       texto:
         "El video con el que invitamos a esta noche: la idea, el lugar y el talento que subió al escenario.",
       reproducir: "Reproducir el video de presentación del festival",
+      iframeTitulo: "Presentación Concierto Talento Para Dios Puebla",
     },
+    jsonTitulo:
+      "Recap del Festival de Música Cristiana — Talento para Dios, Hacienda Paz",
   },
   galeria: {
     kicker: "Recap",
     titulo: "La noche en fotos",
     intro:
       "Algunos de los momentos que nos dejó el festival, de la primera nota al cierre con todos en el escenario.",
+    /** Mismo orden que `galeria` en config/evento.ts. */
+    fotos: [
+      {
+        alt: "Todos los artistas y participantes reunidos en el escenario, frente al logotipo de Talento para Dios",
+        pie: "El cierre: todos juntos en el escenario",
+      },
+      {
+        alt: "Aldo y María Teomitzi, de Songfield, sonriendo juntos en el escenario con un bajo",
+        pie: "Aldo y María Teomitzi, de Songfield",
+      },
+      {
+        alt: "Público con las manos levantadas frente al escenario durante la presentación de Dfive",
+        pie: "Manos al cielo",
+      },
+      {
+        alt: "Los dos conductores del festival mirando hacia arriba con alegría",
+        pie: "Los conductores de la noche",
+      },
+      {
+        alt: "Juan Poumian cantando con los brazos abiertos y su guitarra acústica",
+        pie: "Juan Poumian, con los brazos abiertos",
+      },
+      {
+        alt: "Artistas cantando juntos frente a una pantalla luminosa con la letra «Exaltado Dios, Santo, Santo por siempre»",
+        pie: "Voces unidas",
+      },
+      {
+        alt: "Una vocalista de Dfive cantando con el brazo en alto",
+        pie: "Dfive, en vivo",
+      },
+      {
+        alt: "Músicos de distintas bandas abrazados por los hombros, cantando juntos",
+        pie: "Brazo con brazo, un solo canto",
+      },
+      {
+        alt: "El escenario lleno al cierre de la noche, con la conductora hablando al micrófono",
+        pie: "El escenario lleno al cierre de la noche",
+      },
+    ],
   },
   artistas: {
     kicker: "Los artistas",
@@ -131,6 +224,41 @@ export const es = {
       titulo: "María, de Songfield, en «Santo por Siempre» para Iglesia EB",
       dato: "Más de 90 millones de reproducciones",
     },
+    detalle: {
+      manzo: {
+        alt: "Manzo en el escenario: una vocalista y un guitarrista frente a la pantalla con el nombre de la banda",
+      },
+      cheo: {
+        alt: "Cheo Bustamante con su sección de metales, trombón y saxofones, durante su presentación",
+      },
+      omar: {
+        alt: "Omar Vigil al teclado frente a la pantalla con la letra «Te adoro, gran Señor»",
+      },
+      shejina: {
+        alt: "Un integrante de Shejiná cantando con los ojos cerrados bajo luces rojas",
+      },
+      juan: {
+        alt: "Juan Poumian cantando con su guitarra acústica sobre el escenario",
+      },
+      dfive: {
+        alt: "Dos vocalistas de Dfive cantando frente a una pantalla de luces",
+      },
+      twog: {
+        alt: "Un guitarrista de TWOG con las manos al cielo junto a su vocalista",
+      },
+      jesus: {
+        alt: "Jesús Espinoza cantando con guitarra junto a un saxofonista, bajo el logotipo JE",
+      },
+      tony: {
+        nombre: "Tony Rosher y Dos de Fe",
+        alt: "Tony Rosher cantando con el brazo levantado bajo luces moradas",
+        dato: "2 veces participante de La Voz México",
+      },
+      songfield: {
+        nombre: "Aldo y María Teomitzi",
+        alt: "María Teomitzi cantando junto a Aldo, de Songfield, con su bajo en el escenario",
+      },
+    } as Record<string, { alt: string; dato?: string; nombre?: string }>,
   },
   recinto: {
     kicker: "El lugar",
@@ -172,6 +300,10 @@ export const es = {
       },
     ],
     cta: "Quiero saber más sobre adoptar",
+    contactoTitulo: "¿Dios puso un ministerio en tu corazón?",
+    contactoTexto:
+      "Escríbenos y platiquemos cómo acompañar a un ministerio musical.",
+    asunto: "Quiero adoptar un ministerio",
   },
   etica: {
     kicker: "Transparencia y ética",
@@ -210,7 +342,7 @@ export const es = {
   },
   footer: {
     contacto: "Contacto",
-    lema: "Impulsamos talento emergente musical cristiano para evangelizar.",
+    lema: "Impulsando talento emergente cristiano para evangelizar y transformar la cultura.",
     legal:
       "Gracias a todos los que hicieron posible esta noche.",
     derechos: "Talento para Dios ®. Todos los derechos reservados.",

@@ -1,20 +1,21 @@
 import Image from "next/image";
 import { galeria } from "@/config/evento";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 
-const t = getDiccionario();
+export function GaleriaSection({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
+  // Los textos de cada foto viven en el diccionario, en el mismo orden que `galeria`.
+  const fotos = galeria.map((f, i) => ({ ...f, ...t.galeria.fotos[i] }));
+  /** La primera foto abre la galería a todo lo ancho; el resto va en mosaico. */
+  const [destacada, ...resto] = fotos;
 
-/** La primera foto abre la galería a todo lo ancho; el resto va en mosaico. */
-const [destacada, ...resto] = galeria;
-
-export function GaleriaSection() {
   return (
     <section
       id="galeria"
       aria-labelledby="galeria-titulo"
       className="relative overflow-hidden bg-noche py-24 sm:py-32"
     >
-      <div aria-hidden className="absolute inset-0 bg-destello-electrico" />
+      <div aria-hidden className="absolute inset-0 bg-destello-lateral" />
 
       <div className="container relative z-10">
         <div className="max-w-3xl">
@@ -32,7 +33,7 @@ export function GaleriaSection() {
           </p>
         </div>
 
-        <figure className="mt-12 overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_64px_rgba(212,175,55,0.14)]">
+        <figure className="mt-12 overflow-hidden rounded-2xl border border-dorado/20 shadow-[0_0_64px_rgba(217,165,32,0.14)]">
           <Image
             src={destacada.src}
             alt={destacada.alt}

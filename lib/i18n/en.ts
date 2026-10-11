@@ -5,6 +5,52 @@ import type { Diccionario } from "./es";
  * PLACEHOLDER translation: review before enabling the language switch.
  */
 export const en: Diccionario = {
+  evento: {
+    tituloHero: "The Sound of a New Generation",
+    fechaRealizado: "Held on Sunday, September 27, 2026",
+    ciudad: "Puebla, Mexico",
+    tipo: "Christian Music Festival",
+  },
+  meta: {
+    descripcion:
+      "Boosting emerging Christian talent to evangelize and transform culture. Christian Music Festival · Held on Sunday, September 27, 2026 · Puebla, Mexico. Festival recap: ten Christian music projects, one stage.",
+    descripcionOg:
+      "Boosting emerging Christian talent to evangelize and transform culture. Christian Music Festival · Held on Sunday, September 27, 2026 · Puebla, Mexico.",
+  },
+  /** Psalm 96:1-3 — American Standard Version (1901), public domain. */
+  versiculo: {
+    versos: [
+      "O sing unto Jehovah a new song; Sing unto Jehovah, all the earth.",
+      "Sing unto Jehovah, bless his name; Show forth his salvation from day to day.",
+      "Declare his glory among the nations, His marvellous works among all the peoples.",
+    ],
+    cita: "O sing unto Jehovah a new song; Sing unto Jehovah, all the earth. Sing unto Jehovah, bless his name; Show forth his salvation from day to day. Declare his glory among the nations, His marvellous works among all the peoples.",
+    referencia: "Psalm 96:1-3 (ASV)",
+  },
+  a11y: {
+    idioma: "Language",
+    navPrincipal: "Main navigation",
+    abrirMenu: "Open menu",
+    cerrarMenu: "Close menu",
+    portada: "Event cover",
+    comparativa: "Reach comparison: sermon vs song",
+    correo: "Email us",
+    instagram: "Talento para Dios on Instagram (link to be defined)",
+    youtube: "Talento para Dios on YouTube (link to be defined)",
+    facebook: "Talento para Dios on Facebook (link to be defined)",
+  },
+  comillas: { abre: "“", cierra: "”" },
+  correo: {
+    asuntoApoyo: "I want to support Talento para Dios",
+  },
+  aplicaMeta: {
+    tituloAbierta: "Apply with your project",
+    tituloCerrada: "Connect with",
+    descripcionAbierta:
+      "Call for Christian soloists, bands and music ministries with 100% original music. A worship and adoption runway — not a contest.",
+    descripcionCerrada:
+      "This year's call for artists has closed. Write to us to connect with Talento para Dios: artists, allies and volunteers.",
+  },
   nav: {
     porQue: "Why",
     evento: "The night",
@@ -17,7 +63,7 @@ export const en: Diccionario = {
   },
   hero: {
     kicker: "Christian Music Festival · Puebla 2026",
-    titulo: "Sing to the Lord a new song",
+    titulo: "O sing unto Jehovah a new song",
     referencia: "Psalm 96:1",
     lema: "The sound of a new generation",
     subtitulo:
@@ -32,13 +78,13 @@ export const en: Diccionario = {
     versiculoIntro: "It all began with an invitation that was already written:",
     pilares: [
       {
-        versiculo: "Sing to the Lord a new song",
+        versiculo: "O sing unto Jehovah a new song",
         titulo: "A new song",
         texto:
           "Original music, written by a generation that wants to worship in its own voice. That is why each project performs what God put in its heart.",
       },
       {
-        versiculo: "Proclaim his salvation day after day",
+        versiculo: "Show forth his salvation from day to day",
         titulo: "More than one night",
         texto:
           "The message does not end when the lights go out. The adoption model supports a ministry for a year so it can keep proclaiming it day after day.",
@@ -66,6 +112,10 @@ export const en: Diccionario = {
       "That is why we believe in raising new Christian talent as musical missionaries: artists seeking more than fame — carrying the message of Christ and impacting society through their songs.",
     cierre:
       "Championing an emerging band is not sponsoring a show. It is sending a song where a sermon may never reach.",
+    fuentes: {
+      noAlcanzados: "Source: Haggai International",
+      alcance: "Source: YouTube",
+    },
   },
   queViviras: {
     kicker: "The night",
@@ -97,11 +147,12 @@ export const en: Diccionario = {
   },
   proposito: {
     kicker: "Our purpose",
-    inicio: "To boost ",
-    destacado: "emerging Christian music talent",
-    final: " so it can evangelize.",
+    inicio: "Boosting ",
+    destacado: "emerging Christian talent",
+    final: " to evangelize and transform culture.",
     apoyo:
-      "Every song is a chance to carry the message of Christ to where a sermon may never arrive.",
+      "A Christian platform that discovers, boosts and connects emerging musical talent to evangelize and transform culture through music.",
+    valores: ["Talent", "Community", "Purpose"],
   },
   video: {
     kicker: "Recap",
@@ -114,13 +165,55 @@ export const en: Diccionario = {
       texto:
         "The video we used to invite people to this night: the idea, the place and the talent that took the stage.",
       reproducir: "Play the festival introduction video",
+      iframeTitulo: "Talento para Dios Puebla concert introduction",
     },
+    jsonTitulo:
+      "Christian Music Festival recap — Talento para Dios, Hacienda Paz",
   },
   galeria: {
     kicker: "Recap",
     titulo: "The night in photos",
     intro:
       "Some of the moments the festival gave us, from the first note to the finale with everyone on stage.",
+    /** Same order as `galeria` in config/evento.ts. */
+    fotos: [
+      {
+        alt: "All the artists and participants gathered on stage in front of the Talento para Dios logo",
+        pie: "The finale: everyone together on stage",
+      },
+      {
+        alt: "Aldo and María Teomitzi, of Songfield, smiling together on stage with a bass guitar",
+        pie: "Aldo and María Teomitzi, of Songfield",
+      },
+      {
+        alt: "Audience with raised hands in front of the stage during Dfive's performance",
+        pie: "Hands to heaven",
+      },
+      {
+        alt: "The festival's two hosts looking upward with joy",
+        pie: "The hosts of the night",
+      },
+      {
+        alt: "Juan Poumian singing with open arms and his acoustic guitar",
+        pie: "Juan Poumian, arms wide open",
+      },
+      {
+        alt: "Artists singing together in front of a bright screen with the lyrics «Exaltado Dios, Santo, Santo por siempre»",
+        pie: "Voices united",
+      },
+      {
+        alt: "A Dfive vocalist singing with her arm raised",
+        pie: "Dfive, live",
+      },
+      {
+        alt: "Musicians from different bands arm in arm, singing together",
+        pie: "Arm in arm, one song",
+      },
+      {
+        alt: "The stage full at the close of the night, with the host speaking into the microphone",
+        pie: "The stage full at the close of the night",
+      },
+    ],
   },
   artistas: {
     kicker: "The artists",
@@ -133,6 +226,41 @@ export const en: Diccionario = {
       titulo: "María, of Songfield, in «Santo por Siempre» for Iglesia EB",
       dato: "Over 90 million plays",
     },
+    detalle: {
+      manzo: {
+        alt: "Manzo on stage: a female vocalist and a guitarist in front of the screen with the band's name",
+      },
+      cheo: {
+        alt: "Cheo Bustamante with his brass section, trombone and saxophones, during the performance",
+      },
+      omar: {
+        alt: "Omar Vigil at the keyboard in front of the screen showing the lyrics «Te adoro, gran Señor» (“I worship you, great Lord”)",
+      },
+      shejina: {
+        alt: "A Shejiná member singing with closed eyes under red lights",
+      },
+      juan: {
+        alt: "Juan Poumian singing with his acoustic guitar on stage",
+      },
+      dfive: {
+        alt: "Two Dfive vocalists singing in front of a screen of lights",
+      },
+      twog: {
+        alt: "A TWOG guitarist with hands raised to heaven next to the vocalist",
+      },
+      jesus: {
+        alt: "Jesús Espinoza singing with a guitar next to a saxophonist, under the JE logo",
+      },
+      tony: {
+        nombre: "Tony Rosher and Dos de Fe",
+        alt: "Tony Rosher singing with his arm raised under purple lights",
+        dato: "Two-time contestant on La Voz México",
+      },
+      songfield: {
+        nombre: "Aldo and María Teomitzi",
+        alt: "María Teomitzi singing next to Aldo, of Songfield, with his bass on stage",
+      },
+    } as Record<string, { alt: string; dato?: string; nombre?: string }>,
   },
   recinto: {
     kicker: "The venue",
@@ -174,6 +302,10 @@ export const en: Diccionario = {
       },
     ],
     cta: "I want to learn more about adopting",
+    contactoTitulo: "Did God place a ministry on your heart?",
+    contactoTexto:
+      "Write to us and let's talk about how to accompany a music ministry.",
+    asunto: "I want to adopt a ministry",
   },
   etica: {
     kicker: "Transparency & ethics",
@@ -211,7 +343,7 @@ export const en: Diccionario = {
   },
   footer: {
     contacto: "Contact",
-    lema: "We boost emerging Christian music talent to evangelize.",
+    lema: "Boosting emerging Christian talent to evangelize and transform culture.",
     legal: "Thank you to everyone who made this night possible.",
     derechos: "Talento para Dios ®. All rights reserved.",
   },

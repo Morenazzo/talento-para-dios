@@ -1,19 +1,18 @@
 import { Music, Sparkles, HeartHandshake, Mic2 } from "lucide-react";
-import { getDiccionario } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 
-const t = getDiccionario();
 
 const iconos = [Music, Mic2, Sparkles, HeartHandshake];
 
-export function QueVivirasSection() {
+export function QueVivirasSection({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       id="evento"
       aria-labelledby="evento-titulo"
       className="relative overflow-hidden bg-noche py-24 sm:py-32"
     >
-      <div aria-hidden className="absolute inset-0 bg-destello-electrico" />
+      <div aria-hidden className="absolute inset-0 bg-destello-lateral" />
       <div className="container relative z-10 max-w-5xl">
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-dorado">
           {t.queViviras.kicker}
@@ -32,20 +31,14 @@ export function QueVivirasSection() {
           <ul className="grid gap-8 sm:grid-cols-2">
             {t.queViviras.items.map((item, i) => {
               const Icono = iconos[i % iconos.length];
-              const esAzul = i % 2 === 1;
               return (
                 <li key={item.titulo} className="flex gap-4">
                   <span
                     aria-hidden
-                    className={cn(
-                      "mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border",
-                      esAzul
-                        ? "border-electrico/30 bg-electrico/10"
-                        : "border-dorado/30 bg-dorado/10"
-                    )}
+                    className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-dorado/30 bg-dorado/10"
                   >
                     <Icono
-                      className={cn("h-5 w-5", esAzul ? "text-electrico" : "text-dorado")}
+                      className="h-5 w-5 text-dorado"
                     />
                   </span>
                   <div>

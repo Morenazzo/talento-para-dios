@@ -1,10 +1,9 @@
-import { getDiccionario } from "@/lib/i18n";
-import { evento } from "@/config/evento";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { BotonContacto } from "@/components/BotonContacto";
 
-const t = getDiccionario();
 
-export function CTAFinal() {
+export function CTAFinal({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       aria-labelledby="cta-final-titulo"
@@ -25,6 +24,7 @@ export function CTAFinal() {
         </p>
 
         <BotonContacto
+          asunto={t.correo.asuntoApoyo}
           className="mt-10 inline-flex h-14 items-center justify-center rounded-full bg-dorado px-8 py-3.5 text-base font-semibold text-noche shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-all hover:bg-dorado-claro hover:shadow-[0_0_36px_rgba(245,216,122,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
         >
           {t.ctaFinal.cta}
@@ -32,10 +32,10 @@ export function CTAFinal() {
 
         <blockquote className="mt-16 max-w-2xl">
           <p className="font-display text-lg italic leading-relaxed text-dorado-claro/90 sm:text-xl">
-            «{evento.versiculo.cita}»
+            {t.comillas.abre}{t.versiculo.cita}{t.comillas.cierra}
           </p>
           <cite className="mt-3 block text-sm not-italic tracking-widest text-marfil-suave">
-            — {evento.versiculo.referencia}
+            — {t.versiculo.referencia}
           </cite>
         </blockquote>
       </div>

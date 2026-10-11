@@ -1,45 +1,62 @@
 import type { Metadata } from "next";
 import { Check, Youtube, Video } from "lucide-react";
-import { Navbar } from "@/components/sections/Navbar";
+import { notFound } from "next/navigation";
+import { imagenOg } from "@/lib/imagen-og";
+import { SiteNavbar } from "@/components/sections/SiteNavbar";
 import { Footer } from "@/components/sections/Footer";
 import { Logo } from "@/components/Logo";
 import { FormularioAplicacion } from "@/components/aplica/FormularioAplicacion";
 import { ConvocatoriaCerrada } from "@/components/aplica/ConvocatoriaCerrada";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, esLocale, ruta } from "@/lib/i18n";
 import { evento, convocatoriaAbierta } from "@/config/evento";
 
-const t = getDiccionario();
 
-const descripcionAplica = convocatoriaAbierta
-  ? "Convocatoria para solistas, bandas y ministerios musicales cristianos con música 100% original. Pasarela de adoración y adopción — no es un concurso."
-  : "La convocatoria de este año cerró. Escríbenos para conectar con Talento para Dios: artistas, aliados y voluntarios.";
+export function generateMetadata({
+  params,
+}: {
+  params: { lang: string };
+}): Metadata {
+  if (!esLocale(params.lang)) return {};
+  const lang = params.lang;
+  const m = getDiccionario(lang).aplicaMeta;
+  const titulo = convocatoriaAbierta
+    ? `${m.tituloAbierta} — ${evento.nombre}`
+    : `${m.tituloCerrada} ${evento.nombre}`;
+  const descripcion = convocatoriaAbierta
+    ? m.descripcionAbierta
+    : m.descripcionCerrada;
+  const url = ruta(lang, "/aplica");
 
-const tituloAplica = convocatoriaAbierta
-  ? `Aplica con tu proyecto — ${evento.nombre}`
-  : `Conecta con ${evento.nombre}`;
+  return {
+    title: titulo,
+    description: descripcion,
+    alternates: {
+      canonical: url,
+      languages: { es: "/aplica", en: "/en/aplica", "x-default": "/aplica" },
+    },
+    openGraph: {
+      title: titulo,
+      description: descripcion,
+      url,
+      siteName: evento.nombre,
+      type: "website",
+      locale: lang === "en" ? "en_US" : "es_MX",
+      images: [imagenOg],
+    },
+    twitter: { card: "summary_large_image", images: [imagenOg.url] },
+  };
+}
 
-export const metadata: Metadata = {
-  title: tituloAplica,
-  description: descripcionAplica,
-  openGraph: {
-    title: tituloAplica,
-    description: descripcionAplica,
-    url: "/aplica",
-    siteName: evento.nombre,
-    type: "website",
-    locale: "es_MX",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+export default function AplicaPage({ params }: { params: { lang: string } }) {
+  if (!esLocale(params.lang)) notFound();
+  const { lang } = params;
+  const t = getDiccionario(lang);
 
-export default function AplicaPage() {
-  if (!convocatoriaAbierta) return <ConvocatoriaCerrada />;
+  if (!convocatoriaAbierta) return <ConvocatoriaCerrada lang={lang} />;
 
   return (
     <>
-      <Navbar />
+      <SiteNavbar lang={lang} camino="/aplica" />
       <main>
         {/* Encabezado */}
         <section
@@ -145,7 +162,7 @@ export default function AplicaPage() {
               {t.aplica.formulario.titulo}
             </h2>
             <div className="mt-8">
-              <FormularioAplicacion />
+              <FormularioAplicacion lang={lang} />
             </div>
           </div>
         </section>
@@ -189,7 +206,7 @@ export default function AplicaPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }
