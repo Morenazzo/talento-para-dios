@@ -94,11 +94,17 @@ export const es = {
     ],
   },
   video: {
-    kicker: "Presentación",
-    titulo: "Así presentamos el festival",
+    kicker: "Recap",
+    titulo: "Revive la noche",
     texto:
-      "El video con el que invitamos a esta noche: la idea, el lugar y el talento que subió al escenario.",
-    reproducir: "Reproducir el video de presentación del festival",
+      "Así se vivió el festival en Hacienda Paz: la música, la gente y el escenario, en poco más de un minuto.",
+    reproducir: "Reproducir el video recap del festival",
+    presentacion: {
+      titulo: "Así presentamos el festival",
+      texto:
+        "El video con el que invitamos a esta noche: la idea, el lugar y el talento que subió al escenario.",
+      reproducir: "Reproducir el video de presentación del festival",
+    },
   },
   galeria: {
     kicker: "Recap",

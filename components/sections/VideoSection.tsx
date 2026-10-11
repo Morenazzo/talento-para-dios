@@ -1,7 +1,24 @@
+import { VideoRecap } from "@/components/VideoRecap";
 import { VideoPresentacion } from "@/components/VideoPresentacion";
 import { getDiccionario } from "@/lib/i18n";
+import { evento } from "@/config/evento";
 
 const t = getDiccionario();
+
+const SITIO = "https://talentoparadios.com";
+
+/** Datos estructurados para que Google pueda mostrar el video en sus resultados. */
+const datosVideo = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: evento.videoRecap.titulo,
+  description: t.video.texto,
+  thumbnailUrl: `${SITIO}${evento.videoRecap.poster}`,
+  contentUrl: `${SITIO}${evento.videoRecap.src}`,
+  uploadDate: evento.videoRecap.subidoEl,
+  duration: evento.videoRecap.duracionISO,
+  inLanguage: "es",
+};
 
 export function VideoSection() {
   return (
@@ -10,6 +27,10 @@ export function VideoSection() {
       aria-labelledby="video-titulo"
       className="relative overflow-hidden bg-noche py-20 sm:py-28"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datosVideo) }}
+      />
       <div aria-hidden className="absolute inset-0 bg-destello-dorado" />
       <div className="container relative z-10">
         <div className="mx-auto max-w-2xl text-center">
@@ -26,10 +47,23 @@ export function VideoSection() {
             {t.video.texto}
           </p>
         </div>
-        {/* Sin max-w: el video ocupa todo el ancho del contenedor (hasta
-            1200px) para que domine la pantalla al llegar al home. */}
+
+        {/* Pieza principal: el recap, a todo el ancho del contenedor. */}
         <div className="mx-auto mt-10 max-w-5xl">
-          <VideoPresentacion etiquetaReproducir={t.video.reproducir} />
+          <VideoRecap etiqueta={t.video.reproducir} />
+        </div>
+
+        {/* Secundario: el video con el que se presentó el festival (YouTube). */}
+        <div className="mx-auto mt-20 max-w-3xl text-center">
+          <h3 className="font-display text-2xl font-bold text-marfil sm:text-3xl">
+            {t.video.presentacion.titulo}
+          </h3>
+          <p className="mx-auto mt-3 text-sm leading-relaxed text-marfil-suave sm:text-base">
+            {t.video.presentacion.texto}
+          </p>
+        </div>
+        <div className="mx-auto mt-8 max-w-3xl">
+          <VideoPresentacion etiquetaReproducir={t.video.presentacion.reproducir} />
         </div>
       </div>
     </section>

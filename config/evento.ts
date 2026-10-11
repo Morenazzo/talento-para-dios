@@ -179,6 +179,14 @@ export const evento = {
     id: "OVgEkmA2_Sk",
     titulo: "Presentación Concierto Talento Para Dios Puebla",
   },
+  /** Video recap del festival (archivo propio en `public/video/`, 77 s, 1024x576). */
+  videoRecap: {
+    src: "/video/recap-festival.mp4",
+    poster: "/img/recap/video-recap-poster.jpg",
+    titulo: "Recap del Festival de Música Cristiana — Talento para Dios, Hacienda Paz",
+    subidoEl: "2026-10-07",
+    duracionISO: "PT1M17S",
+  },
   ciudad: "Puebla, México",
   /** Salmo 96:1-3 — base del texto del sitio. */
   versiculo: {

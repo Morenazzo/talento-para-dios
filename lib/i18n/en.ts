@@ -96,11 +96,17 @@ export const en: Diccionario = {
     ],
   },
   video: {
-    kicker: "Introduction",
-    titulo: "How we introduced the festival",
+    kicker: "Recap",
+    titulo: "Relive the night",
     texto:
-      "The video we used to invite people to this night: the idea, the place and the talent that took the stage.",
-    reproducir: "Play the festival introduction video",
+      "How the festival felt at Hacienda Paz: the music, the people and the stage, in just over a minute.",
+    reproducir: "Play the festival recap video",
+    presentacion: {
+      titulo: "How we introduced the festival",
+      texto:
+        "The video we used to invite people to this night: the idea, the place and the talent that took the stage.",
+      reproducir: "Play the festival introduction video",
+    },
   },
   galeria: {
     kicker: "Recap",
