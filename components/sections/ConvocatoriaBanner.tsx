@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Mic2 } from "lucide-react";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, ruta, type Locale } from "@/lib/i18n";
 
-const t = getDiccionario();
 
 /** Banner de convocatoria para artistas → /aplica */
-export function ConvocatoriaBanner() {
+export function ConvocatoriaBanner({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       id="convocatoria"
@@ -35,7 +35,7 @@ export function ConvocatoriaBanner() {
             </div>
 
             <Link
-              href="/aplica"
+              href={ruta(lang, "/aplica")}
               className="inline-flex min-h-14 items-center justify-center rounded-full bg-dorado px-8 py-3 text-center text-base font-semibold text-noche shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-all hover:bg-dorado-claro hover:shadow-[0_0_36px_rgba(245,216,122,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
             >
               {t.convocatoria.cta}

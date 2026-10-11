@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 
-const t = getDiccionario();
 
-export function RecintoSection() {
+export function RecintoSection({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       aria-labelledby="recinto-titulo"

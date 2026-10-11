@@ -1,13 +1,17 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { createContext, useContext, useRef, useState, type ReactNode } from "react";
 import { CheckCircle2, AlertCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-const t = getDiccionario();
-const f = t.aplica.formulario;
+type FormTextos = ReturnType<typeof getDiccionario>["aplica"]["formulario"];
+
+/** Textos del formulario en el idioma activo; las piezas internas los leen del contexto. */
+const FormCtx = createContext<FormTextos>(getDiccionario("es").aplica.formulario);
+
+const TOTAL_PASOS = 7;
 
 const inputCls =
   "w-full rounded-xl border border-noche-borde bg-noche px-4 py-3 text-sm text-marfil placeholder:text-marfil-suave/50 focus:border-dorado/60 focus:outline-none focus:ring-1 focus:ring-dorado/40 aria-[invalid=true]:border-red-400/70";
@@ -62,6 +66,7 @@ function GrupoSiNo({
   label: string;
   error?: string;
 }) {
+  const f = useContext(FormCtx);
   return (
     <fieldset aria-invalid={!!error}>
       <legend className="text-sm font-medium text-marfil">
@@ -108,7 +113,8 @@ function TituloSeccion({ children }: { children: ReactNode }) {
 }
 
 /** Un paso por sección del formulario oficial — se navega de una en una. */
-const PASOS = [
+function crearPasos(f: FormTextos) {
+  return [
   { titulo: f.secciones.proyecto, campos: ["nombreProyecto", "tipoParticipacion", "ciudadPais", "nombreLider", "telefono", "correo"] },
   { titulo: f.secciones.integrantes, campos: ["numIntegrantes", "integrantes"] },
   { titulo: f.secciones.referencia, campos: ["iglesia", "pastorNombre", "pastorContacto"] },
@@ -117,10 +123,11 @@ const PASOS = [
   { titulo: f.secciones.disponibilidad, campos: ["dispPresentarse", "dispMentoria", "abiertoAdopcion"] },
   { titulo: f.secciones.confirmacion, campos: ["aceptoBases", "infoVeridica"] },
 ] as const;
-
-const TOTAL_PASOS = PASOS.length;
+}
 
 function ProgresoPasos({ paso }: { paso: number }) {
+  const f = useContext(FormCtx);
+  const PASOS = crearPasos(f);
   return (
     <div>
       <div className="flex items-center justify-between text-xs text-marfil-suave">
@@ -139,7 +146,17 @@ function ProgresoPasos({ paso }: { paso: number }) {
   );
 }
 
-export function FormularioAplicacion() {
+export function FormularioAplicacion({ lang }: { lang: Locale }) {
+  const f = getDiccionario(lang).aplica.formulario;
+  return (
+    <FormCtx.Provider value={f}>
+      <FormularioInterno f={f} />
+    </FormCtx.Provider>
+  );
+}
+
+function FormularioInterno({ f }: { f: FormTextos }) {
+  const PASOS = crearPasos(f);
   const [errores, setErrores] = useState<Record<string, string>>({});
   const [estado, setEstado] = useState<"idle" | "enviando" | "exito" | "error">(
     "idle"

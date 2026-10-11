@@ -1,16 +1,17 @@
 import Image from "next/image";
 import { CalendarDays, MapPin, ChevronDown } from "lucide-react";
 import { BotonContacto } from "@/components/BotonContacto";
-import { getDiccionario } from "@/lib/i18n";
+import { Logo } from "@/components/Logo";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
-const t = getDiccionario();
 
-export function Hero() {
+export function Hero({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
   return (
     <section
       id="inicio"
-      aria-label="Portada del evento"
+      aria-label={t.a11y.portada}
       className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-noche pt-16"
     >
       {/* Fondo: foto real del cierre del festival (Hacienda Paz, 27 sep 2026). */}
@@ -34,6 +35,18 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 flex flex-col items-center py-24 text-center">
+        {/* Emblema de portada: el logo completo, con halo de luz */}
+        <div className="relative mb-8">
+          <div aria-hidden className="absolute -inset-8 rounded-full bg-dorado/15 blur-3xl animate-pulso-suave" />
+          <div aria-hidden className="halo-dorado absolute -inset-3 rounded-full" />
+          <Logo
+            title="Talento para Dios"
+            priority
+            sizes="(min-width: 640px) 160px, 128px"
+            className="relative h-32 w-32 drop-shadow-[0_0_28px_rgba(255,200,61,0.35)] sm:h-40 sm:w-40"
+          />
+        </div>
+
         <p
           className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-dorado-claro/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.8)] sm:text-sm"
         >
@@ -59,13 +72,13 @@ export function Hero() {
           <span className="inline-flex items-center gap-2">
             <CalendarDays aria-hidden className="h-4 w-4 text-dorado" />
             <span>
-              {evento.fechaRealizado}
+              {t.evento.fechaRealizado}
             </span>
           </span>
           <span className="inline-flex items-center gap-2">
             <MapPin aria-hidden className="h-4 w-4 text-dorado" />
             <span>
-              {evento.lugar} · {evento.ciudad}
+              {evento.lugar} · {t.evento.ciudad}
             </span>
           </span>
         </div>
@@ -80,6 +93,7 @@ export function Hero() {
           </a>
           {/* CTA secundario, discreto → correo para apoyar el proyecto */}
           <BotonContacto
+            asunto={t.correo.asuntoApoyo}
             className="inline-flex h-11 items-center justify-center rounded-full border border-dorado/40 px-6 text-sm font-medium text-dorado-claro transition-colors hover:border-dorado hover:bg-dorado/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
           >
             {t.hero.ctaSecundario}

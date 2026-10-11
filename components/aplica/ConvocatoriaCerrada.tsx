@@ -1,11 +1,10 @@
 import { Mic2, HeartHandshake, Users, Mail } from "lucide-react";
-import { Navbar } from "@/components/sections/Navbar";
+import { SiteNavbar } from "@/components/sections/SiteNavbar";
 import { Footer } from "@/components/sections/Footer";
 import { Logo } from "@/components/Logo";
-import { getDiccionario } from "@/lib/i18n";
+import { getDiccionario, type Locale } from "@/lib/i18n";
 import { evento } from "@/config/evento";
 
-const t = getDiccionario();
 
 const iconos = [Mic2, HeartHandshake, Users];
 
@@ -21,10 +20,12 @@ function mailto(asunto: string, cuerpo: string) {
  * (por un enlace viejo, por Google o por el menú) tiene tres formas claras
  * de conectar.
  */
-export function ConvocatoriaCerrada() {
+export function ConvocatoriaCerrada({ lang }: { lang: Locale }) {
+  const t = getDiccionario(lang);
+
   return (
     <>
-      <Navbar />
+      <SiteNavbar lang={lang} camino="/aplica" />
       <main>
         <section
           aria-labelledby="conecta-titulo"
@@ -103,7 +104,7 @@ export function ConvocatoriaCerrada() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }
