@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { PropositoSection } from "@/components/sections/PropositoSection";
 import { VideoSection } from "@/components/sections/VideoSection";
 import { PorQueSection } from "@/components/sections/PorQueSection";
 import { QueVivirasSection } from "@/components/sections/QueVivirasSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <PropositoSection />
         <VideoSection />
         <PorQueSection />
         <QueVivirasSection />

@@ -18,6 +18,10 @@ export function Footer() {
           </p>
         </div>
 
+        <p className="max-w-md text-sm leading-relaxed text-dorado-claro/90">
+          {t.footer.lema}
+        </p>
+
         <div className="flex flex-col items-center gap-2 text-sm text-marfil-suave">
           <p>
             {evento.fechaRealizado}

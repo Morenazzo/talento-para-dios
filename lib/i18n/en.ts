@@ -95,6 +95,14 @@ export const en: Diccionario = {
       },
     ],
   },
+  proposito: {
+    kicker: "Our purpose",
+    inicio: "To boost ",
+    destacado: "emerging Christian music talent",
+    final: " so it can evangelize.",
+    apoyo:
+      "Every song is a chance to carry the message of Christ to where a sermon may never arrive.",
+  },
   video: {
     kicker: "Recap",
     titulo: "Relive the night",
@@ -203,6 +211,7 @@ export const en: Diccionario = {
   },
   footer: {
     contacto: "Contact",
+    lema: "We boost emerging Christian music talent to evangelize.",
     legal: "Thank you to everyone who made this night possible.",
     derechos: "Talento para Dios ®. All rights reserved.",
   },
