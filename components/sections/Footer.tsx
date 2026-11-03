@@ -21,6 +21,9 @@ export function Footer({ lang }: { lang: Locale }) {
         <p className="max-w-md text-sm leading-relaxed text-dorado-claro/90">
           {t.footer.lema}
         </p>
+        <p className="text-xs uppercase tracking-[0.2em] text-marfil-suave/80">
+          {t.footer.apoyo}
+        </p>
 
         <div className="flex flex-col items-center gap-2 text-sm text-marfil-suave">
           <p>
