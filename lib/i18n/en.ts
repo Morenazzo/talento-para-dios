@@ -344,8 +344,26 @@ export const en: Diccionario = {
   footer: {
     contacto: "Contact",
     lema: "Boosting emerging Christian talent to evangelize and transform culture.",
+    apoyo: "With the support of Haggai International",
     legal: "Thank you to everyone who made this night possible.",
     derechos: "Talento para Dios ®. All rights reserved.",
+  },
+  agradecimiento: {
+    kicker: "Thank you",
+    titulo: "Thank you, Haggai International",
+    parrafo1:
+      "This project was incubated by its co-founder, Edwin Moreno, during a Haggai international seminar in Malaysia in January 2025.",
+    parrafo2:
+      "Since then, Haggai has been a sponsor of Talento para Dios and has supported the creation of concerts featuring emerging musical talent.",
+    gracias:
+      "Thank you for your support and for believing in a new generation that wants to carry the message of Christ through music.",
+    datos: [
+      { etiqueta: "Origin", valor: "Haggai international seminar" },
+      { etiqueta: "Place and date", valor: "Malaysia · January 2025" },
+      { etiqueta: "Haggai is a", valor: "Sponsor" },
+    ],
+    logoAlt: "Haggai International logo",
+    patrocinador: "With the support of",
   },
   convocatoria: {
     kicker: "Connect with us",

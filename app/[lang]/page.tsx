@@ -10,6 +10,7 @@ import { ArtistasSection } from "@/components/sections/ArtistasSection";
 import { RecintoSection } from "@/components/sections/RecintoSection";
 import { AdopcionSection } from "@/components/sections/AdopcionSection";
 import { EticaSection } from "@/components/sections/EticaSection";
+import { PatrocinadorSection } from "@/components/sections/PatrocinadorSection";
 import { ConvocatoriaBanner } from "@/components/sections/ConvocatoriaBanner";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 import { Footer } from "@/components/sections/Footer";
@@ -33,6 +34,7 @@ export default function Home({ params }: { params: { lang: string } }) {
         <RecintoSection lang={lang} />
         <AdopcionSection lang={lang} />
         <EticaSection lang={lang} />
+        <PatrocinadorSection lang={lang} />
         <ConvocatoriaBanner lang={lang} />
         <CTAFinal lang={lang} />
       </main>

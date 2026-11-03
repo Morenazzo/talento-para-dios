@@ -343,9 +343,27 @@ export const es = {
   footer: {
     contacto: "Contacto",
     lema: "Impulsando talento emergente cristiano para evangelizar y transformar la cultura.",
+    apoyo: "Con el apoyo de Haggai International",
     legal:
       "Gracias a todos los que hicieron posible esta noche.",
     derechos: "Talento para Dios ®. Todos los derechos reservados.",
+  },
+  agradecimiento: {
+    kicker: "Agradecimiento",
+    titulo: "Gracias, Haggai International",
+    parrafo1:
+      "Este proyecto fue incubado por su cofundador, Edwin Moreno, durante un seminario internacional de Haggai, en Malasia, en enero de 2025.",
+    parrafo2:
+      "Desde entonces, Haggai es patrocinador de Talento para Dios y ha apoyado la creación de conciertos con talento musical emergente.",
+    gracias:
+      "Gracias por su apoyo y por creer en una nueva generación que quiere llevar el mensaje de Cristo a través de la música.",
+    datos: [
+      { etiqueta: "Origen", valor: "Seminario internacional de Haggai" },
+      { etiqueta: "Lugar y fecha", valor: "Malasia · enero de 2025" },
+      { etiqueta: "Haggai es", valor: "Patrocinador" },
+    ],
+    logoAlt: "Logotipo de Haggai International",
+    patrocinador: "Con el apoyo de",
   },
   convocatoria: {
     kicker: "Conecta con nosotros",

@@ -1,5 +1,8 @@
 # Dependencias
 /node_modules
+# iCloud ignora las carpetas *.nosync: aquí vive el node_modules real, con un
+# enlace simbólico node_modules → node_modules.nosync (evita que macOS lo saque del disco).
+/node_modules.nosync
 /.pnp
 .pnp.js
 
