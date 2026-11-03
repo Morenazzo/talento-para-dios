@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import { evento } from "@/config/evento";
 import { getDiccionario, type Locale } from "@/lib/i18n";
 
 /**
@@ -68,6 +70,15 @@ export function PatrocinadorSection({ lang }: { lang: Locale }) {
                 className="mx-auto h-auto w-full"
               />
             </div>
+            <a
+              href={evento.patrocinador.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex min-h-14 items-center justify-center gap-2 rounded-full bg-dorado px-8 py-3 text-center text-base font-semibold text-noche shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-all hover:bg-dorado-claro hover:shadow-[0_0_36px_rgba(245,216,122,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dorado-claro focus-visible:ring-offset-2 focus-visible:ring-offset-noche"
+            >
+              {a.boton}
+              <ArrowUpRight aria-hidden className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>

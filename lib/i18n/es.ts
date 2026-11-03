@@ -364,6 +364,7 @@ export const es = {
     ],
     logoAlt: "Logotipo de Haggai International",
     patrocinador: "Con el apoyo de",
+    boton: "Visitar Haggai México",
   },
   convocatoria: {
     kicker: "Conecta con nosotros",
