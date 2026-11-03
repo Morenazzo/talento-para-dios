@@ -364,6 +364,7 @@ export const en: Diccionario = {
     ],
     logoAlt: "Haggai International logo",
     patrocinador: "With the support of",
+    boton: "Visit Haggai Mexico",
   },
   convocatoria: {
     kicker: "Connect with us",

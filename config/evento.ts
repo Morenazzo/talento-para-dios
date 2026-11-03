@@ -122,6 +122,10 @@ export const evento = {
     subidoEl: "2026-10-07",
     duracionISO: "PT1M17S",
   },
+  /** Sitio de Haggai México (Campus Virtual Haggai México), patrocinador. */
+  patrocinador: {
+    url: "https://haggaimexico.org/",
+  },
   contacto: {
     /** Correo de contacto del evento. */
     correo: "somostalentoparadios@gmail.com",
