@@ -155,11 +155,20 @@ export const en: Diccionario = {
     valores: ["Talent", "Community", "Purpose"],
   },
   video: {
-    kicker: "Recap",
-    titulo: "Relive the night",
+    kicker: "Documentary",
+    titulo: "Talento para Dios: the documentary",
     texto:
-      "How the festival felt at Hacienda Paz: the music, the people and the stage, in just over a minute.",
-    reproducir: "Play the festival recap video",
+      "The story of the festival in five minutes: the vision, the stage and the people who made it possible at Hacienda Paz Lomas, Puebla.",
+    nota: "In Spanish, with Spanish subtitles.",
+    reproducir: "Play the Talento para Dios documentary",
+    recap: {
+      titulo: "Relive the night",
+      texto:
+        "How the festival felt at Hacienda Paz: the music, the people and the stage, in just over a minute.",
+      reproducir: "Play the festival recap video",
+      jsonTitulo:
+        "Christian Music Festival recap — Talento para Dios, Hacienda Paz",
+    },
     presentacion: {
       titulo: "How we introduced the festival",
       texto:
@@ -168,7 +177,7 @@ export const en: Diccionario = {
       iframeTitulo: "Talento para Dios Puebla concert introduction",
     },
     jsonTitulo:
-      "Christian Music Festival recap — Talento para Dios, Hacienda Paz",
+      "Talento para Dios — Documentary of the Christian Music Festival, Hacienda Paz Lomas, Puebla",
   },
   galeria: {
     kicker: "Recap",

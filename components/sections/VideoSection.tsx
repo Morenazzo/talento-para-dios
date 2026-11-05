@@ -9,18 +9,26 @@ const SITIO = evento.sitio;
 export function VideoSection({ lang }: { lang: Locale }) {
   const t = getDiccionario(lang);
 
-  /** Datos estructurados para que Google pueda mostrar el video en sus resultados. */
-  const datosVideo = {
+  /** Datos estructurados para que Google pueda mostrar los videos en sus resultados. */
+  const objetoVideo = (
+    v: { src: string; poster: string; subidoEl: string; duracionISO: string },
+    name: string,
+    description: string,
+  ) => ({
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: t.video.jsonTitulo,
-    description: t.video.texto,
-    thumbnailUrl: `${SITIO}${evento.videoRecap.poster}`,
-    contentUrl: `${SITIO}${evento.videoRecap.src}`,
-    uploadDate: evento.videoRecap.subidoEl,
-    duration: evento.videoRecap.duracionISO,
-    inLanguage: lang,
-  };
+    name,
+    description,
+    thumbnailUrl: `${SITIO}${v.poster}`,
+    contentUrl: `${SITIO}${v.src}`,
+    uploadDate: v.subidoEl,
+    duration: v.duracionISO,
+    inLanguage: "es",
+  });
+  const datosVideo = [
+    objetoVideo(evento.videoDocumental, t.video.jsonTitulo, t.video.texto),
+    objetoVideo(evento.videoRecap, t.video.recap.jsonTitulo, t.video.recap.texto),
+  ];
 
   return (
     <section
@@ -49,9 +57,33 @@ export function VideoSection({ lang }: { lang: Locale }) {
           </p>
         </div>
 
-        {/* Pieza principal: el recap, a todo el ancho del contenedor. */}
+        {/* Pieza principal: el documental, a todo el ancho del contenedor. */}
         <div className="mx-auto mt-10 max-w-5xl">
-          <VideoRecap etiqueta={t.video.reproducir} />
+          <VideoRecap
+            etiqueta={t.video.reproducir}
+            src={evento.videoDocumental.src}
+            poster={evento.videoDocumental.poster}
+          />
+          <p className="mt-4 text-center text-xs uppercase tracking-[0.2em] text-marfil-suave/80">
+            {t.video.nota}
+          </p>
+        </div>
+
+        {/* Recap corto de la noche. */}
+        <div className="mx-auto mt-20 max-w-3xl text-center">
+          <h3 className="font-display text-2xl font-bold text-marfil sm:text-3xl">
+            {t.video.recap.titulo}
+          </h3>
+          <p className="mx-auto mt-3 text-sm leading-relaxed text-marfil-suave sm:text-base">
+            {t.video.recap.texto}
+          </p>
+        </div>
+        <div className="mx-auto mt-8 max-w-3xl">
+          <VideoRecap
+            etiqueta={t.video.recap.reproducir}
+            src={evento.videoRecap.src}
+            poster={evento.videoRecap.poster}
+          />
         </div>
 
         {/* Secundario: el video con el que se presentó el festival (YouTube). */}
