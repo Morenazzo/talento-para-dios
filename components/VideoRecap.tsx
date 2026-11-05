@@ -1,13 +1,18 @@
-import { evento } from "@/config/evento";
-
 /**
- * Reproductor del video recap: archivo propio (MP4 H.264/AAC con el índice al
- * inicio, así que arranca sin bajarlo completo). `preload="none"` + carátula:
- * nadie descarga los 13 MB hasta que pulsa Reproducir. Los subtítulos ya
+ * Reproductor de video propio (documental y recap): MP4 H.264/AAC con el índice
+ * al inicio, así que arranca sin bajarlo completo. `preload="none"` + carátula:
+ * nadie descarga el archivo hasta que pulsa Reproducir. Los subtítulos ya
  * vienen integrados en el video.
  */
-export function VideoRecap({ etiqueta }: { etiqueta: string }) {
-  const { src, poster } = evento.videoRecap;
+export function VideoRecap({
+  etiqueta,
+  src,
+  poster,
+}: {
+  etiqueta: string;
+  src: string;
+  poster: string;
+}) {
 
   return (
     <div className="relative aspect-video overflow-hidden rounded-2xl border border-dorado/30 bg-black shadow-[0_0_64px_rgba(212,175,55,0.14)]">

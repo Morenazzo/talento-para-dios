@@ -153,11 +153,20 @@ export const es = {
     valores: ["Talento", "Comunidad", "Propósito"],
   },
   video: {
-    kicker: "Recap",
-    titulo: "Revive la noche",
+    kicker: "Documental",
+    titulo: "Talento para Dios: el documental",
     texto:
-      "Así se vivió el festival en Hacienda Paz: la música, la gente y el escenario, en poco más de un minuto.",
-    reproducir: "Reproducir el video recap del festival",
+      "La historia del festival en cinco minutos: la visión, el escenario y la gente que lo hizo posible en Hacienda Paz Lomas, Puebla.",
+    nota: "En español, con subtítulos en español.",
+    reproducir: "Reproducir el documental de Talento para Dios",
+    recap: {
+      titulo: "Revive la noche",
+      texto:
+        "Así se vivió el festival en Hacienda Paz: la música, la gente y el escenario, en poco más de un minuto.",
+      reproducir: "Reproducir el video recap del festival",
+      jsonTitulo:
+        "Recap del Festival de Música Cristiana — Talento para Dios, Hacienda Paz",
+    },
     presentacion: {
       titulo: "Así presentamos el festival",
       texto:
@@ -166,7 +175,7 @@ export const es = {
       iframeTitulo: "Presentación Concierto Talento Para Dios Puebla",
     },
     jsonTitulo:
-      "Recap del Festival de Música Cristiana — Talento para Dios, Hacienda Paz",
+      "Talento para Dios — Documental del Festival de Música Cristiana, Hacienda Paz Lomas, Puebla",
   },
   galeria: {
     kicker: "Recap",

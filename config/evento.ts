@@ -115,6 +115,13 @@ export const evento = {
   lugar: "Hacienda Paz",
   /** Video de presentación del evento (YouTube). */
   video: { id: "OVgEkmA2_Sk" },
+  /** Documental del festival con intro y outro de marca (archivo propio, 5:43, 1280x720, ~69 MB). */
+  videoDocumental: {
+    src: "/video/documental-talento-para-dios.mp4",
+    poster: "/img/recap/video-documental-poster.jpg",
+    subidoEl: "2026-11-04",
+    duracionISO: "PT5M43S",
+  },
   /** Video recap del festival (archivo propio en `public/video/`, 77 s, 1024x576). */
   videoRecap: {
     src: "/video/recap-festival.mp4",
